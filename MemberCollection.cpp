@@ -9,8 +9,6 @@ MemberInfoCollection::MemberInfoCollection(MemberInfo _memberInfo[MAX])
 	//Description:MemberInfoCollecion을 생성하는 생성자
 	//Created: 2018/05/28
 	//Author: 문현준
-
-
 	memberInfoCount = 0;
 	for (int i = 0; i < MAX; i++)
 	{
@@ -24,7 +22,6 @@ void MemberInfoCollection::addMemberInfo(string memType, string name, string res
 	//Description: MemberInfoCollection에 Member 객체를 입력하는 함수
 	//Created: 2018/05/28
 	//Author: 문현준
-
 
 	string tempmemType = memType;
 	string tempname = name;
