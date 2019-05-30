@@ -1,5 +1,4 @@
 #pragma once
-
 #include "MemberCollection.h"
 #include "Member.h"
 
@@ -16,14 +15,14 @@ MemberCollection::MemberCollection(Member member[MAX])
 	}
 }
 
-void MemberCollection::addMember(string id, string password, string name, string idNum, string memType, bool sessionOn); //MemberCollectoin에 Member객체를 저장하는 함수
+void MemberCollection::addMember(string id, string password, string name, string idNum, string memType, bool sessionOn) //MemberCollectoin에 Member객체를 저장하는 함수
 {
 	//Functnion: addMember(string id, string password, string name, string idNum, string memType, bool sessionOn)
 	//Description: MemberCollection에 Member 객체를 추가하는 함수
 	//Created: 2019/05/30
 	//Author: 이계웅
 
-	this->Member[memberNumber]->createMember(string id, string password, string name, string idNum, string memType, bool sessionOn);
+	this->member[this->memberNumber]->createMember(id, password, name, idNum, memType, sessionOn);
 	this->memberNumber++;
 }
 
@@ -36,19 +35,19 @@ void MemberCollection::deleteMember(int deleteMemberIndex)
 
 	if (deleteMemberIndex == 0) // 만약 지울 번호가 0번이라면 
 	{
-		Member[deleteMemberIndex]->deleteMember(); // string을 ""으로 만든다.
-		Member[deleteMemberIndex] = NULL; // 그리고 NULL로 만들어버린다.
+		this->member[deleteMemberIndex]->deleteMember(); // string을 ""으로 만든다.
+		this->member[deleteMemberIndex] = NULL; // 그리고 NULL로 만들어버린다.
 	}
 	else // 0번이 아니라면 
 	{
-		Member[deleteMemberIndex]->deleteMember(); // string을 ""으로 만든다.
+		this->member[deleteMemberIndex]->deleteMember(); // string을 ""으로 만든다.
 
 		for(int i = deleteMemberIndex; i < this->memberNumber; i++) // 한칸씩 당긴다.
 		{
-			Member[deleteMemberIndex] = Member[deleteMemberIndex + 1];
+			this->member[deleteMemberIndex] = this->member[deleteMemberIndex + 1];
 		}
-		Member[this->memberNumber - 1]->deleteMember(); // 마지막에 있는 Member지우고 
-		Member[this->memberNumber - 1] = NULL;          // 널처리를 해준다.
+		this->member[this->memberNumber - 1]->deleteMember(); // 마지막에 있는 Member지우고 
+		this->member[this->memberNumber - 1] = NULL;          // 널처리를 해준다.
 		this->memberNumber--;                           // 멤버 수를 하나 줄인다. 
 	}
 }
@@ -60,7 +59,7 @@ Member* MemberCollection::getMember(int memberIndex)
 	//Created: 2019/05/30
 	//Author: 이계웅
 
-	return Member[memberIndex]; // 리턴하는 것은 포인터
+	return this->member[memberIndex]; // 리턴하는 것은 포인터
 }
 
 Member* MemberCollection::currentSession()
@@ -71,34 +70,35 @@ Member* MemberCollection::currentSession()
 	//Author: 이계웅
 
 	bool checkSession = false; //  일단 false로 한다.
-	for (int i = 0; i < this->memberNumber; i++) // 멤버 수만큼 반복문을 돌린다.
+	for(int i = 0; i < this->memberNumber; i++) // 멤버 수만큼 반복문을 돌린다.
 	{
-		if (Member[i]->getSessionOn() == true) // 만약 그 멤버의 세션이 트루라면 
+		if (this->member[i]->getSessionOn() == true) // 만약 그 멤버의 세션이 트루라면 
 		{
 			checkSession = true; // 체크세션을 트루로 하고
-			return Member[i];    // 그 멤버를 리턴한다.
+			return this->member[i];    // 그 멤버를 리턴한다.
 		}
 	}
-	if (!checkSession) // 만약 아무것도 true가 아니라면 
-	{ 
+	if(!checkSession) // 만약 아무것도 true가 아니라면 
+	{
 	 	return NULL;   // NULL을 리턴한다.
 	}
 }
 
 int MemberCollection::getCurrentSessionIndex()
 {
-	//Functnion: getCurrentSessionIndex()
+	//Function: getCurrentSessionIndex()
 	//Description: 몇번째 Member가 현재 Session을 사용하는지 그 인덱스를 반환하는 함수
 	//Created: 2019/05/30
 	//Author: 이계웅
 
 	for (int i = 0; i < this->memberNumber; i++) // 멤버수만큼 반복문을 돌린다.
 	{
-		if (Member[i]->getSessionOn() == true) // 만약 세션온이 True라면 
+		if (this->member[i]->getSessionOn() == true) // 만약 세션온이 True라면 
 		{ 
 			return i; // 그 인덱스를 받는다.
 		}
 	}
+	return -1;
 }
 
 int MemberCollection::getMemberNumber()
@@ -111,12 +111,12 @@ int MemberCollection::getMemberNumber()
 	return this->memberNumber;
 }
 
-void MemberCollection::setMemberCount(int memberIndex)
+void MemberCollection::setMemberNumber(int memberIndex)
 {
-	//Functnion: setMemberCount(int memberIndex)
+	//Functnion: setMemberNumber(int memberIndex)
 	//Description: memberIndex의 인자를 멤버변수인 memberNumber로 Set하는 함수
 	//Created: 2019/05/30
 	//Author: 이계웅
 
-	memberNumber = memberIndex;
+	this->memberNumber = memberIndex;
 }

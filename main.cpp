@@ -1,8 +1,9 @@
 #pragma once
 #include "main.h"
 #define MAX 50
+#define INPUT_FILE_NAME "input.txt"
+#define OUTPUT_FILE_NAME "output.txt"
 using namespace std;
-
 
 int main()
 {
@@ -15,17 +16,20 @@ int main()
 	//    What : switch 및 case문의 interface 함수 생성 
 
 	Member member[MAX];             // 멤버 객체 생성 
-	Timer timer;					// 타이머 객체 생성 
-	Reservation reservation[MAX];	// 예약 객체 생성
-	Ticket ticket[MAX];				// 티켓 객체 생성
+	//Timer timer;					// 타이머 객체 생성 
+	//Reservation reservation[MAX];	// 예약 객체 생성
+	//Ticket ticket[MAX];				// 티켓 객체 생성
 
-	ReservationCollection reservationCollection(reservation);  // 예약 생성
-	TicketCollection ticketCollection(ticket);                 // 티켓 생성
+	//ReservationCollection reservationCollection(reservation);  // 예약 생성
+	//TicketCollection ticketCollection(ticket);                 // 티켓 생성
 	MemberCollection memberCollection(member);				   // 멤버 생성
 
-	freopen("input.txt", "r", stdin);   // scanf시에 input.txt에서 read한다.
-	freopen("output.txt", "w", stdout); // printf시에 output.txt에서 write한다.
+	FILE* in_fp;
+	FILE* out_fp;
 
+	in_fp = fopen(INPUT_FILE_NAME, "r+");   
+	out_fp = fopen(OUTPUT_FILE_NAME, "w+");
+	
 	while (1)
 	{
 		// 두 개의 메뉴를 위한 변수 
@@ -42,7 +46,8 @@ int main()
 			{
 				switch(menu_2)
 				{
-					case 1: {	// 1.1. 회원가입 
+					case 1: {	// 1.1. 회원가입
+
 						signupInterface(&memberCollection);
 						break;
 					}
@@ -228,13 +233,13 @@ void participateAuctionTicketInterface(ReservationCollection* reservationCollect
 	userInterface.showReservationInformation(&control, reservationCollection, MemberCollection);
 }
 */
-void setCurrentTimeInterface(Timer* timer, TicketCollection * TicketCollection, MemberCollection* MemberCollection) // 5.1 현재시간설정 인터페이스
+/*void setCurrentTimeInterface(Timer* timer, TicketCollection * TicketCollection, MemberCollection* MemberCollection) // 5.1 현재시간설정 인터페이스
 {
 	SetCurrentTimeUI userInterface;
 	SetCurrentTimeControl control;
 	userInterface.startInterface(&control, timer, MemberCollection, TicketCollection);
 }
-
+*/
 /*
 void changeSession(MemberCollection* p_membercollection) // 6.1 Session변경
 {

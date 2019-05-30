@@ -25,7 +25,7 @@ void SignUpControl::createAccount(string id, string password, string name, strin
 
 	for (int i = 0; i < memberCount; i++)
 	{
-		if (ID.compare(memberCollection->getMember(i)->getId()) == 0) // 문자열이 같으면 0이다.
+		if (id.compare(memberCollection->getMember(i)->getId()) == 0) // 문자열이 같으면 0이다.
 		{
 			this->checkId = false; // 문자열이 같으면 False이다.
 		}
