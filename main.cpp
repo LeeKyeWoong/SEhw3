@@ -63,7 +63,7 @@ int main()
 				switch(menu_2)
 				{
 					case 1: {	// 2.1. 로그인
-						//loginInterface(&MemberCollection);
+						loginInterface(&MemberCollection);
 						break;
 					}
 					case 2: {	// 2.2. 로그아웃
@@ -170,14 +170,14 @@ void unregisterInterface(TicketCollection* TicketCollection, ReservationCollecti
 	UnregisterControl control;
 	userInterface.callUnregister(&control, TicketCollection, reservationCollection, MemberCollection);
 }
-
+*/
 void loginInterface(MemberCollection* MemberCollection) //2.1 로그인 인터페이스
 {
 	LoginUI userInterface;
 	LoginControl control;
 	userInterface.inputLoginInfo(&control, MemberCollection);
 }
-
+/*
 void logoutInterface(MemberCollection* MemberCollection) //2.2 로그아웃 인터페이스
 {
 	LogoutUI userInterface;

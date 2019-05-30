@@ -50,10 +50,11 @@
 //#include "SetCurrentTimeControl.h"
 
 void signupInterface(MemberCollection* memberCollection);//1.1 회원가입 인터페이스
-/*
 void loginInterface(MemberCollection* MemberCollection); //2.1 로그인 인터페이스
+
+//void unregisterInterface(AccommodationCollection* accommodationCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection); //1.2 회원탈퇴 인터페이스
+/*
 void logoutInterface(MemberCollection* MemberCollection);//2.2 로그아웃 인터페이스
-void unregisterInterface(AccommodationCollection* accommodationCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection); //1.2 회원탈퇴 인터페이스
 void registerAccommodationInterface(AccommodationCollection* accommodationCollection, MemberCollection* MemberCollection, Timer * timer); //3.1 숙소 등록 인터페이스
 void checkAccommodationInterface(AccommodationCollection* accommodationCollection, MemberCollection* MemberCollection); //3.2 숙소 조회 인터페이스
 void searchAccommodationInterface(AccommodationCollection* accommodationCollection, MemberCollection* MemberCollection);  //4.1 숙소검색 인터페이스
