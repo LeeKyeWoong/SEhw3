@@ -35,7 +35,7 @@ int main()
 		// 입력파일에서 메뉴 숫자 2개를 읽기
 		cin >> menu_1 >> menu_2;
 
-		//메뉴 구분 및 해당 연산 수행
+		// 메뉴 구분 및 해당 연산 수행
 		switch(menu_1)
 		{
 			case 1: 
@@ -43,7 +43,7 @@ int main()
 				switch(menu_2)
 				{
 					case 1: {	// 1.1. 회원가입 
-						//signInInterface(&MemberCollection);
+						signInInterface(&MemberCollection);
 						break;
 					}
 					case 2: {	// 1.2. 회원탈퇴 
@@ -158,7 +158,7 @@ void signupInterface(MemberCollection* MemberCollection)  // 1.1 회원가입 인터페
 	SignInControl control;
 	userInterface.inputInfo(&control, MemberCollection);
 }
-
+/*
 void unregisterInterface(TicketCollection* TicketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection) //1.2 회원탈퇴 인터페이스
 {
 	UnregisterUI userInterface;
@@ -180,7 +180,7 @@ void logoutInterface(MemberCollection* MemberCollection) //2.2 로그아웃 인터페이
 	userInterface.callLogout(&control, MemberCollection);
 }
 
-void registerTicketInterface(TicketCollection* TicketCollection, MemberCollection* MemberCollection,Timer * timer) // 3.1 판매티켓 등록 인터페이스
+void registerTicketInterface(TicketCollection* TicketCollection, MemberCollection* MemberCollection, Timer * timer) // 3.1 판매티켓 등록 인터페이스
 {
 	RegisterTicketUI userInterface;
 	RegisterTicketControl control;
@@ -306,3 +306,4 @@ void exitProgram() {  // 7.1 종료 인터페이스
 	printf("7.1 종료\n");
 	exit(0);
 }
+*/

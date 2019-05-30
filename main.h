@@ -52,7 +52,8 @@
 #define OUTPUT_FILE_NAME "output.txt"
 */
 
-void SignUpInterface(MemberCollection* MemberCollection);//1.1 회원가입 인터페이스
+void signInInterface(&MemberCollection);;//1.1 회원가입 인터페이스
+/*
 void loginInterface(MemberCollection* MemberCollection); //2.1 로그인 인터페이스
 void logoutInterface(MemberCollection* MemberCollection);//2.2 로그아웃 인터페이스
 void unregisterInterface(AccommodationCollection* accommodationCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection); //1.2 회원탈퇴 인터페이스
@@ -66,7 +67,7 @@ void setCurrentTimeInterface(Timer* timer, AccommodationCollection* accommodatio
 void changeSession(MemberCollection* p_membercollection);  //6.1 Session변경
 void guestSession(MemberCollection* p_membercollection); //6.2. gusetSession으로 변경
 void programExit(); //7.1종료 인터페이스
-
+*/
 
 // 입력형식
 /* 

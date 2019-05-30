@@ -57,11 +57,11 @@ void Member::deleteMember()
 	// Created: 2019/05/29
 	// Author: ÀÌ°è¿õ
 
-	this->id = id;
-	this->password = password;
-	this->name = name;
-	this->idNum = idNum;
-	this->memType = memType;
+	this->id = "";
+	this->password = "";
+	this->name = "";
+	this->idNum = "";
+	this->memType = "";
 	this->sessionOn = false;
 
 }
