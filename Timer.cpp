@@ -19,7 +19,7 @@ string Timer::getCurrentTime() {
 
 	return this->currentTime;
 }
-
+/*
 bool Timer::checkTimeToDeleteTicket(string registerTime) {
 	// Function: bool checkTimeToDeleteTicket(string registerTime)
 	// Description: 티켓이 등록된 시간과 현재시간을 비교하여 티켓을 삭제할지 결정하는 함수이다.
@@ -29,4 +29,4 @@ bool Timer::checkTimeToDeleteTicket(string registerTime) {
 	// Author: 김승연
 
 
-}
+}*/

@@ -12,8 +12,8 @@ int main()
 	// Created: 2019/05/29
 	// Author: 이계웅
 	// Revsions : 
-	// 1. When & Who : 20--/--/-- by ___
-	//    What : switch 및 case문의 interface 함수 생성 
+	// 1. When & Who : 2019/05/31 by 김승연
+	//    What : setCurrentTimeInterface() 함수 구현
 
 	Member member[MAX];             // 멤버 객체 생성 
 	//Timer timer;					// 타이머 객체 생성 
@@ -47,7 +47,6 @@ int main()
 				switch(menu_2)
 				{
 					case 1: {	// 1.1. 회원가입
-
 						signupInterface(&memberCollection);
 						break;
 					}
@@ -120,7 +119,7 @@ int main()
 				switch(menu_2) 
 				{
 					case 1: {	 // 5.1. 현재시간 설정
-						//setCurrentTimeInterface(&timer, &TicketCollection, &MemberCollection);
+						//setCurrentTimeInterface(&timer, &ticketCollection);
 						break;
 					}
 				}	
@@ -171,14 +170,15 @@ void unregisterInterface(TicketCollection* TicketCollection, ReservationCollecti
 	userInterface.callUnregister(&control, TicketCollection, reservationCollection, MemberCollection);
 }
 */
-void loginInterface(MemberCollection* memberCollection) // 2.1 로그인 인터페이스
+
+void loginInterface(MemberCollection* memberCollection) //2.1 로그인 인터페이스
 {
 	LoginUI userInterface;
 	LoginControl control;
 	userInterface.inputLogin(&control, memberCollection);
 }
 
-void logoutInterface(MemberCollection* memberCollection) // 2.2 로그아웃 인터페이스
+void logoutInterface(MemberCollection* memberCollection) //2.2 로그아웃 인터페이스
 {
 	LogoutUI userInterface;
 	LogoutControl control;
@@ -233,11 +233,20 @@ void participateAuctionTicketInterface(ReservationCollection* reservationCollect
 	userInterface.showReservationInformation(&control, reservationCollection, MemberCollection);
 }
 */
-/*void setCurrentTimeInterface(Timer* timer, TicketCollection * TicketCollection, MemberCollection* MemberCollection) // 5.1 현재시간설정 인터페이스
+/*
+void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection) // 5.1 현재시간설정 인터페이스
 {
+	// Function: void setCurrentTimeInterface(Timer* timer, TicketCollection* TicketCollection, MemberCollection* MemberCollection)
+	// Description: 현재시간설정 인터페이스를 호출하는 함수이다.
+	// Parameters: Timer* timer - 현재시간을 저장하기 위한 Timer 객체
+	//						TicketCollection* ticketCollection - 현재시간이 바뀌고 나서 일 년이 지난 티켓을 삭제하기 위해 필요한 TicketCollection 객체
+	//						MemberCollection* memberCollection - ???????????/
+	// Created: 2019/05/31
+	// Author: 김승연
+
 	SetCurrentTimeUI userInterface;
 	SetCurrentTimeControl control;
-	userInterface.startInterface(&control, timer, MemberCollection, TicketCollection);
+	userInterface.startInterface(&control, timer, ticketCollection);
 }
 */
 /*
