@@ -5,20 +5,18 @@
 
 using namespace std;
 
-class SignInControl;
-class MemberInfoCollection;
+class SignUpControl;
+class MemberCollection;
 
-class SignInUI
+class SignUpUI
 {
-	//Class: SignInUI
-	//Description: SignIn의 boundary class
-	//Created: 2018/05/28
-	//Author: 문현준
-
-
+	// Class: SignUpUI
+	// Description: SignUp의 boundary class
+	// Created: 2019/5/30
+	// Author: 이계웅
 private:
-	
+
 public:
-	void inputInfo(SignInControl* _signIn, MemberInfoCollection* memberInfoCollection);  ////입력된 정보를 기반으로 MemberInfo를 생성 후, 해당 객체를 MemberInfoColelction에 저장하고, 메세지를 출력하는 함수 
+	void inputInfo(SignUpControl* signupControl, MemberCollection* memberCollection);  //Member를 생성 한다. 해당 객체를 MemberCollection에 저장하고, 메세지를 출력한다. 
 };
 

@@ -1,30 +1,32 @@
 #pragma once
-#include "SignInUI.h"
-#include "SignInControl.h"
-#include "MemberInfo.h"
-#include "MemberInfoCollection.h"
+#include "SignUpUI.h"
+#include "SignUpControl.h"
+#include "Member.h"
+#include "MemberCollection.h"
 
-void SignInUI::inputInfo(SignInControl* _signIn, MemberInfoCollection* memberInfoCollection)
+void SignUpUI::inputInfo(SignUpControl* signupControl, MemberCollection* memberCollection)
 {
 
-	// Function :inputInfo(SignInControl* _signIn, MemberInfoCollection* memberInfoCollection)
+	// Function :inputInfo(SignUpControl* signupControl, MemberCollection* memberCollection)
 	// Description: 입력된 정보를 바탕으로 새 계정을 만드는 함수
-	// Created: 2017/5/29
-	// Author: 문현준
+	// Created: 2019/5/30
+	// Author: 이계웅
 
-	
-	string memType, name, residentRegistrationNumber, address, ID, password;
-	cin >> memType >> name >> residentRegistrationNumber >> address >> ID >> password;
-	_signIn->createAccount(memType, name, residentRegistrationNumber, address, ID, password, memberInfoCollection);
+	string id, password, name, idNum, memType;
+	bool session = false;
 
-	if (_signIn->getCheckId())
+	cin >> id >> password >> name >> idNum >> memType; // 정보를 입력받는다. 
+
+	signupControl->createAccount(id, password, name, idNum, memType, session, memberCollection);
+
+	if (signupControl->getCheckId()) // 중복이 없다면 즉, true라면
 	{
 		cout << "1.1 회원가입" << endl;
-		cout << ">" << memType << " " << name << " " << residentRegistrationNumber << " " << address << " " << ID << " " << password << endl;
+		cout << ">" << id << " " << password << " " << name << " " << idNum << " " << memType << " " << endl;
 	}
 	else
 	{
-
+		cout << "> ID 중복입니다" << endl;
 	}
 	
 }

@@ -1,59 +1,53 @@
 #pragma once
-#include "SignInUI.h"
-#include "SignInControl.h"
-#include "MemberInfo.h"
-#include "MemberInfoCollection.h"
+#include "SignUpUI.h"
+#include "SignUpControl.h"
+#include "Member.h"
+#include "MemberCollection.h"
 
-SignInControl::SignInControl()
+SignUpControl::SignUpControl()
 {
-	// Function : SignInControl()
-	// Description: SignInControl의 기본 생성자가 아닌, 아무 입력 없이 control 객체의 checkID값을 NULL값으로 초기화 하는 생성자
-	// Created: 2017/5/29
-	// Author: 박건용
+	// Function : SignUpControl()
+	// Description: 객체의 checkID값을 true로 초기화 하는 생성자 ( true 는 중복이 없다는 것을 의미한다.)
+	// Created: 2019/5/30
+	// Author: 이계웅
 
-
-	checkId = true;
+	this->checkId = true;
 }
 
-void SignInControl::createAccount(string memType, string name, string residentRegistrationNumber, string address, string ID, string password, MemberInfoCollection* memberInfoCollection)
+void SignUpControl::createAccount(string id, string password, string name, string idNum, string memType, bool sessionOn, MemberCollection* memberCollection)
 {
-	// Function : createAccount(string memType, string name, string residentRegistrationNumber, string address, string ID, string password, MemberInfoCollection* memberInfoCollection)
-	// Description: 매개변수를 입력받아 새 Account를 생성하며, 입력된 ID의 중복 여부를 확인하는 함수
-	// Created: 2017/5/28
-	// Author: 문현준
-	// Revsions : 
-	//   1. When & Who : 2018/05/29 by 박건용
-	//      What : 매개변수에 memType 추가 
+	// Function : createAccount(string id, string password, string name, string idNum, string memType, bool sessionOn, MemberCollection* memberCollection)
+	// Description: 새 Account를 생성하며, 입력된 ID의 중복 여부를 확인하는 함수
+	// Created: 2019/5/30
+	// Author: 이계웅
 
+	int memberCount = memberCollection->getMemberNumber(); // 갯수를 받아온다.
 
-	int memberInfoCount = memberInfoCollection->getMemberInfoCount();
-
-	for (int i = 0; i < memberInfoCount; i++)
+	for (int i = 0; i < memberCount; i++)
 	{
-		if (ID.compare(memberInfoCollection->getMemberInfo(i)->getID()) == 0)
+		if (ID.compare(memberCollection->getMember(i)->getId()) == 0) // 문자열이 같으면 0이다.
 		{
-			checkId = false;
+			this->checkId = false; // 문자열이 같으면 False이다.
 		}
 	}
 
-	if (checkId)
+	if(this->checkId) // 문자열이 동일한 것이 없다. 즉, true이다.
 	{
-		memberInfoCollection->addMemberInfo(memType, name, residentRegistrationNumber, address, ID, password, "0", false);
+		memberCollection->addMember(id, password, name, idNum, memType, sessionOn);
 	}
-	else
+	else // 문자열이 동일한것이 있다.
 	{
-		
+		// 아무일도 하지 않는다.
 	}
 	
 }
 
-bool SignInControl::getCheckId()
+bool SignUpControl::getCheckId()
 {
-	// Function : SignInControl()
+	// Function : getCheckId()
 	// Description: 회원 가입을 시도하는 ID의 중복 여부를 반환하는 함수
-	// Created: 2017/5/29
-	// Author: 박건용
+	// Created: 2019/5/30
+	// Author: 이계웅
 
-
-	return checkId;
+	return this->checkId;
 }

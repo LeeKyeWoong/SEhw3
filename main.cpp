@@ -19,9 +19,9 @@ int main()
 	Reservation reservation[MAX];	// 예약 객체 생성
 	Ticket ticket[MAX];				// 티켓 객체 생성
 
-	ReservationCollection ReservationCollection(reservation);  // 예약 생성
-	TicketCollection TicketCollection(ticket);                 // 티켓 생성
-	MemberCollection MemberCollection(member);				   // 멤버 생성
+	ReservationCollection reservationCollection(reservation);  // 예약 생성
+	TicketCollection ticketCollection(ticket);                 // 티켓 생성
+	MemberCollection memberCollection(member);				   // 멤버 생성
 
 	freopen("input.txt", "r", stdin);   // scanf시에 input.txt에서 read한다.
 	freopen("output.txt", "w", stdout); // printf시에 output.txt에서 write한다.
@@ -43,7 +43,7 @@ int main()
 				switch(menu_2)
 				{
 					case 1: {	// 1.1. 회원가입 
-						signInInterface(&MemberCollection);
+						signupInterface(&memberCollection);
 						break;
 					}
 					case 2: {	// 1.2. 회원탈퇴 
@@ -152,11 +152,11 @@ int main()
 	return 0;
 }
 
-void signupInterface(MemberCollection* MemberCollection)  // 1.1 회원가입 인터페이스
+void signupInterface(MemberCollection* memberCollection)  // 1.1 회원가입 인터페이스
 {
-	SignInUI userInterface;
-	SignInControl control;
-	userInterface.inputInfo(&control, MemberCollection);
+	SignUpUI userInterface;
+	SignUpControl control;
+	userInterface.inputInfo(&control, memberCollection);
 }
 /*
 void unregisterInterface(TicketCollection* TicketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection) //1.2 회원탈퇴 인터페이스
