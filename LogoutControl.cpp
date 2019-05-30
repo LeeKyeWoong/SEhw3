@@ -1,23 +1,24 @@
 #pragma once
 #include "LogoutUI.h"
 #include "LogoutControl.h"
-#include "MemberInfo.h"
-#include "MemberInfoCollection.h"
+#include "Member.h"
+#include "MemberCollection.h"
 
-void LogoutControl::requestLogout(MemberInfoCollection* memberInfoCollection)
+void LogoutControl::requestLogout(MemberCollection* memberCollection)
 {
-	//Function: requestLogout(MemberInfoCollection* memberInfoCollection)
+	//Function: requestLogout(MemberCollection* memberCollection)
 	//Description: 회원의 세션상태를 변경해 로그아웃 함.
-	//Created: 2018/05/27
-	//Author: 문현준
+	//Created: 2019/05/31
+	//Author: 이계웅
 
-	if (memberInfoCollection->currentSession() == NULL)
+	if (memberCollection->currentSession() == NULL)
 	{
+		cout << "> 현재 로그인 중인 id가 없습니다.";
 	}
-	else
+	else // 로그인 중인 id가 있다면 
 	{
-		logoutId = memberInfoCollection->currentSession()->getID();
-		memberInfoCollection->currentSession()->setsessionOn(false);
+		this->logoutId = memberCollection->currentSession()->getId(); // 로그인한 id를 얻는다.
+		memberCollection->currentSession()->setSessionOn(false);
 	}
 }
 
@@ -25,7 +26,8 @@ string LogoutControl::getLogoutId()
 {
 	//Function: getLogoutId()
 	//Description: LogoutID를 출력하는 함수
-	//Created: 2018/05/27
-	//Author: 문현준
-	return logoutId;
+	//Created: 2019/05/31
+	//Author: 이계웅
+
+	return this->logoutId;
 }

@@ -1,50 +1,49 @@
 #pragma once
 #include "LoginUI.h"
 #include "LoginControl.h"
-#include "MemberInfo.h"
-#include "MemberInfoCollection.h"
+#include "Member.h"
+#include "MemberCollection.h"
 
 LoginControl::LoginControl()
 {
-	//Functnion: LoginControl()
-	//Description: LoginÀ» ½ÃµµÇÏ¸ç successLogin º¯¼ö¸¦ False·Î ÃÊ±âÈ­ ÇÏ´Â ÇÔ¼ö
-	//Created: 2018/05/30
-	//Author: ¹®ÇöÁØ
+	//Function: LoginControl()
+	//Description: Loginì„ ì‹œë„í•˜ë©° successLogin ë³€ìˆ˜ë¥¼ Falseë¡œ ì´ˆê¸°í™” í•˜ëŠ” í•¨ìˆ˜
+	//Created: 2019/05/31
+	//Author: ì´ê³„ì›…
 
-
-	successLogin = false;
+	this->successLogin = false;
 }
 
-void LoginControl::requestLogin(string ID, string password, MemberInfoCollection* memberInfoCollection)
+void LoginControl::requestLogin(string id, string password, MemberCollection* memberCollection)
 {
-	//Functnion: requestLogin(string ID, string password, MemberInfoCollection* memberInfoCollection)
-	//Description: ÀÔ·Â¹ŞÀº ID ¹× password°¡ MemberCollection¿¡ ÀÖ´ÂÁö È®ÀÎÇÏ¿© LoginÀ» ½ÃµµÇÑ´Ù
-	//Created: 2018/05/28
-	//Author: ¹®ÇöÁØ
+	//Function: requestLogin(string id, string password, MemberCollection* memberCollection)
+	//Description: ì…ë ¥ë°›ì€ id ë° passwordê°€ MemberCollectionì— ìˆëŠ”ì§€ í™•ì¸í•˜ì—¬ Loginì„ ì‹œë„í•œë‹¤
+	//Created: 2019/05/31
+	//Author: ì´ê³„ì›…
 
-
-	int memberCount = memberInfoCollection->getMemberInfoCount();
-	for (int i = 0; i < memberCount; i++)
+	int memberCount = memberCollection->getMemberNumber(); // memberCollectionì—ì„œ ë©¤ë²„ìˆ˜ë¥¼ ë°›ëŠ”ë‹¤.
+	
+	for (int i = 0; i < memberCount; i++) // ë©¤ë²„ìˆ˜ë§Œí¼ ë°˜ë³µë¬¸ì„ ëŒë¦°ë‹¤.
 	{
-		if ((memberInfoCollection->getMemberInfo(i)->getID().compare(ID) == 0) && (memberInfoCollection->getMemberInfo(i)->getpassword().compare(password) == 0))
+		if ((memberCollection->getMember(i)->getId().compare(id) == 0) && // ì•„ì´ë””ë¥¼ ë¹„êµí•œë‹¤. ê°™ìœ¼ë©´ 0 
+		    (memberCollection->getMember(i)->getPassword().compare(password) == 0)) // ë¹„ë°€ë²ˆí˜¸ë¥¼ ë¹„êµí•œë‹¤. ê°™ìœ¼ë©´ 0
 		{
-			successLogin = true;
-			memberInfoCollection->getMemberInfo(i)->setsessionOn(true);
+			this->successLogin = true; // ë‘˜ ë‹¤ ë§ëŠ” ê²ƒì´ ìˆë‹¤ë©´ trueë¡œ í•´ì¤€ë‹¤.
+			memberCollection->getMember(i)->setSessionOn(true);
 		}
 		else
 		{
-			memberInfoCollection->getMemberInfo(i)->setsessionOn(false);
+			memberCollection->getMember(i)->setSessionOn(false);
 		}
 	}
 }
 
 bool LoginControl::getSuccessLogin()
 {
-	//Functnion: LoginControl()
-	//Description: Login ¼º°ø ¿©ºÎ¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼ö
-	//Created: 2018/05/30
-	//Author: ¹®ÇöÁØ
+	//Function: LoginControl()
+	//Description: Login ì„±ê³µ ì—¬ë¶€ë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜
+	//Created: 2019/05/31
+	//Author: ì´ê³„ì›…
 
-
-	return successLogin;
+	return this->successLogin;
 }

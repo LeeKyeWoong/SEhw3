@@ -1,28 +1,27 @@
 #pragma once
 #include "LoginUI.h"
 #include "LoginControl.h"
-#include "MemberInfo.h"
-#include "MemberInfoCollection.h"
+#include "Member.h"
+#include "MemberCollection.h"
 
-void LoginUI::inputLoginInfo(LoginControl* _login, MemberInfoCollection* memberInfoCollection)
+void LoginUI::inputLogin(LoginControl* loginControl, MemberCollection* memberCollection)
 {
-	//Functnion: inputLoginInfo(LoginControl* _login, MemberInfoCollection* memberInfoCollection)
+	//Functnion: inputLogin(LoginControl* loginControl, MemberCollection* memberCollection)
 	//Description: Login 정보를 입력받는다
-	//Created: 2018/05/28
-	//Author: 문현준
-
+	//Created: 2019/05/31
+	//Author: 이계웅
 	
-	string ID, password;
-	cin >> ID >> password;
-	_login->requestLogin(ID, password, memberInfoCollection);
+	string id, password;
+	cin >> id >> password;
+	loginControl->requestLogin(id, password, memberCollection);
 
-	if (_login->getSuccessLogin())
+	if (loginControl->getSuccessLogin()) // 로그인이 성공한다면 
 	{
 		cout << "2.1 로그인" << endl;
-		cout << ">" << ID << " " << password << endl;
+		cout << ">" << id << " " << password << endl;
 	}
-	else
+	else // 로그인이 실패한다면
 	{
-
+		cout << "> 로그인 실패";
 	}
 }

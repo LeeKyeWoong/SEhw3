@@ -6,19 +6,18 @@
 using namespace std;
 
 class LoginControl;
-class MemberInfoCollection;
+class MemberCollection;
 
 class LoginUI
 {
 	//Class: LoginUI
 	//Description: Login의 boundary class
-	//Created: 2018/05/28
-	//Author: 문현준
-
+	//Created: 2019/05/31
+	//Author: 이계웅
 
 private:
 	
 public:
-	void inputLoginInfo(LoginControl* _login, MemberInfoCollection* memberInfoCollection);  ////Login 정보를 입력받는 함수
+	void inputLogin(LoginControl* loginControl, MemberCollection* memberCollection);//Login 정보를 입력받는 함수
 };
 

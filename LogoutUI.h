@@ -6,18 +6,18 @@
 using namespace std;
 
 class LogoutControl;
-class MemberInfoCollection;
+class MemberCollection;
 
 class LogoutUI
 {
-	//Class: LogoutUI
-	//Description: Logout의 boundary class
-	//Created: 2018/05/27
-	//Author: 문현준
+	// Class: LogoutUI
+	// Description: Logout의 boundary class
+	// Created: 2019/05/31
+	// Author: 이계웅
 
 private:
 
 public:
-	void callLogout(LogoutControl* _logout, MemberInfoCollection* memberInfoCollection); //LogoutControl 객체에 User의 Logout 요청을 전달하는 함수
+	void callLogout(LogoutControl* logoutControl, MemberCollection* memberCollection); //LogoutControl 객체에 User의 Logout 요청을 전달하는 함수
 };
 

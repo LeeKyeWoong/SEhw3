@@ -63,11 +63,11 @@ int main()
 				switch(menu_2)
 				{
 					case 1: {	// 2.1. 로그인
-						loginInterface(&MemberCollection);
+						loginInterface(&memberCollection);
 						break;
 					}
 					case 2: {	// 2.2. 로그아웃
-						//logoutInterface(&MemberCollection);
+						logoutInterface(&memberCollection);
 						break;
 					}
 				}
@@ -171,20 +171,20 @@ void unregisterInterface(TicketCollection* TicketCollection, ReservationCollecti
 	userInterface.callUnregister(&control, TicketCollection, reservationCollection, MemberCollection);
 }
 */
-void loginInterface(MemberCollection* MemberCollection) //2.1 로그인 인터페이스
+void loginInterface(MemberCollection* memberCollection) // 2.1 로그인 인터페이스
 {
 	LoginUI userInterface;
 	LoginControl control;
-	userInterface.inputLoginInfo(&control, MemberCollection);
+	userInterface.inputLogin(&control, memberCollection);
 }
-/*
-void logoutInterface(MemberCollection* MemberCollection) //2.2 로그아웃 인터페이스
+
+void logoutInterface(MemberCollection* memberCollection) // 2.2 로그아웃 인터페이스
 {
 	LogoutUI userInterface;
 	LogoutControl control;
-	userInterface.callLogout(&control, MemberCollection);
+	userInterface.callLogout(&control, memberCollection);
 }
-
+/*
 void registerTicketInterface(TicketCollection* TicketCollection, MemberCollection* MemberCollection, Timer * timer) // 3.1 판매티켓 등록 인터페이스
 {
 	RegisterTicketUI userInterface;
