@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include "Member.h"
 
 #define MAX 50
 
@@ -17,11 +18,11 @@ class MemberCollection
 	// Author: 이계웅
 
 private:
-	Member * Member[MAX];  // Member를 저장하는 포인터를 원소로 하는 배열
+	Member * member[MAX];  // Member를 저장하는 포인터를 원소로 하는 배열
 	int memberNumber;      // Member 번호를 기록하는 변수
 
 public:
-	MemberCollection(Member Member[MAX]);  // MeberCollection의 사용자 정의 생성자
+	MemberCollection(Member member[MAX]);  // MemberCollection의 사용자 정의 생성자
 	void addMember(string id, string password, string name, string idNum, string memType, bool sessionOn);  // MemberCollectoin에 Member객체를 저장하는 함수
 	void deleteMember(int deleteMemberIndex);  // memberCollecton의 deleteMemberIndex번째의 Member를 삭제하는 함수
 	Member *getMember(int memberIndex);  // memberIndex번째의 Member를 불러오는 함수

@@ -20,6 +20,6 @@ int ReservationCollection::getReservationCount() {
 }
 
 Reservation ReservationCollection::getReservationInfo(int reservationCount) {
-
+	// ¼öÁ¤~~~~~~~~~~~~~~~~~~~
 	return *reservation[reservationCount];
 }

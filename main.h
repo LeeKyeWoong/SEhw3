@@ -14,13 +14,14 @@
 #include "MemberCollection.h"
 #include "SignUpUI.h"         // 회원가입
 #include "SignUpControl.h"
+/*
 #include "LoginUI.h"          // 로그인
 #include "LoginControl.h"
 #include "LogoutUI.h"         // 로그아웃 
 #include "LogoutControl.h"
 #include "UnregisterUI.h"     // 회원탈퇴 
 #include "UnregisterControl.h"
-
+*/
 /*
 //숙소 등록, 등록 숙소 조회 기능
 #include "Accommodation.h"
@@ -42,17 +43,17 @@
 #include "ReserveOpaqueInventoryControl.h"
 #include "CheckReservationInformationUI.h"
 #include "CheckReservationInformationControl.h"
-
+*/
 //타이머 및 세션
 #include "Timer.h"
 #include "SetCurrentTimeUI.h"
 #include "SetCurrentTimeControl.h"
-
+/*
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 */
 
-void signInInterface(&MemberCollection);;//1.1 회원가입 인터페이스
+void signInInterface(&MemberCollection);//1.1 회원가입 인터페이스
 /*
 void loginInterface(MemberCollection* MemberCollection); //2.1 로그인 인터페이스
 void logoutInterface(MemberCollection* MemberCollection);//2.2 로그아웃 인터페이스
@@ -63,7 +64,9 @@ void searchAccommodationInterface(AccommodationCollection* accommodationCollecti
 void reserveGeneralReservationInterface(ReservationCollection* reservationCollection, AccommodationCollection* accommodationCollection,MemberCollection* MemberCollection); //4.2 숙소예약 인터페이스
 void reserveOpaqueReservationInterface(ReservationCollection* reservationCollection, AccommodationCollection* accommodationCollection, MemberCollection* MemberCollection, Timer* timer); //4.3 opaque inventory 예약 인터페이스
 void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* MemberCollection);  //4.4 예약정보 조회 인터페이스
+*/
 void setCurrentTimeInterface(Timer* timer, AccommodationCollection* accommodationCollection, MemberCollection * MemberCollection); //5.1 현재시간설정
+/*
 void changeSession(MemberCollection* p_membercollection);  //6.1 Session변경
 void guestSession(MemberCollection* p_membercollection); //6.2. gusetSession으로 변경
 void programExit(); //7.1종료 인터페이스
