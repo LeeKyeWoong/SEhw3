@@ -152,7 +152,7 @@ int main()
 	return 0;
 }
 
-void signupInterface(MemberCollection* MemberCollection)  // 1.1 회원가입 인터페이스
+void signInInterface(MemberCollection* MemberCollection)  // 1.1 회원가입 인터페이스
 {
 	SignInUI userInterface;
 	SignInControl control;
@@ -227,7 +227,7 @@ void participateAuctionTicketInterface(ReservationCollection* reservationCollect
 	CheckReservationInformationControl control;
 	userInterface.showReservationInformation(&control, reservationCollection, MemberCollection);
 }
-
+*/
 void setCurrentTimeInterface(Timer* timer, TicketCollection * TicketCollection, MemberCollection* MemberCollection) // 5.1 현재시간설정 인터페이스
 {
 	SetCurrentTimeUI userInterface;
@@ -235,6 +235,7 @@ void setCurrentTimeInterface(Timer* timer, TicketCollection * TicketCollection, 
 	userInterface.startInterface(&control, timer, MemberCollection, TicketCollection);
 }
 
+/*
 void changeSession(MemberCollection* p_membercollection) // 6.1 Session변경
 {
 	// Function : changeSession(MemberCollection* p_membercollection)

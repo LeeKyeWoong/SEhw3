@@ -3,7 +3,7 @@
 #include "MemberCollection.h"
 #include "Member.h"
 
-MemberCollection::MemberCollection(Member Member[MAX])
+MemberCollection::MemberCollection(Member member[MAX])
 {
 	//Functnion: MemberCollection(Member Member[MAX])
 	//Description: MemberCollecion을 생성하는 생성자
@@ -12,7 +12,7 @@ MemberCollection::MemberCollection(Member Member[MAX])
 	memberNumber = 0;
 	for (int i = 0; i < MAX; i++) // MAX까지 반복한다.
 	{
-		this->Member[i] = &Member[i]; // i번째 멤버는 Member[i]의 주소를 넣어준다.(포인터배열)
+		this->member[i] = &member[i]; // i번째 멤버는 Member[i]의 주소를 넣어준다.(포인터배열)
 	}
 }
 
