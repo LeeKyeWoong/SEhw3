@@ -65,8 +65,8 @@ void reserveOpaqueReservationInterface(ReservationCollection* reservationCollect
 void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* MemberCollection);  //4.4 예약정보 조회 인터페이스
 */
 void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection); //5.1 현재시간설정
+void changeSession(MemberCollection* mCollection);  //6.1 Session변경
 /*
-void changeSession(MemberCollection* p_membercollection);  //6.1 Session변경
 void guestSession(MemberCollection* p_membercollection); //6.2. gusetSession으로 변경
 void programExit(); //7.1종료 인터페이스
 */

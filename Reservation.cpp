@@ -20,7 +20,7 @@ void Reservation::changeAuctionBuyer(string bID, int price, string date) {
 
 	this->buyerID = bID;
 	this->reservePrice = price;
-	this->reserveDate = ;
+	
 }
 
 string Reservation::getSellerID() {

@@ -65,7 +65,7 @@ Member* MemberCollection::getMember(int memberIndex)
 Member* MemberCollection::currentSession()
 {
 	//Functnion: currentSession()
-	//Description: 어떤 Memeber가 현재 Session인지 확인하는 함수
+	//Description: 어떤 Member가 현재 Session인지 확인하는 함수
 	//Created: 2019/05/30
 	//Author: 이계웅
 

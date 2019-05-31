@@ -29,8 +29,10 @@ int main()
 
 	in_fp = fopen(INPUT_FILE_NAME, "r+");   
 	out_fp = fopen(OUTPUT_FILE_NAME, "w+");
+
+	bool is_program_exit = false;
 	
-	while (1)
+	while (!is_program_exit)
 	{
 		// 두 개의 메뉴를 위한 변수 
 		int menu_1 = 0;
@@ -130,7 +132,7 @@ int main()
 				switch(menu_2) 
 				{
 					case 1: {	 // 6.1. session 변경
-						//changeSession(&MemberCollection);
+						changeSession(&memberCollection);
 						break;
 					}
 					case 2: {	// 6.2. guest session으로 변경
@@ -145,6 +147,7 @@ int main()
 				{
 					case 1: {   // 7.1. 종료
 						//programExit();	//programExit() 함수에서 해당 기능 수행
+						is_program_exit = true; // 임시로 해놨어요@@@@@@@@@@@@@@@@@
 						break;
 					}
 				}
@@ -248,47 +251,52 @@ void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection) /
 	userInterface.startInterface(&control, timer, ticketCollection);
 }
 
-/*
-void changeSession(MemberCollection* p_membercollection) // 6.1 Session변경
+
+void changeSession(MemberCollection* mCollection) // 6.1 Session변경
 {
-	// Function : changeSession(MemberCollection* p_membercollection)
-	// Description: 입력받은 ID로 Session Change를 시도하는 함수
-	// Created: 2018/5/27
-	// Author: 김정걸
+	// Function: void changeSession(MemberCollection* mCollection)
+	// Description: 입력받은 ID로 Session을 변경하는 함수
+	// Created: 2019/05/31
+	// Author: 김승연
+
 	string ID;
 	cin >> ID;
-	bool sameID = false;
-	int membercount = p_membercollection->getMemberCount();
+	
+	int memberCount = mCollection->getMemberNumber();
 
-	// 해당 기능 수행
-	for (int i = 0; i < membercount; i++)
+	int nextSessionOnIndex;
+	bool findIndex = false;
+
+	for (int i = 0; i < memberCount; i++)
 	{
-		if (p_membercollection->getMember(i)->getID().compare(ID) == 0)
+		if (mCollection->getMember(i)->getId().compare(ID) == 0)
 		{
-			sameID = true;
+			nextSessionOnIndex = i;
+			findIndex = true;
 			break;
 		}
 	}
 
-	if (sameID)
-	{
-		for (int i = 0; i < membercount; i++)
-		{
-			if (p_membercollection->getMember(i)->getID().compare(ID) == 0)
-			{
-				p_membercollection->getMember(i)->setsessionOn(true);
-			}
-			else
-			{
-				p_membercollection->getMember(i)->setsessionOn(false);
-			}
-		}
+	int cntSessionIndex = mCollection->getCurrentSessionIndex();
+
+	if (findIndex) {
+		mCollection->getMember(cntSessionIndex)->setSessionOn(false);
+
+		mCollection->getMember(nextSessionOnIndex)->setSessionOn(true);
+	}
+	else {
+		cout << "그런 아이디는 없습니다." << endl;
+		ID = mCollection->getMember(cntSessionIndex)->getId();
+
+	}
+	
 		cout << "6.1 Session 변경" << endl;
 		cout << ">" << ID << endl;
-	}
+	
 
 }
 
+/*
 void guestSession(MemberCollection* p_MemberCollection)  // 6.2. guest session으로 변경
 {
 	// Function :guestSession(MemberCollection* membercollection)
