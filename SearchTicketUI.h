@@ -18,5 +18,6 @@ class SearchTicketUI
 private:
 
 public:
-	void selectHomeTeam(SearchTicketControl* searchTicketControl, )
+	void selectHomeTeam(SearchTicketControl* searchTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection);
+	//홈팀을 선택하여 예약가능한 티켓을 조회한다. (4.1.)
 };
