@@ -22,8 +22,8 @@ private:
 
 public:
 	Reservation();
-	Reservation(string sellerId, string buyerId, int price, string reserveDate, string gameDate, string home, string away, int seatNum);
-	void makeNewReservation(string sID, string bID, int price, string reservedate, string gamedate, string homeTeam, string awayTeam, int seat);
+	Reservation(string sellerId, string buyerId, int price, string reserveDate, string gameDate, string home, string away, string seatNum);
+	void makeNewReservation(string sID, string bID, int price, string reservedate, string gamedate, string homeTeam, string awayTeam, string seat);
 	void changeAuctionBuyer(string bID, int price, string date);
 	string getSellerID();
 	string getBuyerID();
@@ -31,5 +31,5 @@ public:
 	string getReserveDate();
 	string getHomeTeam();
 	string getAwayTeam();
-	int getSeatNumber();
+	string getSeatNumber();
 };

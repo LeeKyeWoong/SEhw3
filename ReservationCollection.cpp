@@ -13,8 +13,8 @@ ReservationCollection::ReservationCollection(Reservation reservation[MAX]) {
 	reservationCount = 0; // reservationCount를 0으로 초기화한다.
 }
 
-void ReservationCollection::addReservation(string sID, string bID, int price, string date, string homeTeam, string awayTeam, int seat) {
-	// Function: void addReservation(string sID, string bID, int price, string date, string homeTeam, string awayTeam, int seat)
+void ReservationCollection::addReservation(string sID, string bID, int price, string date, string homeTeam, string awayTeam, string seat) {
+	// Function: void addReservation(string sID, string bID, int price, string date, string homeTeam, string awayTeam, string seat)
 	// Description: reservation 객체를 하나 추가하는 함수이다.
 	// Created: 2019/05/31
 	// Author: 김승연
