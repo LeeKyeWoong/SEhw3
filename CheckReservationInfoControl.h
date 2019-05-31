@@ -13,6 +13,13 @@ class Reservation;
 
 class CheckReservationInfoControl
 {
+
+	//Class: CheckReservationInfoControl
+	//Description : CheckReservationInfo(예약정보 조회)의 control class
+	//Created : 2019/5/31
+	//Author : 홍지은
+
+
 private:
 	Reservation *temp[MAX]; //output.txt에 출력할 reservation검색목록을 담을 임시변수
 	int tempCount; //임시변수 개수 count

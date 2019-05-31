@@ -14,6 +14,8 @@ void CheckReservationInfoUI::showReservationInfo(CheckReservationInfoControl* _C
 	//Created: 2019/05/31
 	//Author: 홍지은
 
+	//출력형식 : 구매가격/날짜시간/홈팀/어웨이팀/좌석위치
+
 
 	_CheckReservationInfo->getReservationInfo(_CheckReservationInfo, reservationCollection, memberCollection);
 
@@ -30,11 +32,11 @@ void CheckReservationInfoUI::showReservationInfo(CheckReservationInfoControl* _C
 		cout << "4.5.예약정보조회" << endl;
 		for (int i = 0; i < reservationCount << i++)
 		{
-			cout << ">" << _CheckReservationInfo->getReservationInfo(i)->getReservePrice() << " ";
+			cout << ">" <<"{"<< _CheckReservationInfo->getReservationInfo(i)->getReservePrice() << " ";
 			cout << _CheckReservationInfo->getReservationInfo(i)->getGameDate() << " ";
 			cout << _CheckReservationInfo->getReservationInfo(i)->getHomeTeam() << " ";
 			cout << _CheckReservationInfo->getReservationInfo(i)->getAwayTeam() << " ";
-			cout << _CheckReservationInfo->getReservationInfo(i)->getSeatNumber() << endl;
+			cout << _CheckReservationInfo->getReservationInfo(i)->getSeatNumber() <<"}"<< endl;
 		}
 	}
 }
