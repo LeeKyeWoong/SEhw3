@@ -27,7 +27,7 @@ void RegisterTicketControl::registerNewTicket(int price, string gameDatenTime, s
 	}
 	else // 세션ON 인 멤버가 있다.
 	{ 
-		if (this->memberCollection->currentSession()->getMemType().compare("host") == 0) // 만약 판매자라면
+		if (this->memberCollection->currentSession()->getMemType().compare("Seller") == 0) // 만약 판매자라면
 		{	
 			int ticketNumber = this->ticketCollection->getTicketCount();// 전체티켓수를 받는다.
 			bool checkRegister = true; 									// 등록여부(중복여부)를 알려준다.
