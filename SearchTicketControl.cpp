@@ -6,6 +6,7 @@
 #include "TicketCollection.h"
 #include "Member.h"
 #include "MemberCollection.h"
+#include "Timer.h"
 using namespace std;
 
 
@@ -41,8 +42,21 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 
 			for (int i = 0; i < tempCount - 1; i++)
 			{
-				
+				for (int j = 0; j < tempCount - 1 - i; j++)
+				{
+					if(temp[j].)
+				}
 			}
 		}
 	}
+}
+
+Ticket* SearchTicketControl::getSortedList(int ticketCount)
+{
+	return temp[ticketCount];
+}
+
+int SearchTicketControl::getTempCount()
+{
+	return tempCount;
 }
