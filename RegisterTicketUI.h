@@ -15,10 +15,10 @@ class RegisterTicketUI {
 
 private:
 
-	RegisterTicketControl * registerTicketControl;  
-	TicketCollection * ticketCollection;     
-	MemberInfoCollection * memberCollection;
+	RegisterTicketControl *registerTicketControl;  
+	TicketCollection *ticketCollection;     
+	MemberCollection *memberCollection;
 	
 public:
-	void inputRegisterNewTicket(RegisterTicketControl * registerTicketControl,TicketCollection *ticketCollection, MemberCollection * memberCollection, Timer * timer);  //매개변수를 받아 새 Ticket으로 저장하는 함수	
+	void inputRegisterNewTicket(RegisterTicketControl * registerTicketControl, TicketCollection *ticketCollection, MemberCollection * memberCollection, Timer * timer);  //매개변수를 받아 새 Ticket으로 저장하는 함수	
 };
