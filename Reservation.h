@@ -29,6 +29,7 @@ public:
 	string getBuyerID();
 	int getReservePrice();
 	string getReserveDate();
+	string getGameDate();
 	string getHomeTeam();
 	string getAwayTeam();
 	string getSeatNumber();

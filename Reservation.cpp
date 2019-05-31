@@ -90,6 +90,15 @@ string Reservation::getReserveDate() {
 	return this->reserveDate;
 }
 
+string Reservation::getGameDate() {
+	// Function: string getGameDate()
+	// Description: 경기날짜를 리턴하는 함수이다.
+	// Created: 2019/05/31
+	// Author: 김승연
+
+	return this->gameDate;
+}
+
 string Reservation::getHomeTeam() {
 	// Function: string getHomeTeam()
 	// Description: 홈팀의 이름을 리턴하는 함수이다.
