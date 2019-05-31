@@ -27,19 +27,19 @@
 //티켓 등록, 등록 티켓 조회 기능
 #include "Ticket.h"
 #include "TicketCollection.h"
-//#include "CheckAccommodationControl.h"
-//#include "CheckAccommodationUI.h"
-//#include "RegisterAccommodationControl.h"
-//#include "RegisterAccommodationUI.h"
+//#include "CheckTicketControl.h"
+//#include "CheckTicketUI.h"
+#include "RegisterTicketControl.h"
+#include "RegisterTicketUI.h"
 /*
-//숙소 검색 및 예약 기능, Opaque inventory, 예약 정보 조회 기능
+//티켓 검색 및 예약 기능, Opaque inventory, 예약 정보 조회 기능
 #include "Reservation.h"
 #include "ReservationCollection.h"
-#include "ReserveGeneralAccommodationUI.h"
-#include "ReserveGeneralAccommodationControl.h"
-#include "ReserveGeneralAccommodationUI.h"
-#include "SearchAccommodationControl.h"
-#include "SearchAccommodationUI.h"
+#include "ReserveGeneralTicketUI.h"
+#include "ReserveGeneralTicketControl.h"
+#include "ReserveGeneralTicketUI.h"
+#include "SearchTicketControl.h"
+#include "SearchTicketUI.h"
 #include "ReserveOpaqueInventoryUI.h"
 #include "ReserveOpaqueInventoryControl.h"
 #include "CheckReservationInformationUI.h"
@@ -57,13 +57,14 @@ void signupInterface(MemberCollection* memberCollection);//1.1 회원가입 인터페이
 void loginInterface(MemberCollection* memberCollection); //2.1 로그인 인터페이스
 void logoutInterface(MemberCollection* memberCollection);//2.2 로그아웃 인터페이스
 
-//void unregisterInterface(AccommodationCollection* accommodationCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection); //1.2 회원탈퇴 인터페이스
+//void unregisterInterface(TicketCollection* TicketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection); //1.2 회원탈퇴 인터페이스
+
+void registerTicketInterface(TicketCollection* TicketCollection, MemberCollection* MemberCollection, Timer * timer); //3.1 숙소 등록 인터페이스
 /*
-void registerAccommodationInterface(AccommodationCollection* accommodationCollection, MemberCollection* MemberCollection, Timer * timer); //3.1 숙소 등록 인터페이스
-void checkAccommodationInterface(AccommodationCollection* accommodationCollection, MemberCollection* MemberCollection); //3.2 숙소 조회 인터페이스
-void searchAccommodationInterface(AccommodationCollection* accommodationCollection, MemberCollection* MemberCollection);  //4.1 숙소검색 인터페이스
-void reserveGeneralReservationInterface(ReservationCollection* reservationCollection, AccommodationCollection* accommodationCollection,MemberCollection* MemberCollection); //4.2 숙소예약 인터페이스
-void reserveOpaqueReservationInterface(ReservationCollection* reservationCollection, AccommodationCollection* accommodationCollection, MemberCollection* MemberCollection, Timer* timer); //4.3 opaque inventory 예약 인터페이스
+void checkTicketInterface(TicketCollection* TicketCollection, MemberCollection* MemberCollection); //3.2 숙소 조회 인터페이스
+void searchTicketInterface(TicketCollection* TicketCollection, MemberCollection* MemberCollection);  //4.1 숙소검색 인터페이스
+void reserveGeneralReservationInterface(ReservationCollection* reservationCollection, TicketCollection* TicketCollection,MemberCollection* MemberCollection); //4.2 숙소예약 인터페이스
+void reserveOpaqueReservationInterface(ReservationCollection* reservationCollection, TicketCollection* TicketCollection, MemberCollection* MemberCollection, Timer* timer); //4.3 opaque inventory 예약 인터페이스
 void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* MemberCollection);  //4.4 예약정보 조회 인터페이스
 */
 void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection); //5.1 현재시간설정
