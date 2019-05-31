@@ -22,7 +22,7 @@ private:
 
 public:
 	ReservationCollection(Reservation reservation[MAX]);
-	void addReservation(string sID, string bID, int price, string date, string homeTeam, string awayTeam, int seat);
+	void addReservation(string sID, string bID, int price, string reserveDate, string gameDate, string homeTeam, string awayTeam, int seat);
 	int getReservationCount();
 	Reservation* getReservation(int reservationCount);
 };
