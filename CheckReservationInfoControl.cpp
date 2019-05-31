@@ -5,7 +5,7 @@
 #include "Reservation.h"
 #include "ReservationCollection.h"
 #include "Member.h"
-#include "MemberCollection"
+#include "MemberCollection.h"
 
 CheckReservationInfoControl::CheckReservationInfoControl()
 {
@@ -25,6 +25,34 @@ void CheckReservationInfoControl::getReservationInfo(CheckReservationInfoControl
 
 	else
 	{
-		memberCollection->currentSession()->getmemType().compare("guest") == 0)
+		if (memberCollection->currentSession()->getMemType().compare("guest") == 0)
+		{
+			//해당 id의 숙소예약을 확인
+			int reservationCount = reservationCollection->getReservationCount();
+
+			if(reservationCount ==0)
+			{ }
+
+			else
+			{
+				for (int i = 0; i < reservationCount; i++)
+				{
+					if (reservationCollection->getReservation(i)->getBuyerID().compare(memberCollection->currentSession()->getId()) == 0)
+					{
+						temp[tempCount++] = reservationCollection->getReservation(i);
+					}
+				}
+			}
+		}
 	}
+}
+
+Reservation* CheckReservationInfoControl::getReservationInfo(int n)
+{
+	return temp[n];
+}
+
+int CheckReservationInfoControl::getTempCount()
+{
+	return tempCount;
 }
