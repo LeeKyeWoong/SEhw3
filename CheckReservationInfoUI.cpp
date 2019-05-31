@@ -31,7 +31,7 @@ void CheckReservationInfoUI::showReservationInfo(CheckReservationInfoControl* _C
 		for (int i = 0; i < reservationCount << i++)
 		{
 			cout << ">" << _CheckReservationInfo->getReservationInfo(i)->getReservePrice() << " ";
-			cout << _CheckReservationInfo->getReservationInfo(i)->//여기에 날짜시간 들어가야함!!
+			cout << _CheckReservationInfo->getReservationInfo(i)->getGameDate() << " ";
 			cout << _CheckReservationInfo->getReservationInfo(i)->getHomeTeam() << " ";
 			cout << _CheckReservationInfo->getReservationInfo(i)->getAwayTeam() << " ";
 			cout << _CheckReservationInfo->getReservationInfo(i)->getSeatNumber() << endl;
