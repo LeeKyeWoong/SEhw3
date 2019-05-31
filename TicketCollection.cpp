@@ -23,15 +23,14 @@ int TicketCollection::getTicketCount()
 	return this->ticketCount;
 }
 
-//티켓 삭제는 고려해보기.
-//void TicketCollection::deleteTicket(int deleteTicketIndex)
-/*{
+void TicketCollection::deleteTicket(int deleteTicketIndex)
+{
 	if (deleteTicketIndex == 0)
 	{
 		ticketList[deleteTicketIndex]->removeTicket();
 		ticketList[deleteTicketIndex] = NULL;
 	}
-}*/
+}
 
 void TicketCollection::addTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType) // TicketList에 티켓등록한다.
 {
