@@ -27,7 +27,7 @@ void Ticket::addNewTicket(int price, string gameDatenTime, string homeTeam, stri
 	this->gameDatenTime = gameDatenTime;
 	this->seatNum = seatNum;
 	this->isLimitedTimeAuction = isLimitedTimeAuction;
-	this->isSold = false;
+	this->isSold = false; //새로 들어온 티켓은 아직 팔리지 않은상태!
 	this->sid = sid;	
 	this->registerTicketDate = registerTicketDate;
 	this->ticketType = ticketType;
@@ -44,9 +44,12 @@ bool Ticket::getReservable()
 	return isSold;
 }
 
-void Ticket::setReservable(bool isSold)
+void Ticket::setReservable(bool pSold)
 {
-	isSold = t
+	isSold = !pSold;
+
+	//만일 pSold가 true이면 아직 안팔렸다는 뜻이므로 isSold는 false가 된다
+	//반대로 pSold가 false이면 팔렸다는 뜻이므로 isSold는 true가 되야한다.
 }
 
 string Ticket::getSellerId()
