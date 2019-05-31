@@ -23,10 +23,10 @@ CheckReservationInfoControl::CheckReservationInfoControl()
 }
 
 
-void CheckReservationInfoControl::getReservationInfo(CheckReservationInfoControl* _CheckReservationInfo, ReservationCollection* reservationCollection, MemberCollection* memberCollection)
+void CheckReservationInfoControl::getReservationInfo(CheckReservationInfoControl* checkReservationInfo, ReservationCollection* reservationCollection, MemberCollection* memberCollection)
 {
 
-	//Function: getReservationInfo(CheckReservationInfoControl* _CheckReservationInfo, ReservationCollection* reservationCollection, MemberCollection* memberCollection)
+	//Function: getReservationInfo(CheckReservationInfoControl* checkReservationInfo, ReservationCollection* reservationCollection, MemberCollection* memberCollection)
 	//Description: 예약한 정보를 가져온다
 	//Created: 2019/05/31
 	//Author: 홍지은
