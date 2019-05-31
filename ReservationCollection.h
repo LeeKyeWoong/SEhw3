@@ -6,6 +6,8 @@
 
 #define MAX 50
 
+using namespace std;
+
 class Reservation;
 
 class ReservationCollection {
@@ -19,8 +21,8 @@ private:
 	int reservationCount;
 
 public:
-	ReservationCollection();
+	ReservationCollection(Reservation reservation[MAX]);
 	void addReservation(string sID, string bID, int price, string date, string homeTeam, string awayTeam, int seat);
 	int getReservationCount();
-	Reservation getReservationInfo(int reservationCount);
+	Reservation* getReservation(int reservationCount);
 };
