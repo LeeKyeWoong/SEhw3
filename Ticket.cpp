@@ -19,21 +19,18 @@ Ticket::Ticket()
 	this->isLimitedTimeAuction = false;
 }
 
-void Ticket::addNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction)
+void Ticket::addNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType )
 {
-	//어떻게 지정해줄것인가.
-	this->sid = sid;	
-	this->registerTicketDate = registerTicketDate;
-	this->isSold = false;
-	this->ticketType = ticketType;
-
-	//아래는 실제 입력 데이터
 	this->price = price;
 	this->homeTeam = homeTeam;
 	this->awayTeam = awayTeam;
 	this->gameDatenTime = gameDatenTime;
 	this->seatNum = seatNum;
 	this->isLimitedTimeAuction = isLimitedTimeAuction;
+	this->isSold = false;
+	this->sid = sid;	
+	this->registerTicketDate = registerTicketDate;
+	this->ticketType = ticketType;
 }
 
 //void Ticket::removeTicket()  ->필요한가
@@ -69,9 +66,12 @@ int Ticket::getTicketPrice()
 	return this->price;
 }
 
-
 string Ticket::getTicketRegisterDate()
 {
 	return this->registerTicketDate;
 }
 
+string Ticket::getTicketSeatNum()
+{
+	return this->seatNum;
+}

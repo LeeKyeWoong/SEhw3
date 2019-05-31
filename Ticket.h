@@ -27,7 +27,7 @@ private:
 
 public:
 	Ticket(); //생성자
-	void addNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction ); //티켓 생성
+	void addNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType ); //티켓 생성
 	//날짜 시간 예시 : 2019:05:22:12:00
 	//void removeTicket();
 
@@ -39,6 +39,6 @@ public:
 	int getTicketPrice();
 	//int getAuctionTicketPrice(); ->굳이 필요한가... 왜냐하면 경매티켓은 항상 반값부터 시작하기 때문이다.
 	string getTicketRegisterDate();
-
+	string getTicketSeatNum(); // 티켓좌석 가져오기 
 
 };
