@@ -22,6 +22,6 @@ void LoginUI::inputLogin(LoginControl* loginControl, MemberCollection* memberCol
 	}
 	else // 로그인이 실패한다면
 	{
-		cout << "> 로그인 실패";
+		cout << "> 로그인 실패" << endl;
 	}
 }

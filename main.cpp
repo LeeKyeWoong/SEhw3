@@ -152,7 +152,7 @@ int main()
 				break;
 			}
 		}
-		cout << endl;
+		//cout << endl;
 	}
 	return 0;
 }
@@ -161,7 +161,7 @@ void signupInterface(MemberCollection* memberCollection)
 {
 	SignUpUI userInterface;
 	SignUpControl control;
-	userInterface.inputInfo(&control, memberCollection);
+	userInterface.inputInfo(&control, memberCollection); // 포인터
 }
 /*
 void unregisterInterface(TicketCollection* ticketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection) //1.2 회원탈퇴 인터페이스

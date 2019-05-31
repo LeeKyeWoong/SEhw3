@@ -9,7 +9,6 @@
 #include <string.h>
 #include <cstdio>
 
-
 #include "Member.h"           // 멤버             
 #include "MemberCollection.h"
 #include "SignUpUI.h"         // 회원가입
