@@ -48,6 +48,7 @@ void Member::createMember(string id, string password, string name, string idNum,
 	this->idNum = idNum;
 	this->memType = memType;
 	this->sessionOn = sessionOn;
+	
 }
 
 void Member::deleteMember()

@@ -30,7 +30,7 @@ void SignUpControl::createAccount(string id, string password, string name, strin
 			this->checkId = false; // 문자열이 같으면 False이다.
 		}
 	}
-
+	
 	if(this->checkId) // 문자열이 동일한 것이 없다. 즉, true이다.
 	{
 		memberCollection->addMember(id, password, name, idNum, memType, sessionOn);

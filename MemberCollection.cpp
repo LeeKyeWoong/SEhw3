@@ -21,9 +21,10 @@ void MemberCollection::addMember(string id, string password, string name, string
 	//Description: MemberCollection에 Member 객체를 추가하는 함수
 	//Created: 2019/05/30
 	//Author: 이계웅
-
+	
 	this->member[this->memberNumber]->createMember(id, password, name, idNum, memType, sessionOn);
 	this->memberNumber++;
+
 }
 
 void MemberCollection::deleteMember(int deleteMemberIndex)
@@ -75,7 +76,7 @@ Member* MemberCollection::currentSession()
 		if (this->member[i]->getSessionOn() == true) // 만약 그 멤버의 세션이 트루라면 
 		{
 			checkSession = true; // 체크세션을 트루로 하고
-			return this->member[i];    // 그 멤버를 리턴한다.
+			return this->member[i];// 그 멤버를 리턴한다.
 		}
 	}
 	if(!checkSession) // 만약 아무것도 true가 아니라면 
