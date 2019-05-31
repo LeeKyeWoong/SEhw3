@@ -7,7 +7,7 @@ Reservation::Reservation() {
 	// Author: 김승연
 }
 
-Reservation::Reservation(string sellerId, string buyerId, int price, string reserveDate, string gameDate, string home, string away, int seatNum)
+Reservation::Reservation(string sellerId, string buyerId, int price, string reserveDate, string gameDate, string home, string away, string seatNum)
 {
 	//Function: Reservation(string sellerId, string buyerId, int price, string reserveDate, string gameDate, string home, string away, int seatNum)
 	//Description: Reservation 생성자 & 초기화
@@ -24,7 +24,7 @@ Reservation::Reservation(string sellerId, string buyerId, int price, string rese
 	this->seatNumber = seatNum;
 }
 
-void Reservation::makeNewReservation(string sID, string bID, int price, string reservedate, string gamedate, string homeTeam, string awayTeam, int seat) {
+void Reservation::makeNewReservation(string sID, string bID, int price, string reservedate, string gamedate, string homeTeam, string awayTeam, string seat) {
 	// Function: void makeNewReservation(string sID, string bID, int price, string reservedate, string gamedate, string homeTeam, string awayTeam, int seat)
 	// Description: 매개변수로 받은 값들을 가지고 reservation 객체의 값을 설정하는 함수이다.
 	// Created: 2019/05/31
@@ -108,7 +108,7 @@ string Reservation::getAwayTeam() {
 	return this->awayTeam;
 }
 
-int Reservation::getSeatNumber() {
+string Reservation::getSeatNumber() {
 	// Function: int getSeatNumber()
 	// Description: 좌석번호를 리턴하는 함수이다.
 	// Created: 2019/05/31

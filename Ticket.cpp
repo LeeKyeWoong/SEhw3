@@ -33,7 +33,10 @@ void Ticket::addNewTicket(int price, string gameDatenTime, string homeTeam, stri
 	this->ticketType = ticketType;
 }
 
-//void Ticket::removeTicket()  ->필요한가
+void Ticket::removeTicket()
+{
+
+}
 //-> 타이머에서 1년이 지난 티켓 삭제 하지만 구현은 여기서?
 
 bool Ticket::getReservable()
@@ -43,7 +46,7 @@ bool Ticket::getReservable()
 
 void Ticket::setReservable(bool isSold)
 {
-	
+	isSold = t
 }
 
 string Ticket::getSellerId()
