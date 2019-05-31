@@ -79,11 +79,11 @@ int main()
 				switch(menu_2) 
 				{
 					case 1: {   // 3.1. 판매티켓 등록
-						//registerTicketInterface(&TicketCollection, &MemberCollection,&timer);
+						registerTicketInterface(&ticketCollection, &memberCollection, &timer);
 						break;
 					}
 					case 2: {   // 3.2. 등록티켓 조회
-						//checkTicketInterface(&TicketCollection, &MemberCollection);
+						//checkTicketInterface(&ticketCollection, &MemberCollection);
 						break;
 					}
 				}
@@ -94,15 +94,15 @@ int main()
 				switch(menu_2) 
 				{
 					case 1: {   // 4.1. 티켓 검색
-						//searchTicketInterface(&TicketCollection, &MemberCollection);
+						//searchTicketInterface(&ticketCollection, &MemberCollection);
 						break;
 					}
 					case 2: {   // 4.2. 티켓 예약
-						//reserveGeneralReservationInterface(&reservationCollection, &TicketCollection, &MemberCollection);
+						//reserveGeneralReservationInterface(&reservationCollection, &ticketCollection, &MemberCollection);
 						break;
 					}
 					case 3: {   // 4.3. 경매 중인 티켓 검색
-						//reserveOpaqueReservationInterface(&reservationCollection, &TicketCollection, &MemberCollection, &timer);
+						//reserveOpaqueReservationInterface(&reservationCollection, &ticketCollection, &MemberCollection, &timer);
 						break;
 					}
 					case 4: {   // 4.4. 경매 참여
@@ -166,11 +166,11 @@ void signupInterface(MemberCollection* memberCollection)
 	userInterface.inputInfo(&control, memberCollection);
 }
 /*
-void unregisterInterface(TicketCollection* TicketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection) //1.2 회원탈퇴 인터페이스
+void unregisterInterface(TicketCollection* ticketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection) //1.2 회원탈퇴 인터페이스
 {
 	UnregisterUI userInterface;
 	UnregisterControl control;
-	userInterface.callUnregister(&control, TicketCollection, reservationCollection, MemberCollection);
+	userInterface.callUnregister(&control, ticketCollection, reservationCollection, MemberCollection);
 }
 */
 
@@ -187,59 +187,59 @@ void logoutInterface(MemberCollection* memberCollection) //2.2 로그아웃 인터페이
 	LogoutControl control;
 	userInterface.callLogout(&control, memberCollection);
 }
-/*
-void registerTicketInterface(TicketCollection* TicketCollection, MemberCollection* MemberCollection, Timer * timer) // 3.1 판매티켓 등록 인터페이스
+
+void registerTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer * timer) // 3.1 판매티켓 등록 인터페이스
 {
 	RegisterTicketUI userInterface;
 	RegisterTicketControl control;
-	userInterface.inputRegisterNewTicket(&control, TicketCollection, MemberCollection, timer);
+	userInterface.inputRegisterNewTicket(&control, ticketCollection, memberCollection, timer);
 }
-
-void checkTicketInterface(TicketCollection* TicketCollection, MemberCollection* MemberCollection) // 3.2. 등록티켓 조회 인터페이스
+/*
+void checkTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection) // 3.2. 등록티켓 조회 인터페이스
 {
 	CheckTicketUI userInterface;
 	CheckTicketControl control;
-	control.getHostTicket(&userInterface, TicketCollection, MemberCollection);
+	control.getHostTicket(&userInterface, ticketCollection, memberCollection);
 
-void searchGeneralTickeInterface(TicketCollection* TicketCollection, MemberCollection* MemberCollection)  // 4.1. 티켓 검색 인터페이스
+void searchGeneralTickeInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection)  // 4.1. 티켓 검색 인터페이스
 {
 	SearchTicketUI userInterface;
 	SearchTicketControl control;
-	userInterface.selectCityAndDate(&control, TicketCollection, MemberCollection);
+	userInterface.selectCityAndDate(&control, ticketCollection, memberCollection);
 }
 
-void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* TicketCollection, MemberCollection* MemberCollection) // 4.2. 티켓 예약 인터페이스
+void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection) // 4.2. 티켓 예약 인터페이스
 {
 	ReserveGeneralTicketUI userInterface;
 	ReserveGeneralTicketControl control;
-	userInterface.reserveGeneralTicket(&control, reservationCollection, TicketCollection, MemberCollection);
+	userInterface.reserveGeneralTicket(&control, reservationCollection, ticketCollection, memberCollection);
 }
 
-void searchAuctionTicketInterface(ReservationCollection* reservationCollection, TicketCollection* TicketCollection, MemberCollection* MemberCollection, Timer* timer) // 4.3. 경매 중인 티켓 검색 인터페이스 
+void searchAuctionTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer) // 4.3. 경매 중인 티켓 검색 인터페이스 
 {
 	ReserveOpaqueInventoryUI userInterface;
 	ReserveOpaqueInventoryControl control;
-	userInterface.reserveOpaqueInventory(&control, reservationCollection, TicketCollection, MemberCollection, timer);
+	userInterface.reserveOpaqueInventory(&control, reservationCollection, ticketCollection, memberCollection, timer);
 }
 
-void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* MemberCollection)  // 4.4. 예약 정보 조회
+void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection)  // 4.4. 예약 정보 조회
 {
 	CheckReservationInformationUI userInterface;
 	CheckReservationInformationControl control;
-	userInterface.showReservationInformation(&control, reservationCollection, MemberCollection);
+	userInterface.showReservationInformation(&control, reservationCollection, memberCollection);
 }
 
-void participateAuctionTicketInterface(ReservationCollection* reservationCollection, MemberCollection* MemberCollection) // 4.5. 경매 참여 인터페이스
+void participateAuctionTicketInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection) // 4.5. 경매 참여 인터페이스
 {
 	CheckReservationInformationUI userInterface;
 	CheckReservationInformationControl control;
-	userInterface.showReservationInformation(&control, reservationCollection, MemberCollection);
+	userInterface.showReservationInformation(&control, reservationCollection, memberCollection);
 }
 */
 
 void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection) // 5.1 현재시간설정 인터페이스
 {
-	// Function: void setCurrentTimeInterface(Timer* timer, TicketCollection* TicketCollection, MemberCollection* MemberCollection)
+	// Function: void setCurrentTimeInterface(Timer* timer, TicketCollection* TicketCollection, MemberCollection* memberCollection)
 	// Description: 현재시간설정 인터페이스를 호출하는 함수이다.
 	// Parameters: Timer* timer - 현재시간을 저장하기 위한 Timer 객체
 	//						TicketCollection* ticketCollection - 현재시간이 바뀌고 나서 일 년이 지난 티켓을 삭제하기 위해 필요한 TicketCollection 객체
@@ -292,7 +292,6 @@ void changeSession(MemberCollection* mCollection) // 6.1 Session변경
 	
 		cout << "6.1 Session 변경" << endl;
 		cout << ">" << ID << endl;
-	
 
 }
 

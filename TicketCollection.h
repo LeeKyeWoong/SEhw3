@@ -19,7 +19,7 @@ public:
 	void increaseTicketCount(); //티켓의 개수 증가
 	int getTicketCount(); //티켓 개수 가져오기
 	//void deleteTicket(int deleteTicketIndex); //티켓 삭제
-	void addTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction); //리스트에 티켓추가
+	void addTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType); //리스트에 티켓추가
 	Ticket *getTicket(int ticketCount); //특정티켓 가져오는 함수
 
 };

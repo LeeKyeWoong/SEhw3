@@ -33,10 +33,10 @@ int TicketCollection::getTicketCount()
 	}
 }*/
 
-void TicketCollection::addTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction)
+void TicketCollection::addTicket(price, gameDatenTime, homeTeam, awayTeam, seatNum, isLimitedTimeAuction, isSold, sid, registerTicketDate, ticketType);  // TicketList에 티켓등록한다.
 {
 	int currenTicketCount = this->getTicketCount();
-	this->ticketList[currenTicketCount]->addNewTicket(price, gameDatenTime, homeTeam, awayTeam, seatNum, isLimitedTimeAuction);
+	this->ticketList[currenTicketCount]->addNewTicket(price, gameDatenTime, homeTeam, awayTeam, seatNum, isLimitedTimeAuction,isSold, sid, registerTicketDate, ticketType);
 	this->increaseTicketCount();
 }
 

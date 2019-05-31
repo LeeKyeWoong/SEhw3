@@ -5,22 +5,8 @@
 using namespace std;
 
 
-string tid; //티켓 ID
-string sid; //seller의 ID
-string homeTeam; //홈팀
-string awayTeam; //어웨이팀 
-int price; //티켓의 가격
-string gameDatenTime; //게임 시작날짜와 시간
-string registerTicketDate; //티켓 등록 날짜 -> 등록한지 1년이 지난 티켓 비교를 위함
-//	string city; //도시 -> 없앰으로 수정
-string seatNum; //티켓의 좌석
-bool isSold; //팔렸는지의 여부
-string ticketType; //티켓의 타입 -> 일반인지 경매인지
-bool isLimitedTimeAuction; //티켓을 경매로 넘길것인지의 여부
-
 Ticket::Ticket()
 {
-	this->tid = "";
 	this->sid = "";
 	this->homeTeam = "";
 	this->awayTeam = "";
@@ -36,7 +22,6 @@ Ticket::Ticket()
 void Ticket::addNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction)
 {
 	//어떻게 지정해줄것인가.
-	this->tid = tid;
 	this->sid = sid;	
 	this->registerTicketDate = registerTicketDate;
 	this->isSold = false;
@@ -62,11 +47,6 @@ bool Ticket::getReservable()
 void Ticket::setReservable(bool isSold)
 {
 	
-}
-
-string Ticket::getTicketId()
-{
-	return this->tid;
 }
 
 string Ticket::getSellerId()
