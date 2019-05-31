@@ -30,9 +30,7 @@ int main()
 	in_fp = fopen(INPUT_FILE_NAME, "r+");   
 	out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
-	bool is_program_exit = false;
-	
-	while (!is_program_exit)
+	while (1)
 	{
 		// 두 개의 메뉴를 위한 변수 
 		int menu_1 = 0;
@@ -142,12 +140,12 @@ int main()
 				}
 				break;
 			}
-			case 7: {
+			case 7: 
+			{
 				switch(menu_2) 
 				{
 					case 1: {   // 7.1. 종료
-						//programExit();	//programExit() 함수에서 해당 기능 수행
-						is_program_exit = true; // 임시로 해놨어요@@@@@@@@@@@@@@@@@
+						exitProgram();	//exitProgram() 함수에서 해당 기능 수행
 						break;
 					}
 				}
@@ -286,15 +284,14 @@ void guestSession(MemberCollection* p_MemberCollection)  // 6.2. guest session으
 	}
 
 }
-
+*/
 void exitProgram() {  // 7.1 종료 인터페이스
 
-	// Function :programExit()
+	// Function :exitProgram()
 	// Description: 프로그램 종료
-	// Created: 2018/05/25
-	// Author: 성경환
+	// Created: 2019/05/31
+	// Author: 이계웅
 
-	printf("7.1 종료\n");
+	cout << "7.1 종료";
 	exit(0);
 }
-*/

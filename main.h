@@ -69,10 +69,10 @@ void checkReservationInterface(ReservationCollection* reservationCollection, Mem
 */
 void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection); //5.1 현재시간설정
 void changeSessionInterface(MemberCollection* mCollection);  //6.1 Session변경
-/*
-void guestSession(MemberCollection* p_membercollection); //6.2. gusetSession으로 변경
-void programExit(); //7.1종료 인터페이스
-*/
+
+//void guestSession(MemberCollection* p_membercollection); //6.2. gusetSession으로 변경
+void exitProgram(); //7.1종료 인터페이스
+
 
 // 입력형식
 /* 
