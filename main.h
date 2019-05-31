@@ -45,10 +45,12 @@
 #include "CheckReservationInformationUI.h"
 #include "CheckReservationInformationControl.h"
 */
-//타이머 및 세션
+//현재시간 변경 기능, 세션 변경 기능
 #include "Timer.h"
 #include "SetCurrentTimeUI.h"
 #include "SetCurrentTimeControl.h"
+#include "ChangeSessionUI.h"
+#include "ChangeSessionControl.h"
 
 void signupInterface(MemberCollection* memberCollection);//1.1 회원가입 인터페이스
 
@@ -65,7 +67,7 @@ void reserveOpaqueReservationInterface(ReservationCollection* reservationCollect
 void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* MemberCollection);  //4.4 예약정보 조회 인터페이스
 */
 void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection); //5.1 현재시간설정
-void changeSession(MemberCollection* mCollection);  //6.1 Session변경
+void changeSessionInterface(MemberCollection* mCollection);  //6.1 Session변경
 /*
 void guestSession(MemberCollection* p_membercollection); //6.2. gusetSession으로 변경
 void programExit(); //7.1종료 인터페이스

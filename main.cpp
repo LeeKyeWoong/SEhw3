@@ -13,7 +13,7 @@ int main()
 	// Author: 이계웅
 	// Revsions : 
 	// 1. When & Who : 2019/05/31 by 김승연
-	//    What : setCurrentTimeInterface() 함수 구현
+	//    What : setCurrentTimeInterface() 함수, changeSessionInterface() 함수 구현
 
 	Member member[MAX];             // 멤버 객체 생성 
 	Timer timer;					// 타이머 객체 생성 
@@ -132,7 +132,7 @@ int main()
 				switch(menu_2) 
 				{
 					case 1: {	 // 6.1. session 변경
-						changeSession(&memberCollection);
+						changeSessionInterface(&memberCollection);
 						break;
 					}
 					case 2: {	// 6.2. guest session으로 변경
@@ -252,47 +252,17 @@ void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection) /
 }
 
 
-void changeSession(MemberCollection* mCollection) // 6.1 Session변경
+void changeSessionInterface(MemberCollection* mCollection) // 6.1 Session변경
 {
 	// Function: void changeSession(MemberCollection* mCollection)
-	// Description: 입력받은 ID로 Session을 변경하는 함수
+	// Description: Session을 변경하기 위해 인터페이스를 호출하는 함수
+	// Parameter: MemberCollection* mCollection - 세션 변경을 할 때 멤버 객체들에 접근하기 위해 필요
 	// Created: 2019/05/31
 	// Author: 김승연
 
-	string ID;
-	cin >> ID;
-	
-	int memberCount = mCollection->getMemberNumber();
-
-	int nextSessionOnIndex;
-	bool findIndex = false;
-
-	for (int i = 0; i < memberCount; i++)
-	{
-		if (mCollection->getMember(i)->getId().compare(ID) == 0)
-		{
-			nextSessionOnIndex = i;
-			findIndex = true;
-			break;
-		}
-	}
-
-	int cntSessionIndex = mCollection->getCurrentSessionIndex();
-
-	if (findIndex) {
-		mCollection->getMember(cntSessionIndex)->setSessionOn(false);
-
-		mCollection->getMember(nextSessionOnIndex)->setSessionOn(true);
-	}
-	else {
-		cout << "그런 아이디는 없습니다." << endl;
-		ID = mCollection->getMember(cntSessionIndex)->getId();
-
-	}
-	
-		cout << "6.1 Session 변경" << endl;
-		cout << ">" << ID << endl;
-
+	ChangeSessionUI userInterface;
+	ChangeSessionControl control;
+	userInterface.startInterface(&control, mCollection);
 }
 
 /*
