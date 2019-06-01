@@ -28,7 +28,7 @@ void SearchTicketUI::selectHomeTeam(SearchTicketControl* searchTicket, TicketCol
 
 	else
 	{
-		cout << "4.1. 숙소 검색" << endl;
+		cout << "4.1. 티켓 검색" << endl;
 		for (int i = 0; i < ticketCount; i++)
 		{
 			cout <<"{"<< ">" << searchTicket->getSortedList(i)->getTicketPrice() << " ";
