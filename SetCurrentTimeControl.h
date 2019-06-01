@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "TicketCollection.h"
 #include "Timer.h"
 
 using namespace std;
