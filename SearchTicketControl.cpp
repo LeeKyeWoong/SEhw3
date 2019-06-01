@@ -7,6 +7,9 @@
 #include "Member.h"
 #include "MemberCollection.h"
 #include "Timer.h"
+
+#include "Reservation.h"
+#include "ReservationCollection.h"
 using namespace std;
 
 
@@ -44,7 +47,7 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 			{
 				for (int j = 0; j < tempCount - 1 - i; j++)
 				{
-					if(temp[j].)
+					if()
 				}
 			}
 		}

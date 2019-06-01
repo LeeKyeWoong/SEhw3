@@ -11,4 +11,4 @@ void SearchTicketUI::selectHomeTeam(SearchTicketControl* searchTicket, TicketCol
 	string homeTeam; //È¨ÆÀ
 	cin >> homeTeam;
 
-	searchTicket->sh
+	searchTicket->

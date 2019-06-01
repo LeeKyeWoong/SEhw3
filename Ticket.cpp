@@ -18,7 +18,7 @@ Ticket::Ticket()
 	this->homeTeam = "";
 	this->awayTeam = "";
 	this->price = 0;
-	this->gameDatenTime = "";
+	this->gameDateNTime = "";
 	this->registerTicketDate = "";
 	this->seatNum = "";
 	this->isSold = false;
@@ -26,9 +26,9 @@ Ticket::Ticket()
 	this->isLimitedTimeAuction = false;
 }
 
-void Ticket::addNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType )
+void Ticket::addNewTicket(int price, string gameDateNTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType )
 {
-	//Function: addNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType )
+	//Function: addNewTicket(int price, string gameDateNTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType )
 	//Description: 새로운 티켓을 추가한다.
 	//Created: 2019/5/28
 	//Author: 홍지은
@@ -36,7 +36,7 @@ void Ticket::addNewTicket(int price, string gameDatenTime, string homeTeam, stri
 	this->price = price;
 	this->homeTeam = homeTeam;
 	this->awayTeam = awayTeam;
-	this->gameDatenTime = gameDatenTime;
+	this->gameDateNTime = gameDateNTime;
 	this->seatNum = seatNum;
 	this->isLimitedTimeAuction = isLimitedTimeAuction;
 	this->isSold = false; //새로 들어온 티켓은 아직 팔리지 않은상태!
@@ -55,7 +55,7 @@ void Ticket::removeTicket()
 	this->price = 0;
 	this->homeTeam = "";
 	this->awayTeam = "";
-	this->gameDatenTime = "";
+	this->gameDateNTime = "";
 	this->seatNum = "";
 	this->isLimitedTimeAuction = false;
 	this->isSold = false;
@@ -146,4 +146,13 @@ string Ticket::getTicketSeatNum()
 	//Author: 홍지은
 
 	return this->seatNum;
+}
+
+string Ticket::getGameDateNTime()
+{
+	//Function: getGameDateNTime()
+	//Description: 게임날짜와 시간을 반환한다.
+	//Created: 2019/6/1
+	//Author: 홍지은
+	return this->getGameDateNTime;
 }
