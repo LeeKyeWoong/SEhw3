@@ -92,7 +92,7 @@ int main()
 				switch(menu_2) 
 				{
 					case 1: {   // 4.1. 티켓 검색
-						//searchTicketInterface(&ticketCollection, &MemberCollection);
+						searchTicketInterface(&ticketCollection, &memberCollection);
 						break;
 					}
 					case 2: {   // 4.2. 티켓 예약
@@ -198,20 +198,23 @@ void checkTicketInterface(TicketCollection* ticketCollection, MemberCollection* 
 	CheckTicketUI userInterface;
 	CheckTicketControl control;
 	control.getHostTicket(&userInterface, ticketCollection, memberCollection);
-
-void searchGeneralTickeInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection)  // 4.1. 티켓 검색 인터페이스
+}
+*/
+void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection)  // 4.1. 티켓 검색 인터페이스
 {
 	SearchTicketUI userInterface;
 	SearchTicketControl control;
-	userInterface.selectCityAndDate(&control, ticketCollection, memberCollection);
+	userInterface.selectHomeTeam(&control, ticketCollection, memberCollection);
 }
 
+/*
 void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection) // 4.2. 티켓 예약 인터페이스
 {
 	ReserveGeneralTicketUI userInterface;
 	ReserveGeneralTicketControl control;
 	userInterface.reserveGeneralTicket(&control, reservationCollection, ticketCollection, memberCollection);
 }
+
 
 void searchAuctionTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer) // 4.3. 경매 중인 티켓 검색 인터페이스 
 {

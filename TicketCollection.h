@@ -9,6 +9,11 @@
 using namespace std;
 
 class TicketCollection {
+	//Class : TicketCollection
+	//Description : TicketCollection의 entity class
+	//Created : 2019/05/28
+	//Author : 홍지은
+
 private:
 	Ticket * ticketList[MAX];
 	int ticketCount; //티켓의 개수
