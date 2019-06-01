@@ -11,9 +11,6 @@ class TicketCollection;
 class MemberInfoCollection;
 class Ticket;
 
-class ReservationCollection;
-class Reservation;
-
 
 class SearchTicketControl
 {
