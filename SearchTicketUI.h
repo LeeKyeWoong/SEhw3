@@ -12,7 +12,7 @@ class SearchTicketUI
 {
 	//Class: SearchAccommodationUI
 	//Description: SearchTicket ÀÇ boundary class
-	//Created: 2018/05/31
+	//Created: 2019/05/31
 	//Author: È«ÁöÀº
 
 private:

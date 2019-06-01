@@ -16,7 +16,7 @@ class SearchTicketControl
 {
 	//Class: SearchTicketControl
 	//Description: SearchTicketÀÇ control class
-	//Created: 2018/05/31
+	//Created: 2019/05/31
 	//Author: È«ÁöÀº
 
 
