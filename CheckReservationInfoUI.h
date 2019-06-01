@@ -17,7 +17,7 @@ class CheckReservationInfoUI
 
 private:
 public:
-	void showReservationInfo(CheckReservationInfoControl* _CheckReservationInfo,
+	void showReservationInfo(CheckReservationInfoControl* checkReservationInfo,
 		ReservationCollection* reservationCollection,
 		MemberCollection* memberCollection); //숙소 예약정보를 보여주는 함수
 };

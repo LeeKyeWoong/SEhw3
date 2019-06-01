@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-
 using namespace std;
 
 
@@ -10,7 +9,6 @@ class Ticket {
 	//Created : 2019/05/28
 	//Author : 홍지은
 	
-
 private:
 
 	int price; //티켓의 가격
