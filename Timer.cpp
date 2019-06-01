@@ -41,10 +41,10 @@ bool Timer::checkTimeToDeleteTicket(string registerTime) {
 	string tmp_registerTime, tmp_currentTime;
 	tmp_registerTime.append(registerTime, 0, 4);
 	tmp_registerTime.append(registerTime, 5, 2);
-	tmp_registerTime.append(registerTime, 9, 2);
+	tmp_registerTime.append(registerTime, 8, 2);
 	tmp_currentTime.append(this->currentTime, 0, 4);
 	tmp_currentTime.append(this->currentTime, 5, 2);
-	tmp_currentTime.append(this->currentTime, 9, 2);
+	tmp_currentTime.append(this->currentTime, 8, 2);
 
 	int regTime, cntTime;
 	regTime = stoi(tmp_registerTime);
