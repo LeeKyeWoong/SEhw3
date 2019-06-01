@@ -8,7 +8,7 @@ using namespace std;
 
 class SearchTicketUI;
 class TicketCollection;
-class MemberInfoCollection;
+class MemberCollection;
 class Ticket;
 
 
