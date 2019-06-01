@@ -49,7 +49,7 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 				}
 			}
 
-			/*
+			
 			//날짜 및 시간순으로 정렬
 			for (int i = 0; i < tempCount - 1; i++)
 			{
@@ -102,7 +102,7 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 						}
 					}
 				}
-			}*/
+			}
 		}
 	}
 }
