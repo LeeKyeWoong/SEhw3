@@ -30,7 +30,7 @@ void CheckReservationInfoUI::showReservationInfo(CheckReservationInfoControl* ch
 	else
 	{
 		cout << "4.5.예약정보조회" << endl;
-		for (int i = 0; i < reservationCount << i++)
+		for (int i = 0; i < reservationCount ; i++)
 		{
 			cout << ">" <<"{"<< checkReservationInfo->getReservationInfo(i)->getReservePrice() << " ";
 			cout << checkReservationInfo->getReservationInfo(i)->getGameDate() << " ";

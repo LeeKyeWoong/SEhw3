@@ -10,7 +10,6 @@
 
 using namespace std;
 
-
 SearchTicketControl::SearchTicketControl()
 {
 	//Function: SearchTicketControl()
@@ -50,12 +49,13 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 				}
 			}
 
+			/*
 			//날짜 및 시간순으로 정렬
 			for (int i = 0; i < tempCount - 1; i++)
 			{
 				for (int j = 0; j < tempCount - 1 - i; j++)
 				{
-					if (atoi(temp[j]->getGameDateNTime().substr(0, 4).c_str()) > atoi(temp[j+1]->getGameDateNTime().substr(0, 4).c_str())) //year 비교
+					if (atoi((temp[j]->getGameDateNTime()).substr(0, 4).c_str()) > atoi((temp[j+1]->getGameDateNTime()).substr(0, 4).c_str())) //year 비교
 					{
 						Ticket* tempTicket = temp[j];
 						temp[j] = temp[j + 1];
@@ -64,7 +64,7 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 
 					else //만일 year가 같다면
 					{
-						if (atoi(temp[j]->getGameDateNTime().substr(5, 2).c_str()) > atoi(temp[j + 1]->getGameDateNTime().substr(5, 2).c_str())) //month비교
+						if (atoi((temp[j]->getGameDateNTime()).substr(5, 2).c_str()) > atoi((temp[j + 1]->getGameDateNTime()).substr(5, 2).c_str())) //month비교
 						{
 							Ticket* tempTicket = temp[j];
 							temp[j] = temp[j + 1];
@@ -73,7 +73,7 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 
 						else //만일 month가 같다면
 						{
-							if (atoi(temp[j]->getGameDateNTime().substr(8,2).c_str()) > atoi(temp[j + 1]->getGameDateNTime().substr(8,2).c_str())) //day 비교
+							if (atoi((temp[j]->getGameDateNTime()).substr(8, 2).c_str()) > atoi((temp[j + 1]->getGameDateNTime()).substr(8,2).c_str()))
 							{
 								Ticket* tempTicket = temp[j];
 								temp[j] = temp[j + 1];
@@ -82,7 +82,7 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 
 							else //만일 day 같다면
 							{
-								if (atoi(temp[j]->getGameDateNTime().substr(11,2).c_str()) > atoi(temp[j + 1]->getGameDateNTime().substr(11, 2).c_str())) // hour 비교
+								if (atoi((temp[j]->getGameDateNTime()).substr(11,2).c_str()) > atoi((temp[j + 1]->getGameDateNTime()).substr(11,2).c_str())) // hour 비교
 								{
 									Ticket* tempTicket = temp[j];
 									temp[j] = temp[j + 1];
@@ -91,7 +91,7 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 
 								else //만일 시간이 같다면
 								{
-									if (atoi(temp[j]->getGameDateNTime().substr(14, 2).c_str()) > atoi(temp[j + 1]->getGameDateNTime().substr(14, 2).c_str())) //minute비교
+									if (atoi((temp[j]->getGameDateNTime()).substr(14,2).c_str()) > atoi((temp[j + 1]->getGameDateNTime()).substr(14,2).c_str()))//minute비교
 									{
 										Ticket* tempTicket = temp[j];
 										temp[j] = temp[j + 1];
@@ -102,7 +102,7 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 						}
 					}
 				}
-			}
+			}*/
 		}
 	}
 }

@@ -154,5 +154,5 @@ string Ticket::getGameDateNTime()
 	//Description: 게임날짜와 시간을 반환한다.
 	//Created: 2019/6/1
 	//Author: 홍지은
-	return this->getGameDateNTime;
+	return this->gameDateNTime;
 }

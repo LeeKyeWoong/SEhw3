@@ -200,7 +200,7 @@ void checkTicketInterface(TicketCollection* ticketCollection, MemberCollection* 
 	control.getHostTicket(&userInterface, ticketCollection, memberCollection);
 }
 */
-void searchGeneralTickeInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection)  // 4.1. 티켓 검색 인터페이스
+void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection)  // 4.1. 티켓 검색 인터페이스
 {
 	SearchTicketUI userInterface;
 	SearchTicketControl control;
