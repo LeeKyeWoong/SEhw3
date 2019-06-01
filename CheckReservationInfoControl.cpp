@@ -37,7 +37,7 @@ void CheckReservationInfoControl::getReservationInfo(CheckReservationInfoControl
 
 	else
 	{
-		if (memberCollection->currentSession()->getMemType().compare("guest") == 0)
+		if (memberCollection->currentSession()->getMemType().compare("buyer") == 0)
 		{
 			//해당 id의 숙소예약을 확인
 			int reservationCount = reservationCollection->getReservationCount();
