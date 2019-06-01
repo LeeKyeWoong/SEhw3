@@ -19,7 +19,7 @@ string Timer::getCurrentTime() {
 
 	return this->currentTime;
 }
-/*
+
 bool Timer::checkTimeToDeleteTicket(string registerTime) {
 	// Function: bool checkTimeToDeleteTicket(string registerTime)
 	// Description: 티켓이 등록된 시간과 현재시간을 비교하여 티켓을 삭제할지 결정하는 함수이다.
@@ -28,5 +28,28 @@ bool Timer::checkTimeToDeleteTicket(string registerTime) {
 	// Created: 2019/05/30
 	// Author: 김승연
 
+	/*
+	매개변수로 받은 registerTime이 string형으로 ????:??:??:??:?? 형식이기 때문에
+	':'를 제외하고 년월일까지를 따로 임시 변수 tmp_registerTime에 저장을 한다.
+	그래서 2019:05:30:12:23 이란 시간을 tmp_registerTime에 20190530 으로 저장한다.
+	그러고나서 이 string으로 된 것을 int형으로 변환을 한다.
+	이는 currentTime의 경우에도 동일하다.
 
-}*/
+	티켓 삭제는 등록된 지 1년 지났을 때 이루어지기 때문에, 현재시간과 티켓 등록 시간의 차이가 10000 이상이 되는 경우 삭제하면 된다.
+	*/
+
+	string tmp_registerTime, tmp_currentTime;
+	tmp_registerTime.append(registerTime, 0, 4);
+	tmp_registerTime.append(registerTime, 5, 2);
+	tmp_registerTime.append(registerTime, 9, 2);
+	tmp_currentTime.append(this->currentTime, 0, 4);
+	tmp_currentTime.append(this->currentTime, 5, 2);
+	tmp_currentTime.append(this->currentTime, 9, 2);
+
+	int regTime, cntTime;
+	regTime = stoi(tmp_registerTime);
+	cntTime = stoi(tmp_currentTime);
+
+	if (cntTime - regTime > 10000) return true;
+	else return false;
+}
