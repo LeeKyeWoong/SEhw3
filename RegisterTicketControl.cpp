@@ -21,7 +21,7 @@ void RegisterTicketControl::registerNewTicket(int price, string gameDatenTime, s
 	string registerTicketDate;
 	string ticketType;
 
-	if (this->memberCollection->currentSession() == NULL)  // 세션ON인 멤버가 없다.
+	if(this->memberCollection->currentSession() == NULL)  // 세션ON인 멤버가 없다.
 	{
 		cout << "> 현재 SessionOn 인 멤버가 없습니다" << endl;
 	}
@@ -31,19 +31,17 @@ void RegisterTicketControl::registerNewTicket(int price, string gameDatenTime, s
 		{	
 			int ticketNumber = this->ticketCollection->getTicketCount();// 전체티켓수를 받는다.
 			bool checkRegister = true; 									// 등록여부(중복여부)를 알려준다.
-			 								
+						
 			for(int i = 0 ; i < ticketNumber; i ++) // 티켓수만큼 반복한다.
 			{
-				if(  (homeTeam.compare(this->ticketCollection->getTicket(i)->getHomeTeam())==0)&&
-				     (awayTeam.compare(this->ticketCollection->getTicket(i)->getAwayTeam())==0)&&
-				     (gameDatenTime.compare(this->ticketCollection->getTicket(i)->getTicketRegisterDate())==0)&&
-				     (seatNum.compare(this->ticketCollection->getTicket(i)->getTicketSeatNum())==0) )
+				if( (homeTeam.compare(this->ticketCollection->getTicket(i)->getHomeTeam())==0)&&
+				    (awayTeam.compare(this->ticketCollection->getTicket(i)->getAwayTeam())==0)&&
+				    (gameDatenTime.compare(this->ticketCollection->getTicket(i)->getTicketRegisterDate())==0)&&
+				    (seatNum.compare(this->ticketCollection->getTicket(i)->getTicketSeatNum())==0) )
 				{
-					checkRegister = false; // 티켓을 등록할 수 없다. (중복티켓 )
+					checkRegister = false; // 티켓을 등록할 수 없다. (중복티켓)
 				}
-
 			}
-
 			if(!checkRegister) // 등록할 수 없다면 
 			{
 				cout << "> 동일한 티켓은 등록할 수 없습니다." << endl;
@@ -66,9 +64,8 @@ void RegisterTicketControl::registerNewTicket(int price, string gameDatenTime, s
 			
 		}
 		else // 만약 구매자라면 
-		{	
+		{
 			cout << "> 구매자는 티켓을 등록할 수 없습니다" << endl;
 		}
 	}
-
 }

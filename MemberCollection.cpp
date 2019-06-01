@@ -27,7 +27,7 @@ void MemberCollection::addMember(string id, string password, string name, string
 
 }
 
-void MemberCollection::deleteMember()
+void MemberCollection::deleteMember(int deleteMemberIndex)
 {
 	//Functnion: deleteMember(int deleteMemberIndex)
 	//Description: MemberCollecton의 deleteMemberIndex번째의 Member를 삭제하는 함수
@@ -35,10 +35,11 @@ void MemberCollection::deleteMember()
 	//Author: 이계웅
 	//수정
 	/*
-	if (deleteMemberIndex == 0) // 만약 지울 번호가 0번이라면, 하나라고 생각한다.
+	if (deleteMemberIndex == 0) // 만약 지울 번호가 0번이라면
 	{
 		this->member[deleteMemberIndex]->deleteMember(); // string을 ""으로 만든다.
 		this->member[deleteMemberIndex] = NULL; // 그리고 NULL로 만들어버린다.
+		this->memberNumber--;
 	}
 	else // 0번이 아니라면 
 	{
@@ -51,10 +52,19 @@ void MemberCollection::deleteMember()
 		this->member[this->memberNumber - 1]->deleteMember(); // 마지막에 있는 Member지우고 
 		this->member[this->memberNumber - 1] = NULL;          // 널처리를 해준다.
 		this->memberNumber--;                           // 멤버 수를 하나 줄인다. 
-	}*/
+	}
 	this->member[this->memberNumber-1]->deleteMember(); // 마지막인덱스에 있는 멤버를 delete한다.
-	//this->member[targetIndex] = NULL; // 포인터를 NULL로 한다.
-	this->memberNumber--;   // 멤버 수를 하나 줄인다. 
+	this->member[targetIndex] = NULL; // 포인터를 NULL로 한다.
+	this->memberNumber--;   // 멤버 수를 하나 줄인다. */
+	
+	this->member[deleteMemberIndex]->deleteMember(); // string을 ""으로 만든다.
+
+	for(int i = deleteMemberIndex; i < (this->memberNumber - 1); i++) // 한칸씩 당긴다.
+	{
+		this->member[deleteMemberIndex] = this->member[deleteMemberIndex + 1];
+	}
+	this->member[this->memberNumber - 1]->deleteMember(); // 마지막에 있는 Member지우고 
+	this->memberNumber--;           
 }
 
 Member* MemberCollection::getMember(int memberIndex)
