@@ -27,14 +27,15 @@ void MemberCollection::addMember(string id, string password, string name, string
 
 }
 
-void MemberCollection::deleteMember(int deleteMemberIndex)
+void MemberCollection::deleteMember()
 {
 	//Functnion: deleteMember(int deleteMemberIndex)
 	//Description: MemberCollecton의 deleteMemberIndex번째의 Member를 삭제하는 함수
 	//Created: 2019/05/30
 	//Author: 이계웅
-
-	if (deleteMemberIndex == 0) // 만약 지울 번호가 0번이라면 
+	//수정
+	/*
+	if (deleteMemberIndex == 0) // 만약 지울 번호가 0번이라면, 하나라고 생각한다.
 	{
 		this->member[deleteMemberIndex]->deleteMember(); // string을 ""으로 만든다.
 		this->member[deleteMemberIndex] = NULL; // 그리고 NULL로 만들어버린다.
@@ -50,7 +51,10 @@ void MemberCollection::deleteMember(int deleteMemberIndex)
 		this->member[this->memberNumber - 1]->deleteMember(); // 마지막에 있는 Member지우고 
 		this->member[this->memberNumber - 1] = NULL;          // 널처리를 해준다.
 		this->memberNumber--;                           // 멤버 수를 하나 줄인다. 
-	}
+	}*/
+	this->member[this->memberNumber-1]->deleteMember(); // 마지막인덱스에 있는 멤버를 delete한다.
+	//this->member[targetIndex] = NULL; // 포인터를 NULL로 한다.
+	this->memberNumber--;   // 멤버 수를 하나 줄인다. 
 }
 
 Member* MemberCollection::getMember(int memberIndex)

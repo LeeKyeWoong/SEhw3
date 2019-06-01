@@ -28,7 +28,7 @@ void RegisterTicketUI::inputRegisterNewTicket(RegisterTicketControl * registerTi
 	this->registerTicketControl->registerNewTicket(price, gameDatenTime, homeTeam, awayTeam, seatNum, isLimitedTimeAuction,ticketCollection,memberCollection,timer);
 	
 	cout << "3.1 판매티켓등록" << endl; // 출력한다.
-	cout << ">" << price << " " << gameDatenTime << " " << homeTeam << " " << awayTeam << " " << seatNum << isLimitedTimeAuction << endl; // 출력한다.
+	cout << ">" << price << " " << gameDatenTime << " " << homeTeam << " " << awayTeam << " " << seatNum <<  " " << isLimitedTimeAuction << endl; // 출력한다.
 	
 }
 
