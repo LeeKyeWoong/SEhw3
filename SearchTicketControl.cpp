@@ -7,6 +7,7 @@
 #include "Member.h"
 #include "MemberCollection.h"
 #include "Timer.h"
+#include <string.h>
 
 using namespace std;
 
@@ -49,60 +50,21 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, TicketCollection*
 				}
 			}
 
-			
-			//날짜 및 시간순으로 정렬
+			//날짜및 시간이 빠른순서대로 정렬
 			for (int i = 0; i < tempCount - 1; i++)
 			{
 				for (int j = 0; j < tempCount - 1 - i; j++)
+
 				{
-					if (atoi((temp[j]->getGameDateNTime()).substr(0, 4).c_str()) > atoi((temp[j+1]->getGameDateNTime()).substr(0, 4).c_str())) //year 비교
+					if (strcmp(temp[j]->getGameDateNTime().c_str(), temp[j + 1]->getGameDateNTime().c_str()) > 0)
 					{
 						Ticket* tempTicket = temp[j];
 						temp[j] = temp[j + 1];
 						temp[j + 1] = tempTicket;
 					}
-
-					else //만일 year가 같다면
-					{
-						if (atoi((temp[j]->getGameDateNTime()).substr(5, 2).c_str()) > atoi((temp[j + 1]->getGameDateNTime()).substr(5, 2).c_str())) //month비교
-						{
-							Ticket* tempTicket = temp[j];
-							temp[j] = temp[j + 1];
-							temp[j + 1] = tempTicket;
-						}
-
-						else //만일 month가 같다면
-						{
-							if (atoi((temp[j]->getGameDateNTime()).substr(8, 2).c_str()) > atoi((temp[j + 1]->getGameDateNTime()).substr(8,2).c_str()))
-							{
-								Ticket* tempTicket = temp[j];
-								temp[j] = temp[j + 1];
-								temp[j + 1] = tempTicket;
-							}
-
-							else //만일 day 같다면
-							{
-								if (atoi((temp[j]->getGameDateNTime()).substr(11,2).c_str()) > atoi((temp[j + 1]->getGameDateNTime()).substr(11,2).c_str())) // hour 비교
-								{
-									Ticket* tempTicket = temp[j];
-									temp[j] = temp[j + 1];
-									temp[j + 1] = tempTicket;
-								}
-
-								else //만일 시간이 같다면
-								{
-									if (atoi((temp[j]->getGameDateNTime()).substr(14,2).c_str()) > atoi((temp[j + 1]->getGameDateNTime()).substr(14,2).c_str()))//minute비교
-									{
-										Ticket* tempTicket = temp[j];
-										temp[j] = temp[j + 1];
-										temp[j + 1] = tempTicket;
-									}
-								}
-							}
-						}
-					}
 				}
 			}
+
 		}
 	}
 }
