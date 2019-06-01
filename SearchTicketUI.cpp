@@ -16,7 +16,7 @@ void SearchTicketUI::selectHomeTeam(SearchTicketControl* searchTicket, TicketCol
 	string homeTeam; //홈팀
 	cin >> homeTeam;
 
-	searchTicket->showBuyerWantTicket(homeTeam, searchTicket, ticketCollection, memberCollection);
+	searchTicket->showBuyerWantTicket(homeTeam, ticketCollection, memberCollection);
 
 	int ticketCount = searchTicket->getTempCount(); //임시 티켓 저장한 개수 
 

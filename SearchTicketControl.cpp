@@ -22,7 +22,7 @@ SearchTicketControl::SearchTicketControl()
 		temp[i] = NULL;
 }
 
-void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketControl* searchTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection)
+void SearchTicketControl::showBuyerWantTicket(string homeTeam, TicketCollection* ticketCollection, MemberCollection* memberCollection)
 {
 	//Function: showBuyerWantTicket(string homeTeam, SearchTicketControl* searchTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection)
 	//Description: 구매자가 원하는 티켓을 날짜 및 시간 순서가 빠른 순대로 보여준다.
@@ -34,7 +34,7 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 
 	else
 	{
-		if (memberCollection->currentSession()->getMemType().compare("guest") == 0)
+		if (memberCollection->currentSession()->getMemType().compare("buyer") == 0)
 		{
 			int ticketCount = ticketCollection->getTicketCount();
 			//구매자가 선택한 홈팀에 대한 예약가능한 티켓 목록 임시 저장
@@ -42,7 +42,7 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, SearchTicketContr
 			{
 				if ((ticketCollection->getTicket(i)->getHomeTeam().compare(homeTeam) == 0))
 				{
-					if (ticketCollection->getTicket(i)->getReservable() == 0)
+					if (ticketCollection->getTicket(i)->getReservable() == true)
 					{
 						temp[tempCount++] = ticketCollection->getTicket(i);
 					}
