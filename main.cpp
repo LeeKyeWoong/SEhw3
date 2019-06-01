@@ -37,7 +37,7 @@ int main()
 		int menu_2 = 0;
 
 		// 입력파일에서 메뉴 숫자 2개를 읽기
-		cin >> menu_1 >> menu_2;
+ 		cin >> menu_1 >> menu_2;
 
 		// 메뉴 구분 및 해당 연산 수행
 		switch(menu_1)
@@ -186,7 +186,7 @@ void logoutInterface(MemberCollection* memberCollection) //2.2 로그아웃 인터페이
 	userInterface.callLogout(&control, memberCollection);
 }
 
-void registerTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer * timer) // 3.1 판매티켓 등록 인터페이스
+void registerTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer *timer) // 3.1 판매티켓 등록 인터페이스
 {
 	RegisterTicketUI userInterface;
 	RegisterTicketControl control;

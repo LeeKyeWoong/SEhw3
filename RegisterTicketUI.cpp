@@ -1,7 +1,10 @@
 #pragma once
 
 #include<iostream>
+#include "Member.h"
+#include "MemberCollection.h"
 #include "RegisterTicketUI.h"
+#include "RegisterTicketControl.h"
 
 using namespace std;
 
@@ -12,9 +15,9 @@ void RegisterTicketUI::inputRegisterNewTicket(RegisterTicketControl * registerTi
 	// Created: 2019/05/31
 	// Author: 이계웅
 	
-	this->registerTicketControl = registerTicketControl;
-	this->ticketCollection = ticketCollection;
-	this->memberCollection = memberCollection;
+	//this->registerTicketControl = registerTicketControl;
+	//this->ticketCollection = ticketCollection;
+	//this->memberCollection = memberCollection;
 
 	string homeTeam; 			//홈팀
 	string awayTeam; 			//어웨이팀 
@@ -25,10 +28,13 @@ void RegisterTicketUI::inputRegisterNewTicket(RegisterTicketControl * registerTi
 	
 	cin >> price >> gameDatenTime >> homeTeam >> awayTeam >> seatNum >> isLimitedTimeAuction;
 
-	this->registerTicketControl->registerNewTicket(price, gameDatenTime, homeTeam, awayTeam, seatNum, isLimitedTimeAuction,ticketCollection,memberCollection,timer);
+	registerTicketControl->registerNewTicket(price, gameDatenTime, homeTeam, awayTeam, seatNum, isLimitedTimeAuction, ticketCollection, memberCollection, timer);
 	
-	cout << "3.1 판매티켓등록" << endl; // 출력한다.
-	cout << ">" << price << " " << gameDatenTime << " " << homeTeam << " " << awayTeam << " " << seatNum <<  " " << isLimitedTimeAuction << endl; // 출력한다.
-	
+	if(registerTicketControl->getCheckRegister())
+	{
+		cout << "3.1 판매티켓등록" << endl; // 출력한다.
+		cout << ">" << price << " " << gameDatenTime << " " << homeTeam << " " << awayTeam << " " << seatNum <<  " " << isLimitedTimeAuction << endl; // 출력한다.
+	}
+
 }
 

@@ -2,9 +2,13 @@
 
 #include<iostream>
 #include <string>
-#include "RegisterTicketControl.h"
-#include "TicketCollection.h"
-#include "MemberCollection.h"
+//#include "RegisterTicketControl.h"
+//#include "TicketCollection.h"
+//#include "MemberCollection.h"
+class RegisterTicketControl;
+class TicketCollection;
+class MemberCollection;
+class Timer;
 
 class RegisterTicketUI {
 	
@@ -15,9 +19,9 @@ class RegisterTicketUI {
 
 private:
 
-	RegisterTicketControl *registerTicketControl;  
-	TicketCollection *ticketCollection;     
-	MemberCollection *memberCollection;
+	//RegisterTicketControl *registerTicketControl;  
+	//TicketCollection *ticketCollection;     
+	//MemberCollection *memberCollection;
 	
 public:
 	void inputRegisterNewTicket(RegisterTicketControl * registerTicketControl, TicketCollection *ticketCollection, MemberCollection * memberCollection, Timer * timer);  //매개변수를 받아 새 Ticket으로 저장하는 함수	
