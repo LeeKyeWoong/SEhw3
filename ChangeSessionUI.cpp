@@ -10,5 +10,5 @@ void ChangeSessionUI::startInterface(ChangeSessionControl *ctl, MemberCollection
 	cin >> ID;
 
 	ctl->changeSession(ID, mcollection);
-	cout << "6.2. guest session으로 변경" << endl;
+	
 }
