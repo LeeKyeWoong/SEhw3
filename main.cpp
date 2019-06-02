@@ -18,6 +18,8 @@ int main()
 	//    What : searchTicketInterface()함수
 	// 3. When & Who : 2019/6/2 by 홍지은
 	//    What : searchAutionTicketInterface() 함수, checkReservationInterface()함수, reserveGeneralTicketInterface()함수
+	// 4. When & Who: 2019/06/03 by 김승연
+	//    What : participateAuctionTicketInterface() 함수 구현, guest session 변경 기능 구현
 
 	Member member[MAX];             // 멤버 객체 생성 
 	Timer timer;					// 타이머 객체 생성 
@@ -229,6 +231,11 @@ void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberColle
 
 void participateAuctionTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer *timer) // 4.4. 경매 참여 인터페이스
 {
+	// Function: void participateAuctionTicketInterface()
+	// Description: 경매 참여를 위한 인터페이스를 호출
+	// Created: 2019/06/03
+	// Author: 김승연
+
 	ParticipateAuctionTicketUI userInterface;
 	ParticipateAuctionTicketControl control;
 	userInterface.participateAuctionInterface(&control, reservationCollection, memberCollection, ticketCollection, timer);
