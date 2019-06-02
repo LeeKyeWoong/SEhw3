@@ -30,7 +30,7 @@ void RegisterTicketControl::registerNewTicket(int price, string gameDatenTime, s
 
 	if(memberCollection->currentSession() == NULL)  // 세션ON인 멤버가 없다.
 	{
-		cout << "> 현재 SessionOn 인 멤버가 없습니다" << endl;
+		cout << "> 현재 SessionOn 인 멤버가 없습니다" << endl << endl;
 		this->checkRegister = false;
 	}
 	else // 세션ON인 멤버가 있다.
@@ -65,12 +65,12 @@ void RegisterTicketControl::registerNewTicket(int price, string gameDatenTime, s
 			}
 			else // 날짜,홈팀, 어웨이팀,날짜시간 모두 겹치는 것이 없다.
 			{
-				cout << "> 동일한 티켓은 등록할 수 없습니다." << endl;
+				cout << "> 동일한 티켓은 등록할 수 없습니다." << endl << endl;
 			}
 		}
 		else // 만약 구매자라면 
 		{
-			cout << "> 구매자는 티켓을 등록할 수 없습니다" << endl;
+			cout << "> 구매자는 티켓을 등록할 수 없습니다" << endl << endl;
 			this->checkRegister = false;
 		}
 	}

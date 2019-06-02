@@ -32,8 +32,9 @@ void RegisterTicketUI::inputRegisterNewTicket(RegisterTicketControl * registerTi
 	
 	if(registerTicketControl->getCheckRegister())
 	{
-		cout << "3.1 판매티켓등록" << endl; // 출력한다.
-		cout << ">" << price << " " << gameDatenTime << " " << homeTeam << " " << awayTeam << " " << seatNum <<  " " << isLimitedTimeAuction << endl; // 출력한다.
+		cout << "3.1 판매티켓 등록" << endl; // 출력한다.
+		cout << "> " << price << " " << gameDatenTime << " " << homeTeam << " " << awayTeam << " " << seatNum <<  " " << isLimitedTimeAuction << endl; // 출력한다.
+		cout << endl;	
 	}
 
 }

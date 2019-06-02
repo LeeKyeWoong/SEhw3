@@ -27,5 +27,5 @@ void CheckTicketUI::startInterface(int ticketCount, Ticket *sellerTicket[])
 		cout << sellerTicket[i]->getAwayTeam() << " " <<  sellerTicket[i]->getTicketSeatNum() << " " << sellerTicket[i]->getIsLimitedTimeAuction() << " ";
 		cout << sellerTicket[i]->getIsSold() << endl;
 	}
-
+	cout << endl;
 }
