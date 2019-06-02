@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <string>
+#include "Ticket.h"
+
 using namespace std;
 
 class Timer {
@@ -17,5 +19,5 @@ public:
 	void setCurrentTime(string cntTime);
 	string getCurrentTime();
 	bool checkTimeToDeleteTicket(string registerTime);
-
+	void checkTimeToConvertIntoAuction(Ticket *tk);
 };
