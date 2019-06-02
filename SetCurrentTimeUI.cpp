@@ -12,5 +12,6 @@ void SetCurrentTimeUI::startInterface(SetCurrentTimeControl* control, Timer* tim
 
 	cout << "5.1 현재시간 설정" << endl;
 	cout << "> " << cntTime << endl;
+	cout << endl;
 	control->setCurrentTime(timer, cntTime, ticketCollection);
 }
