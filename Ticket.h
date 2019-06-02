@@ -47,5 +47,4 @@ public:
 	void setCanSell(bool can);
 	string getTicketType();
 	void setTicketType(string type);
-	bool getIsSold();
 };
