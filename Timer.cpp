@@ -37,19 +37,108 @@ bool Timer::checkTimeToDeleteTicket(string registerTime) {
 
 	티켓 삭제는 등록된 지 1년 지났을 때 이루어지기 때문에, 현재시간과 티켓 등록 시간의 차이가 10000 이상이 되는 경우 삭제하면 된다.
 	*/
+	if (registerTime == "") {
+		cout << "error: 티켓 등록 날짜가 설정되어있지 않습니다. ""6.1 현재시간 설정""을 먼저한 후 티켓 등록을 해주세요!" << endl;
+		return false;
+	}
+	else {
+		string tmp_registerTime, tmp_currentTime;
+		tmp_registerTime.append(registerTime, 0, 4);
+		tmp_registerTime.append(registerTime, 5, 2);
+		tmp_registerTime.append(registerTime, 8, 2);
+		tmp_currentTime.append(this->currentTime, 0, 4);
+		tmp_currentTime.append(this->currentTime, 5, 2);
+		tmp_currentTime.append(this->currentTime, 8, 2);
 
-	string tmp_registerTime, tmp_currentTime;
-	tmp_registerTime.append(registerTime, 0, 4);
-	tmp_registerTime.append(registerTime, 5, 2);
-	tmp_registerTime.append(registerTime, 9, 2);
-	tmp_currentTime.append(this->currentTime, 0, 4);
-	tmp_currentTime.append(this->currentTime, 5, 2);
-	tmp_currentTime.append(this->currentTime, 9, 2);
+		int regTime, cntTime;
+		regTime = stoi(tmp_registerTime);
+		cntTime = stoi(tmp_currentTime);
 
-	int regTime, cntTime;
-	regTime = stoi(tmp_registerTime);
-	cntTime = stoi(tmp_currentTime);
+		if (cntTime - regTime > 10000) return true;
+		else return false;
+	}
+}
 
-	if (cntTime - regTime > 10000) return true;
-	else return false;
+void Timer::checkTimeToConvertIntoAuction(Ticket * tk) {
+	// Function: bool checkTimeToConvertIntoAuction(Ticket * tk)
+	// Description: 경기 시작 시간과 현재 시간을 비교해 경기 시작 24시간 전인 티켓 중 경매전환 옵션을 선택한 티켓은 ticketType을 A로 바꾼다.
+	//						그리고 경기 시작 6시간 전이 되면 경매 종료가 되므로 판매 불가하다는 의미의 canSell=false로 설정한다.
+	// Parameter: Ticket* tk - 시간을 비교할 티켓
+	// Created: 2019/06/02
+	// Author: 김승연
+
+	bool isLimited = tk->getIsLimitedTimeAuction();
+	string gameTime = tk->getGameDateNTime();
+	string temp_crD, temp_gD, temp_crT, temp_gT;
+	temp_crD.append(currentTime, 0, 4).append(currentTime, 5, 2).append(currentTime, 8, 2);
+	temp_gD.append(gameTime, 0, 4).append(gameTime, 5, 2).append(gameTime, 8, 2);
+	temp_crT.append(currentTime, 11, 2).append(currentTime, 14, 2);
+	temp_gT.append(gameTime, 11, 2).append(gameTime, 14, 2);
+
+	int cD = stoi(temp_crD);
+	int gD = stoi(temp_gD);
+	int cT = stoi(temp_crT);
+	int gT = stoi(temp_gT);
+	int compareDate = gD - cD;
+	int compareTime = gT - cT;
+	
+	long long compare = compareDate * 10000 + compareTime;
+	if (compare <= 10000 && tk->getIsLimitedTimeAuction()) { // 경기시작 24시간 전인 경우
+		tk->setTicketType("A");
+		
+		if (gT < cT) {
+			compareTime = 2400 + gT - cT;
+		}
+		else compareTime = gT - cT;
+
+		if (compareTime <= 600) { // 경기시작 6시간 전인 경우
+			tk->setCanSell(false);
+		}
+	}
+}
+
+string Timer::returnRemainAuctionTime(Ticket* tk) {
+	// Function: string returnRemainAuctionTime(Ticket* tk)
+	// Description: 경매종료까지 얼마나 남았는지를 리턴하는 함수이다.
+	// Parameter: Ticket* tk - 시간을 비교할 티켓
+	// Created: 2019/06/02
+	// Author: 김승연
+
+	if (tk->getCanSell() && tk->getTicketType() == "A") {
+		string temp_crT, temp_gT;
+		string gameTime = tk->getGameDateNTime();
+		temp_crT.append(currentTime, 11, 2).append(currentTime, 14, 2);
+		temp_gT.append(gameTime, 11, 2).append(gameTime, 14, 2);
+
+		int cT = stoi(temp_crT);
+		int gT = stoi(temp_gT);
+
+		int compareTime;
+		if (gT < cT) {
+			compareTime = 2400 + gT - cT;
+		}
+		else compareTime = gT - cT;
+
+		string remainHour, remainMin1, remainMin2;
+		ostringstream o1, o2_1, o2_2;
+		o1 << compareTime / 100;
+		o2_1 << compareTime % 100 / 10;
+		o2_2 << compareTime % 10;
+		remainHour = o1.str();
+		remainMin1 = o2_1.str();
+		remainMin2 = o2_2.str();
+
+		string remainTime = "";
+		remainTime.append(remainHour);
+		remainTime.append(":");
+		remainTime.append(remainMin1);
+		remainTime.append(remainMin2);
+		
+		return remainTime;
+	}
+
+	else {
+		return "경매참여 불가 티켓";
+	}
+	
 }

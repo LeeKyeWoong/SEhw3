@@ -24,12 +24,20 @@ int TicketCollection::getTicketCount()
 }
 
 void TicketCollection::deleteTicket(int deleteTicketIndex)
-{
-	if (deleteTicketIndex == 0)
-	{
-		ticketList[deleteTicketIndex]->removeTicket();
-		ticketList[deleteTicketIndex] = NULL;
+{	//Function: deleteTicket()
+	//Description: 매개변수로 받은 인덱스에 해당하는 티켓을 삭제한다.
+	//Created: 2019/6/1
+	//Author: 홍지은
+	// Revsions : 
+	// 1. When & Who : 2019/06/02 by 김승연
+	//    What : 중간에 있는 티켓 삭제 시, 공백이 생기지 않도록 뒤에 있는 정보들 앞으로 땡겨옴
+
+	ticketList[deleteTicketIndex]->removeTicket();
+	int num = this->ticketCount;
+	for (int i = deleteTicketIndex; i < num-1; i++) {
+		this->ticketList[i] = this->ticketList[i + 1];
 	}
+	this->ticketList[num] = NULL;
 }
 
 void TicketCollection::addTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType) // TicketList에 티켓등록한다.

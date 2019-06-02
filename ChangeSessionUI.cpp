@@ -10,4 +10,5 @@ void ChangeSessionUI::startInterface(ChangeSessionControl *ctl, MemberCollection
 	cin >> ID;
 
 	ctl->changeSession(ID, mcollection);
+	
 }

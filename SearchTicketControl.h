@@ -8,7 +8,7 @@ using namespace std;
 
 class SearchTicketUI;
 class TicketCollection;
-class MemberInfoCollection;
+class MemberCollection;
 class Ticket;
 
 
@@ -27,7 +27,7 @@ private:
 
 public:
 	SearchTicketControl();
-	void showBuyerWantTicket(string homeTeam, SearchTicketControl* searchTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection);
+	void showBuyerWantTicket(string homeTeam, TicketCollection* ticketCollection, MemberCollection* memberCollection);
 	//구매자가 원하는 티켓 목록을 정렬된 상태로 보여주는 함수
 	Ticket* getSortedList(int ticketCount);
 	//경기날짜 및 시간이 빠른 티켓으로 정렬된 리스트를 반환하는 함수

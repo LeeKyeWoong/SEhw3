@@ -10,7 +10,7 @@ class MemberCollection;
 
 class SearchTicketUI
 {
-	//Class: SearchAccommodationUI
+	//Class: SearchTicketUI
 	//Description: SearchTicket ÀÇ boundary class
 	//Created: 2019/05/31
 	//Author: È«ÁöÀº

@@ -100,7 +100,7 @@ int main()
 						break;
 					}
 					case 3: {   // 4.3. 경매 중인 티켓 검색
-						//reserveOpaqueReservationInterface(&reservationCollection, &ticketCollection, &MemberCollection, &timer);
+						searchAutionTicketInterface(&ticketCollection, &memberCollection, &timer);
 						break;
 					}
 					case 4: {   // 4.4. 경매 참여
@@ -215,14 +215,15 @@ void reserveGeneralTicketInterface(ReservationCollection* reservationCollection,
 	userInterface.reserveGeneralTicket(&control, reservationCollection, ticketCollection, memberCollection);
 }
 
-
-void searchAuctionTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer) // 4.3. 경매 중인 티켓 검색 인터페이스 
+*/
+void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t) // 4.3. 경매 중인 티켓 검색 인터페이스 
 {
-	ReserveOpaqueInventoryUI userInterface;
-	ReserveOpaqueInventoryControl control;
-	userInterface.reserveOpaqueInventory(&control, reservationCollection, ticketCollection, memberCollection, timer);
+	SearchAuctionTicketUI userInterface;
+	SearchAuctionTicketControl control;
+	userInterface.selectAuctionHomeTeam(&control, ticketCollection, memberCollection, t);
 }
 
+/*
 void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection)  // 4.4. 예약 정보 조회
 {
 	CheckReservationInformationUI userInterface;

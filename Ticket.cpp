@@ -59,6 +59,7 @@ void Ticket::removeTicket()
 	this->seatNum = "";
 	this->isLimitedTimeAuction = false;
 	this->isSold = false;
+	this->canSell = true;
 	this->sid = "";
 	this->registerTicketDate = "";
 	this->ticketType = "";
@@ -155,4 +156,45 @@ string Ticket::getGameDateNTime()
 	//Created: 2019/6/1
 	//Author: 홍지은
 	return this->gameDateNTime;
+}
+
+bool Ticket::getIsLimitedTimeAuction()
+{
+	return this->isLimitedTimeAuction;
+}
+
+bool Ticket::getCanSell() {
+	//Function: getCanSell()
+	//Description: 판매기간에 속해있는 티켓인 경우 true를 리턴하는 함수이다.
+	//Created: 2019/06/02
+	//Author: 김승연
+
+	return this->canSell;
+}
+
+void Ticket::setCanSell(bool can) {
+	//Function: setCanSell(bool can)
+	//Description: 판매가능기간에 속해있는지 여부를 설정할 때 쓰는 함수이다.
+	//Created: 2019/06/02
+	//Author: 김승연
+
+	this->canSell = can;
+}
+
+string Ticket::getTicketType() {
+	//Function: getTicketType()
+	//Description: ticketType을 리턴하는 함수이다.
+	//Created: 2019/06/02
+	//Author: 김승연
+
+	return this->ticketType;
+}
+
+void Ticket::setTicketType(string type) {
+	//Function: setTicketType(string type)
+	//Description: ticketType을 바꿀 때 쓰는 함수이다.
+	//Created: 2019/06/02
+	//Author: 김승연
+
+	ticketType = type;
 }

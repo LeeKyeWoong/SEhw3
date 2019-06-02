@@ -19,9 +19,11 @@ private:
 	bool isLimitedTimeAuction; //티켓을 경매로 넘길것인지의 여부
 	
 	bool isSold; //팔렸는지의 여부
+	bool canSell; // 판매가능한 기간인지에 대한 여부
 	string sid; //seller의 ID
 	string registerTicketDate; //티켓 등록 날짜 -> 등록한지 1년이 지난 티켓 비교를 위함
 	string ticketType; //티켓의 타입 -> 일반인지 경매인지
+	
 
 public:
 	Ticket(); //생성자
@@ -39,5 +41,9 @@ public:
 	string getTicketRegisterDate();  //티켓 등록날짜 가져오기
 	string getTicketSeatNum(); // 티켓좌석 가져오기 
 	string getGameDateNTime();
-
+	bool getIsLimitedTimeAuction(); //경매 여부 선택이 되어있는지 확인하기
+	bool getCanSell();
+	void setCanSell(bool can);
+	string getTicketType();
+	void setTicketType(string type);
 };
