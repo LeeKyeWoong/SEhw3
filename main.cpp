@@ -14,13 +14,15 @@ int main()
 	// Revsions : 
 	// 1. When & Who : 2019/05/31 by 김승연
 	//    What : setCurrentTimeInterface() 함수, changeSessionInterface() 함수 구현
+	// 2. When & Who : 2019/6/2 by 홍지은
+	//    What : setCurrentTimeInterface() 함수, changeSessionInterface() 함수 구현
 
 	Member member[MAX];             // 멤버 객체 생성 
 	Timer timer;					// 타이머 객체 생성 
-	//Reservation reservation[MAX];	// 예약 객체 생성
+	Reservation reservation[MAX];	// 예약 객체 생성
 	Ticket ticket[MAX];				// 티켓 객체 생성
 
-	//ReservationCollection reservationCollection(reservation);  // 예약 생성
+	ReservationCollection reservationCollection(reservation);  // 예약 생성
 	TicketCollection ticketCollection(ticket);                 // 티켓 생성
 	MemberCollection memberCollection(member);				   // 멤버 생성
 
@@ -96,7 +98,7 @@ int main()
 						break;
 					}
 					case 2: {   // 4.2. 티켓 예약
-						//reserveGeneralReservationInterface(&reservationCollection, &ticketCollection, &MemberCollection);
+						reserveGeneralTicketInterface(&reservationCollection, &ticketCollection, &memberCollection);
 						break;
 					}
 					case 3: {   // 4.3. 경매 중인 티켓 검색
@@ -108,7 +110,7 @@ int main()
 						break;
 					}
 					case 5: {   // 4.5. 예약 정보 조회
-						//checkReservationInterface(&reservationCollection, &MemberCollection);
+						checkReservationInterface(&reservationCollection, &memberCollection);
 						break;
 					}
 				}
@@ -207,7 +209,7 @@ void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection*
 	userInterface.selectHomeTeam(&control, ticketCollection, memberCollection);
 }
 
-/*
+
 void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection) // 4.2. 티켓 예약 인터페이스
 {
 	ReserveGeneralTicketUI userInterface;
@@ -215,7 +217,6 @@ void reserveGeneralTicketInterface(ReservationCollection* reservationCollection,
 	userInterface.reserveGeneralTicket(&control, reservationCollection, ticketCollection, memberCollection);
 }
 
-*/
 void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t) // 4.3. 경매 중인 티켓 검색 인터페이스 
 {
 	SearchAuctionTicketUI userInterface;
@@ -224,20 +225,21 @@ void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberColle
 }
 
 /*
-void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection)  // 4.4. 예약 정보 조회
-{
-	CheckReservationInformationUI userInterface;
-	CheckReservationInformationControl control;
-	userInterface.showReservationInformation(&control, reservationCollection, memberCollection);
-}
-
-void participateAuctionTicketInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection) // 4.5. 경매 참여 인터페이스
+void participateAuctionTicketInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection) // 4.4. 경매 참여 인터페이스
 {
 	CheckReservationInformationUI userInterface;
 	CheckReservationInformationControl control;
 	userInterface.showReservationInformation(&control, reservationCollection, memberCollection);
 }
 */
+
+void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection)  // 4.5. 예약 정보 조회
+{
+	CheckReservationInfoUI userInterface;
+	CheckReservationInfoControl control;
+	userInterface.showReservationInfo(&control, reservationCollection, memberCollection);
+}
+
 
 void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection) // 5.1 현재시간설정 인터페이스
 {

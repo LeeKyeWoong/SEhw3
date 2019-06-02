@@ -23,7 +23,7 @@ void ReserveGeneralTicketUI::reserveGeneralTicket(ReserveGeneralTicketControl* r
 	string seatNum;
 	reserveGeneralTicket->makeGeneralReservation(gameDateTime, awayTeam, seatNum, reserveGeneralTicket, reservationCollection, ticketCollection, memberCollection);
 
-	if (reserveGeneralTicket->getReservedAccommdation() == NULL)
+	if (reserveGeneralTicket->getReservedTicket() == NULL)
 	{
 		cout << "4.2. 티켓 예약" << endl;
 		cout << ">" << endl;
@@ -31,8 +31,8 @@ void ReserveGeneralTicketUI::reserveGeneralTicket(ReserveGeneralTicketControl* r
 	else
 	{
 		cout << "4.2. 티켓 예약" << endl;
-		cout << ">" << reserveGeneralTicket->getReservedAccommdation()->getHostId() << " " << reserveGeneralTicket->getReservedAccommdation()->getAccommodationName() << " " << _ReserveGeneralAccommodation->getReservedAccommdation()->getAccommodationAddress()
-			<< " " << reserveGeneralTicket->getReservedAccommdation()->getAccommodationReserveDate() << " " << reserveGeneralTicket->getReservedAccommdation()->getAccommodationPrice() << endl;
+		cout << ">" << reserveGeneralTicket->getReservedTicket()->getTicketPrice() << " " << reserveGeneralTicket->getReservedTicket()->getGameDateNTime() << " " << reserveGeneralTicket->getReservedTicket()->getHomeTeam()
+			<< " " << reserveGeneralTicket->getReservedTicket()->getAwayTeam() << " " << reserveGeneralTicket->getReservedTicket()->getTicketSeatNum() << endl;
 	}
 
 }

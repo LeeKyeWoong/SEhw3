@@ -34,16 +34,16 @@
 //티켓 검색 및 예약 기능, Opaque inventory, 예약 정보 조회 기능
 #include "Reservation.h"
 #include "ReservationCollection.h"
-//#include "ReserveGeneralTicketUI.h"
-//#include "ReserveGeneralTicketControl.h"
+#include "ReserveGeneralTicketUI.h"
+#include "ReserveGeneralTicketControl.h"
 #include "SearchTicketControl.h"
 #include "SearchTicketUI.h"
 #include "SearchAuctionTicketControl.h"
 #include "SearchAuctionTicketUI.h"
 //#include "ReserveOpaqueInventoryUI.h"
 //#include "ReserveOpaqueInventoryControl.h"
-//#include "CheckReservationInformationUI.h"
-//#include "CheckReservationInformationControl.h"
+#include "CheckReservationInfoUI.h"
+#include "CheckReservationInfoControl.h"
 
 //현재시간 변경 기능, 세션 변경 기능
 #include "Timer.h"
@@ -63,10 +63,10 @@ void registerTicketInterface(TicketCollection* TicketCollection, MemberCollectio
 void checkTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection); // 3.2. 등록티켓 조회
 
 void searchTicketInterface(TicketCollection* TicketCollection, MemberCollection* memberCollection);  //4.1 티켓 검색
+void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* TicketCollection, MemberCollection* MemberCollection); //4.2 티켓 예약 인터페이스
 void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer); //4.3 경매티켓 검색
-//void reserveGeneralReservationInterface(ReservationCollection* reservationCollection, TicketCollection* TicketCollection,MemberCollection* MemberCollection); //4.2 숙소예약 인터페이스
-//void reserveOpaqueReservationInterface(ReservationCollection* reservationCollection, TicketCollection* TicketCollection, MemberCollection* MemberCollection, Timer* timer); //4.3 opaque inventory 예약 인터페이스
-//void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* MemberCollection);  //4.4 예약정보 조회 인터페이스
+//void reserveOpaqueReservationInterface(ReservationCollection* reservationCollection, TicketCollection* TicketCollection, MemberCollection* MemberCollection, Timer* timer); //4.4 opaque inventory 예약 인터페이스
+void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* MemberCollection);  //4.5 예약정보 조회 인터페이스
 
 void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection); //5.1 현재시간설정
 void changeSessionInterface(MemberCollection* mCollection);  //6.1 Session변경
