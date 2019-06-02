@@ -81,7 +81,7 @@ int main()
 						break;
 					}
 					case 2: {   // 3.2. 등록티켓 조회
-						checkTicketInterface(&ticketCollection, &MemberCollection);
+						checkTicketInterface(&ticketCollection, &memberCollection);
 						break;
 					}
 				}

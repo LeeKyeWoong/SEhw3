@@ -9,9 +9,9 @@ using namespace std;
 
 class Ticket;
 class CheckTicketControl;
-void CheckTicketUI::startInterface(int ticketCount, Ticket * sellerTicket)
+void CheckTicketUI::startInterface(int ticketCount, Ticket *sellerTicket[])
 {
-	//Function: startInterface(int ticketCount, Ticket * sellerTicket)
+	//Function: startInterface(int ticketCount, Ticket ** sellerTicket)
 	//Description: CheckTicketUI를 시작하는 함수, 출력하는 함수
 	//Created: 2019/06/02
 	//Author: 이계웅

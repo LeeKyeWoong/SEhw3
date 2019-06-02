@@ -39,14 +39,14 @@ void CheckTicketControl::getSellerTicket(CheckTicketUI *checkTicketUI, TicketCol
 	{
 		if (memberCollection->currentSession()->getMemType().compare("seller") == 0) // 판매자라면 
 		{
-			int ticketNumber = this->ticketCollection->getTicketCount(); // 전체 티켓 수를 가져온다.
+			int ticketNumber = ticketCollection->getTicketCount(); // 전체 티켓 수를 가져온다.
 			string sellerId = memberCollection->currentSession()->getId();  // 판매자 ID 를 받아온다. 
 			
 			for (int i = 0; i < ticketNumber; i++) // 전체 티켓 수만큼 반복문을 돌린다.
 			{	
 				if(sellerId.compare(ticketCollection->getTicket(i)->getSellerId()) == 0) // 현재 세션아이디와 판매자 아이디와 같다면
 				{
-					this->sellerTicketList[this->sellerTicketNumber] = this->ticketCollection->getTicket(i); // 하나씩 넣어라
+					this->sellerTicketList[this->sellerTicketNumber] = ticketCollection->getTicket(i); // 하나씩 넣어라
 					this->sellerTicketNumber++;
 				}
 			}// 다 넣었다
@@ -62,9 +62,8 @@ void CheckTicketControl::getSellerTicket(CheckTicketUI *checkTicketUI, TicketCol
                		}
             	}
         	}// Sort가 끝났다.
+        	checkTicketUI->startInterface(this->sellerTicketNumber, this->sellerTicketList);
 		}
-		checkTicketUI->startInterface(this->sellerTicketNumber, this->sellerTicketList);
-
 		else // 구매자라면
 		{
 			cout << "> 구매자는 등록티켓 조회를 할 수 없습니다." << endl;
