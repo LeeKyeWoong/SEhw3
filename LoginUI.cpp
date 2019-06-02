@@ -18,7 +18,7 @@ void LoginUI::inputLogin(LoginControl* loginControl, MemberCollection* memberCol
 	if (loginControl->getSuccessLogin()) // 로그인이 성공한다면 
 	{
 		cout << "2.1 로그인" << endl;
-		cout << ">" << id << " " << password << endl;
+		cout << "> " << id << " " << password << endl;
 	}
 	else // 로그인이 실패한다면
 	{

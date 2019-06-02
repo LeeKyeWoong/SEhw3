@@ -24,7 +24,7 @@ void CheckReservationInfoUI::showReservationInfo(CheckReservationInfoControl* ch
 	if (reservationCount == 0)
 	{
 		cout << "4.5. 예약정보 조회" << endl;
-		cout << ">" << endl;
+		cout << "> " << endl;
 	}
 
 	else
@@ -32,7 +32,7 @@ void CheckReservationInfoUI::showReservationInfo(CheckReservationInfoControl* ch
 		cout << "4.5.예약정보조회" << endl;
 		for (int i = 0; i < reservationCount ; i++)
 		{
-			cout << ">" <<"{"<< checkReservationInfo->getReservationInfo(i)->getReservePrice() << " ";
+			cout << "> " <<"{"<< checkReservationInfo->getReservationInfo(i)->getReservePrice() << " ";
 			cout << checkReservationInfo->getReservationInfo(i)->getGameDate() << " ";
 			cout << checkReservationInfo->getReservationInfo(i)->getHomeTeam() << " ";
 			cout << checkReservationInfo->getReservationInfo(i)->getAwayTeam() << " ";

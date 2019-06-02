@@ -81,7 +81,7 @@ int main()
 						break;
 					}
 					case 2: {   // 3.2. 등록티켓 조회
-						//checkTicketInterface(&ticketCollection, &MemberCollection);
+						checkTicketInterface(&ticketCollection, &MemberCollection);
 						break;
 					}
 				}
@@ -157,14 +157,14 @@ int main()
 	return 0;
 }
 
-void signupInterface(MemberCollection* memberCollection)
+void signupInterface(MemberCollection* memberCollection) // 1.1 회원가입 인터페이스 
 {
 	SignUpUI userInterface;
 	SignUpControl control;
 	userInterface.inputInfo(&control, memberCollection); // 포인터
 }
 /*
-void unregisterInterface(TicketCollection* ticketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection) //1.2 회원탈퇴 인터페이스
+void unregisterInterface(TicketCollection* ticketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection) // 1.2 회원탈퇴 인터페이스
 {
 	UnregisterUI userInterface;
 	UnregisterControl control;
@@ -192,14 +192,14 @@ void registerTicketInterface(TicketCollection* ticketCollection, MemberCollectio
 	RegisterTicketControl control;
 	userInterface.inputRegisterNewTicket(&control, ticketCollection, memberCollection, timer);
 }
-/*
+
 void checkTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection) // 3.2. 등록티켓 조회 인터페이스
 {
 	CheckTicketUI userInterface;
 	CheckTicketControl control;
-	control.getHostTicket(&userInterface, ticketCollection, memberCollection);
+	control.getSellerTicket(&userInterface, ticketCollection, memberCollection);
 }
-*/
+
 void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection)  // 4.1. 티켓 검색 인터페이스
 {
 	SearchTicketUI userInterface;

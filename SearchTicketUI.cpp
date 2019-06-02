@@ -23,7 +23,7 @@ void SearchTicketUI::selectHomeTeam(SearchTicketControl* searchTicket, TicketCol
 	if (ticketCount == 0)//가져올 숙소가 없다면
 	{
 		cout << "4.1. 티켓 검색" << endl;
-		cout << ">" << endl;
+		cout << "> " << endl;
 	}
 
 	else
@@ -31,7 +31,7 @@ void SearchTicketUI::selectHomeTeam(SearchTicketControl* searchTicket, TicketCol
 		cout << "4.1. 티켓 검색" << endl;
 		for (int i = 0; i < ticketCount; i++)
 		{
-			cout << ">" << searchTicket->getSortedList(i)->getTicketPrice() << " ";
+			cout << "> " << searchTicket->getSortedList(i)->getTicketPrice() << " ";
 			cout << searchTicket->getSortedList(i)->getGameDateNTime() << " ";
 			cout << searchTicket->getSortedList(i)->getHomeTeam() << " ";
 			cout << searchTicket->getSortedList(i)->getAwayTeam() << " ";

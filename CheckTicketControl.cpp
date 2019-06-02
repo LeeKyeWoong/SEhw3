@@ -33,7 +33,7 @@ void CheckTicketControl::getSellerTicket(CheckTicketUI *checkTicketUI, TicketCol
 
 	if(memberCollection->currentSession() == NULL) // 현재 세션온인 멤버가 없습니다.
 	{
-		cout << "현재 Session은 존재하지 않습니다." << endl;
+		cout << "> 현재 Session은 존재하지 않습니다." << endl;
 	}
 	else // 세션이 있다면
 	{
@@ -67,7 +67,7 @@ void CheckTicketControl::getSellerTicket(CheckTicketUI *checkTicketUI, TicketCol
 
 		else // 구매자라면
 		{
-			cout << "구매자는 등록티켓 조회를 할 수 없습니다." << endl;
+			cout << "> 구매자는 등록티켓 조회를 할 수 없습니다." << endl;
 		}
 	}
 	

@@ -160,7 +160,22 @@ string Ticket::getGameDateNTime()
 
 bool Ticket::getIsLimitedTimeAuction()
 {
+	//Function: getGameDateNTime()
+	//Description: 게임날짜와 시간을 반환한다.
+	//Created: 2019/6/1
+	//Author: 홍지은
+
 	return this->isLimitedTimeAuction;
+}
+
+bool Ticket::getIsSold()
+{
+	//Function: getIsSold()
+	//Description: 판매여부를 반환한다.
+	//Created: 2019/6/2
+	//Author: 이계웅
+
+	return this->isSold;
 }
 
 bool Ticket::getCanSell() {

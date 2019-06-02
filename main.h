@@ -26,8 +26,8 @@
 //티켓 등록, 등록 티켓 조회 기능
 #include "Ticket.h"
 #include "TicketCollection.h"
-//#include "CheckTicketControl.h"
-//#include "CheckTicketUI.h"
+#include "CheckTicketControl.h"
+#include "CheckTicketUI.h"
 #include "RegisterTicketControl.h"
 #include "RegisterTicketUI.h"
 
@@ -53,13 +53,14 @@
 #include "ChangeSessionControl.h"
 
 void signupInterface(MemberCollection* memberCollection);//1.1 회원가입 인터페이스
+//void unregisterInterface(TicketCollection* TicketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection); //1.2 회원탈퇴 인터페이스
 
 void loginInterface(MemberCollection* memberCollection); //2.1 로그인 인터페이스
 void logoutInterface(MemberCollection* memberCollection);//2.2 로그아웃 인터페이스
 
-//void unregisterInterface(TicketCollection* TicketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection); //1.2 회원탈퇴 인터페이스
 
 void registerTicketInterface(TicketCollection* TicketCollection, MemberCollection* MemberCollection, Timer * timer); //3.1 티켓 등록
+void checkTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection); // 3.2. 등록티켓 조회
 
 void searchTicketInterface(TicketCollection* TicketCollection, MemberCollection* memberCollection);  //4.1 티켓 검색
 void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer); //4.3 경매티켓 검색

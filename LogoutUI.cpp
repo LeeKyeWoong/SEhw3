@@ -14,6 +14,6 @@ void LogoutUI::callLogout(LogoutControl* logoutControl, MemberCollection* member
 	logoutControl->requestLogout(memberCollection);
 
 	cout << "2.2. ·Î±×¾Æ¿ô" << endl;
-	cout << ">" << logoutControl->getLogoutId() << endl;
+	cout << "> " << logoutControl->getLogoutId() << endl;
 
 }
