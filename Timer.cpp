@@ -96,3 +96,44 @@ void Timer::checkTimeToConvertIntoAuction(Ticket * tk) {
 		}
 	}
 }
+
+string Timer::returnRemainAuctionTime(Ticket* tk) {
+
+	if (tk->getCanSell() && tk->getTicketType() == "A") {
+		string temp_crT, temp_gT;
+		string gameTime = tk->getGameDateNTime();
+		temp_crT.append(currentTime, 11, 2).append(currentTime, 14, 2);
+		temp_gT.append(gameTime, 11, 2).append(gameTime, 14, 2);
+
+		int cT = stoi(temp_crT);
+		int gT = stoi(temp_gT);
+
+		int compareTime;
+		if (gT < cT) {
+			compareTime = 2400 + gT - cT;
+		}
+		else compareTime = gT - cT;
+
+		string remainHour, remainMin1, remainMin2;
+		ostringstream o1, o2_1, o2_2;
+		o1 << compareTime / 100;
+		o2_1 << compareTime % 100 / 10;
+		o2_2 << compareTime % 10;
+		remainHour = o1.str();
+		remainMin1 = o2_1.str();
+		remainMin2 = o2_2.str();
+
+		string remainTime = "";
+		remainTime.append(remainHour);
+		remainTime.append(":");
+		remainTime.append(remainMin1);
+		remainTime.append(remainMin2);
+		
+		return remainTime;
+	}
+
+	else {
+		return "경매참여 불가 티켓";
+	}
+	
+}
