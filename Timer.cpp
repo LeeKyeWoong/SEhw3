@@ -83,9 +83,12 @@ void Timer::checkTimeToConvertIntoAuction(Ticket * tk) {
 	int compareTime = gT - cT;
 	
 	long long compare = compareDate * 10000 + compareTime;
-	if (compare <= 10000 && tk->getIsLimitedTimeAuction()) { // 경기시작 24시간 전인 경우
-		tk->setTicketType("A");
-		
+	if (compareDate >= 0) {
+
+		if (compare <= 10000 && tk->getIsLimitedTimeAuction()) { // 경기시작 24시간 전인 경우
+			tk->setTicketType("A");
+		}
+
 		if (gT < cT) {
 			compareTime = 2400 + gT - cT;
 		}
@@ -94,6 +97,9 @@ void Timer::checkTimeToConvertIntoAuction(Ticket * tk) {
 		if (compareTime <= 600) { // 경기시작 6시간 전인 경우
 			tk->setCanSell(false);
 		}
+	}
+	else {
+		tk->setCanSell(false);
 	}
 }
 

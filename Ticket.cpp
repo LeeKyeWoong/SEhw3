@@ -24,6 +24,7 @@ Ticket::Ticket()
 	this->isSold = false;
 	this->ticketType = "";
 	this->isLimitedTimeAuction = false;
+	this->canSell = true;
 }
 
 void Ticket::addNewTicket(int price, string gameDateNTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType )
