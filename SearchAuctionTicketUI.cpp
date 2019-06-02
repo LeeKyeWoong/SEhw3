@@ -5,10 +5,11 @@
 #include "TicketCollection.h"
 #include "Member.h"
 #include "MemberCollection.h"
+#include "Timer.h"
 
-void SearchAuctionTicketUI::selectHomeTeam(SearchAuctionTicketControl* searchAuctionTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection)
+void SearchAuctionTicketUI::selectAuctionHomeTeam(SearchAuctionTicketControl* searchAuctionTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t)
 {
-	//Function: selectHomeTeam(SearchTicketControl* searchTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection)
+	//Function: selectHomeTeam(SearchTicketControl* searchTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t)
 	//Description: 구매자가 홈팀을 선택하는 UI를 제공하고 그 홈팀에 대한 경매 중인 티켓을 보여준다.
 	//Created: 2019/6/2
 	//Author: 홍지은
@@ -16,7 +17,7 @@ void SearchAuctionTicketUI::selectHomeTeam(SearchAuctionTicketControl* searchAuc
 	string homeTeam; //홈팀
 	cin >> homeTeam;
 
-	searchAuctionTicket->showBuyerWantAuctionTicket(homeTeam, ticketCollection, memberCollection);
+	searchAuctionTicket->showBuyerWantAuctionTicket(homeTeam, ticketCollection, memberCollection, t);
 
 	int ticketCount = searchAuctionTicket->getTempCount(); //임시 티켓 저장한 개수 
 

@@ -6,8 +6,9 @@
 using namespace std;
 
 class TicketCollection;
-class SearchTicketControl;
+class SearchAuctionTicketControl;
 class MemberCollection;
+class Timer;
 
 class SearchAuctionTicketUI
 {
@@ -19,6 +20,6 @@ class SearchAuctionTicketUI
 private:
 
 public:
-	void selectHomeTeam(SearchAuctionTicketControl* searchAuctionTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection);
+	void selectAuctionHomeTeam(SearchAuctionTicketControl* searchAuctionTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t);
 	//홈팀을 선택하여 예약가능한 티켓을 조회한다. (4.1.)
 };

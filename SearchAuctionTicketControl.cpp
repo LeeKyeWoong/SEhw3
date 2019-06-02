@@ -49,8 +49,8 @@ void SearchAuctionTicketControl::showBuyerWantAuctionTicket(string homeTeam, Tic
 					gameTime = ticketCollection->getTicket(i)->getGameDateNTime();
 					string temp_crt, temp_gt;
 
-					temp_crt.append.append(currentTime, 0, 4).append(currentTime, 5, 2).append(currentTime, 8, 2).append(currentTime, 11, 2).append(currentTime, 14, 2);
-					temp_gt.append.append(gameTime, 0, 4).append(gameTime, 5, 2).append(gameTime, 8, 2).append(gameTime, 11, 2).append(gameTime, 14, 2);
+					temp_crt.append(currentTime, 0, 4).append(currentTime, 5, 2).append(currentTime, 8, 2).append(currentTime, 11, 2).append(currentTime, 14, 2);
+					temp_gt.append(gameTime, 0, 4).append(gameTime, 5, 2).append(gameTime, 8, 2).append(gameTime, 11, 2).append(gameTime, 14, 2);
 					
 					long long cT = stoll(temp_crt);
 					long long gT = stoll(temp_gt);
