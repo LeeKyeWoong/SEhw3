@@ -12,13 +12,14 @@ RegisterTicketControl::RegisterTicketControl()
 	// Description: 객체의 checkRegister값을 true로 초기화 하는 생성자 ( true 는 중복이 없다는 것을 의미한다.)
 	// Created: 2019/6/1
 	// Author: 이계웅
+	
 	this->checkRegister = true; // 등록할 수 있다.
 }
 
 void RegisterTicketControl::registerNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, TicketCollection *ticketCollection, MemberCollection * memberCollection ,Timer * timer)
 {
-	//Function: void registerNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, TicketCollection *ticketCollection, MemberCollection * memberCollection ,Timer * timer)
-	//Description: 티켓정보들과 TicketCollection, MemberCollection, Timer을 인자로 받아 티켓을 추가하는함수
+	// Function: void registerNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, TicketCollection *ticketCollection, MemberCollection * memberCollection ,Timer * timer)
+	// Description: 티켓정보들과 TicketCollection, MemberCollection, Timer을 인자로 받아 티켓을 추가하는함수
 	// Created: 2019/05/31
 	// Author: 이계웅
 
