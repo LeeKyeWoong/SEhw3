@@ -44,14 +44,25 @@ void SearchAuctionTicketControl::showBuyerWantAuctionTicket(string homeTeam, Tic
 			{
 				if (ticketCollection->getTicket(i)->getIsLimitedTimeAuction() == true) //경매 티켓이고
 				{
-					if(t->getCurrentTime() - )
-				}
-				if ((ticketCollection->getTicket(i)->getHomeTeam().compare(homeTeam) == 0))
-				{
-					if(ticketCollection->getTicket(i)->)
-					if (ticketCollection->getTicket(i)->getReservable() == true)
+					string currentTime, gameTime;
+					currentTime = t->getCurrentTime();
+					gameTime = ticketCollection->getTicket(i)->getGameDateNTime();
+					string temp_crt, temp_gt;
+
+					temp_crt.append.append(currentTime, 0, 4).append(currentTime, 5, 2).append(currentTime, 8, 2).append(currentTime, 11, 2).append(currentTime, 14, 2);
+					temp_gt.append.append(gameTime, 0, 4).append(gameTime, 5, 2).append(gameTime, 8, 2).append(gameTime, 11, 2).append(gameTime, 14, 2);
+					
+					long long cT = stoll(temp_crt);
+					long long gT = stoll(temp_gt);
+					if (gT - cT >= 600 && gT - cT <= 10000) //경매 들어간 시간
 					{
-						temp[tempCount++] = ticketCollection->getTicket(i);
+						if ((ticketCollection->getTicket(i)->getHomeTeam().compare(homeTeam) == 0))
+						{
+							if (ticketCollection->getTicket(i)->getReservable() == true)
+							{
+								temp[tempCount++] = ticketCollection->getTicket(i);
+							}
+						}
 					}
 				}
 			}
