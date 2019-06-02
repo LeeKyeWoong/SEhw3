@@ -8,9 +8,10 @@
 #include "TicketCollection.h"
 #include "Member.h"
 #include "MemberCollection.h"
+#include "Timer.h"
 
 void ReserveGeneralTicketUI::reserveGeneralTicket(ReserveGeneralTicketControl* reserveGeneralTicket, ReservationCollection* reservationCollection,
-	TicketCollection* ticketCollection, MemberCollection* memberCollection)
+	TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer)
 {
 	//Function: reserveGeneralTicket(ReserveGeneralTicketControl* reserveGeneralTicket, ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection)
 	//Description: 날짜시간, 어웨이팀, 좌석위치를 입력 해 티켓을 예약하는 함수
@@ -21,7 +22,7 @@ void ReserveGeneralTicketUI::reserveGeneralTicket(ReserveGeneralTicketControl* r
 	string gameDateTime;
 	string awayTeam;
 	string seatNum;
-	reserveGeneralTicket->makeGeneralReservation(gameDateTime, awayTeam, seatNum, reserveGeneralTicket, reservationCollection, ticketCollection, memberCollection);
+	reserveGeneralTicket->makeGeneralReservation(gameDateTime, awayTeam, seatNum, reserveGeneralTicket, reservationCollection, ticketCollection, memberCollection, timer);
 
 	if (reserveGeneralTicket->getReservedTicket() == NULL)
 	{

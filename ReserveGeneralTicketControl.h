@@ -18,7 +18,7 @@ class ReserveGeneralTicketControl
 	//Created: 2019/6/2
 	//Author: 홍지은
 private:
-	Ticket *tempTicket; //임시숙소객체
+	Ticket *tempTicket; //임시티켓객체
 public:
 	ReserveGeneralTicketControl();  //tempTicket을 초기화
 	void makeGeneralReservation(string gameDateTime, string awayTime, string seatNum, ReserveGeneralTicketControl* reserveGeneralTicket, ReservationCollection* reservationCollection,

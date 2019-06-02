@@ -100,7 +100,7 @@ int main()
 						break;
 					}
 					case 2: {   // 4.2. 티켓 예약
-						reserveGeneralTicketInterface(&reservationCollection, &ticketCollection, &memberCollection);
+						reserveGeneralTicketInterface(&reservationCollection, &ticketCollection, &memberCollection, &timer);
 						break;
 					}
 					case 3: {   // 4.3. 경매 중인 티켓 검색
@@ -108,7 +108,7 @@ int main()
 						break;
 					}
 					case 4: {   // 4.4. 경매 참여
-						//checkReservationInterface(&reservationCollection, &MemberCollection);
+						participateAuctionTicketInterface(&reservationCollection, &ticketCollection, &memberCollection, &timer);
 						break;
 					}
 					case 5: {   // 4.5. 예약 정보 조회
@@ -212,11 +212,11 @@ void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection*
 }
 
 
-void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection) // 4.2. 티켓 예약 인터페이스
+void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer) // 4.2. 티켓 예약 인터페이스
 {
 	ReserveGeneralTicketUI userInterface;
 	ReserveGeneralTicketControl control;
-	userInterface.reserveGeneralTicket(&control, reservationCollection, ticketCollection, memberCollection);
+	userInterface.reserveGeneralTicket(&control, reservationCollection, ticketCollection, memberCollection, timer);
 }
 
 void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t) // 4.3. 경매 중인 티켓 검색 인터페이스 
@@ -226,14 +226,13 @@ void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberColle
 	userInterface.selectAuctionHomeTeam(&control, ticketCollection, memberCollection, t);
 }
 
-/*
-void participateAuctionTicketInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection) // 4.4. 경매 참여 인터페이스
+
+void participateAuctionTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer *timer) // 4.4. 경매 참여 인터페이스
 {
-	CheckReservationInformationUI userInterface;
-	CheckReservationInformationControl control;
-	userInterface.showReservationInformation(&control, reservationCollection, memberCollection);
+	ParticipateAuctionTicketUI userInterface;
+	ParticipateAuctionTicketControl control;
+	userInterface.participateAuctionInterface(&control, reservationCollection, memberCollection, ticketCollection, timer);
 }
-*/
 
 void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection)  // 4.5. 예약 정보 조회
 {

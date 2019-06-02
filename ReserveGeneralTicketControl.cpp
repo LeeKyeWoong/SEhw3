@@ -15,7 +15,7 @@ ReserveGeneralTicketControl::ReserveGeneralTicketControl()
 	//Description: 임시 티켓 객체인 tempTicket을 초기화 한다.
 	//Created: 2019/6/2
 	//Author: 홍지은
-`
+
 	tempTicket = NULL;
 }
 
@@ -57,17 +57,18 @@ void ReserveGeneralTicketControl::makeGeneralReservation(string gameDateTime, st
 				}
 			}
 
-			// 그런 숙소가 있으면 숙소를 예약
+			// 그런 티켓이 있으면 숙소를 예약
 			if (existTicket)
 			{
 				tempTicket->setReservable(false);
 
-				reservationCollection->addReservation(tempTicket->getSellerId(), memberCollection->currentSession()->getId(), tempTicket->getTicketPrice(), t->getCurrentTime(), tempTicket->getGameDateNTime(),
+				reservationCollection->addReservation(tempTicket->getSellerId(), memberCollection->currentSession()->getId(),
+					tempTicket->getTicketPrice(), t->getCurrentTime(), tempTicket->getGameDateNTime(),
 					tempTicket->getHomeTeam(), tempTicket->getAwayTeam(), tempTicket->getTicketSeatNum());
 			}
 			else
 			{
-				cout << "숙소가 존재하지 않습니다." << endl;
+				cout << "티켓이 존재하지 않습니다." << endl;
 			}
 		}
 	}
