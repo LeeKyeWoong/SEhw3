@@ -94,7 +94,7 @@ void Timer::checkTimeToConvertIntoAuction(Ticket * tk) {
 		}
 		else compareTime = gT - cT;
 
-		if (compareTime <= 600) { // 경기시작 6시간 전인 경우
+		if (compareTime <= 600) { // 경기시작 6시간 전인 경우 경매 종료
 			tk->setCanSell(false);
 		}
 	}
