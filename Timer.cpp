@@ -111,25 +111,36 @@ string Timer::returnRemainAuctionTime(Ticket* tk) {
 	// Author: ±è½Â¿¬
 
 	if (tk->getCanSell() && tk->getTicketType() == "A") {
-		string temp_crT, temp_gT;
+		string temp_crT[2], temp_gT[2];
 		string gameTime = tk->getGameDateNTime();
-		temp_crT.append(currentTime, 11, 2).append(currentTime, 14, 2);
-		temp_gT.append(gameTime, 11, 2).append(gameTime, 14, 2);
+		temp_crT[0].append(currentTime, 11, 2);
+		temp_crT[1].append(currentTime, 14, 2);
+		temp_gT[0].append(gameTime, 11, 2);
+		temp_gT[1].append(gameTime, 14, 2);
+		// 0Àº ½Ã°£, 1Àº ºÐ
+		int cT0 = stoi(temp_crT[0]);
+		int cT1 = stoi(temp_crT[1]);
+		int gT0 = stoi(temp_gT[0]);
+		int gT1 = stoi(temp_gT[1]);
 
-		int cT = stoi(temp_crT);
-		int gT = stoi(temp_gT);
+		int cT = cT0 * 60 + cT1;
+		int gT = gT0 * 60 + gT1;
 
 		int compareTime;
 		if (gT < cT) {
-			compareTime = 2400 + gT - cT;
+			compareTime = 24 * 60 + gT - cT;
 		}
 		else compareTime = gT - cT;
 
 		string remainHour, remainMin1, remainMin2;
+		int oo1, oo21, oo22;
+		oo1 = compareTime / 60;
+		oo21 = compareTime % 60 / 10;
+		oo22 = compareTime % 10;
 		ostringstream o1, o2_1, o2_2;
-		o1 << compareTime / 100;
-		o2_1 << compareTime % 100 / 10;
-		o2_2 << compareTime % 10;
+		o1 << oo1;
+		o2_1 << oo21;
+		o2_2 << oo22;
 		remainHour = o1.str();
 		remainMin1 = o2_1.str();
 		remainMin2 = o2_2.str();
