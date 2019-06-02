@@ -37,6 +37,7 @@ void SearchAuctionTicketUI::selectAuctionHomeTeam(SearchAuctionTicketControl* se
 			cout << searchAuctionTicket->getSortedList(i)->getAwayTeam() << " ";
 			cout << searchAuctionTicket->getSortedList(i)->getTicketSeatNum() << " ";
 			//마감까지 남은 시간 출력
+			cout << t->returnRemainAuctionTime(searchAuctionTicket->getSortedList(i));
 			cout  << endl;
 		}
 	}

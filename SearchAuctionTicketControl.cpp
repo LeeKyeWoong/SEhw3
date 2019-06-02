@@ -36,37 +36,25 @@ void SearchAuctionTicketControl::showBuyerWantAuctionTicket(string homeTeam, Tic
 
 	else
 	{
-		if (memberCollection->currentSession()->getMemType().compare("buyer") == 0 ) //티켓이 경매티켓인지 여부와 현재 시간과 경매시간 비교 24시간 전인것만 검색가능)
+		if (memberCollection->currentSession()->getMemType().compare("buyer") == 0) //티켓이 경매티켓인지 여부와 현재 시간과 경매시간 비교 24시간 전인것만 검색가능)
 		{
 			int ticketCount = ticketCollection->getTicketCount();
 			//구매자가 선택한 홈팀에 대한 예약가능한 티켓 목록 임시 저장
 			for (int i = 0; i < ticketCount; i++)
 			{
 				t->checkTimeToConvertIntoAuction(ticketCollection->getTicket(i));
-				if (ticketCollection->getTicket(i)->getIsLimitedTimeAuction() == true) //경매 티켓이고
+				if (ticketCollection->getTicket(i)->getTicketType() == "A" && ticketCollection->getTicket(i)->getCanSell() == true) //경매 티켓이고
 				{
-					string currentTime, gameTime;
-					currentTime = t->getCurrentTime();
-					gameTime = ticketCollection->getTicket(i)->getGameDateNTime();
-					string temp_crt, temp_gt;
-
-					temp_crt.append(currentTime, 0, 4).append(currentTime, 5, 2).append(currentTime, 8, 2).append(currentTime, 11, 2).append(currentTime, 14, 2);
-					temp_gt.append(gameTime, 0, 4).append(gameTime, 5, 2).append(gameTime, 8, 2).append(gameTime, 11, 2).append(gameTime, 14, 2);
-					
-					long long cT = stoll(temp_crt);
-					long long gT = stoll(temp_gt);
-					if (gT - cT >= 600 && gT - cT <= 10000) //경매 들어간 시간
+					if ((ticketCollection->getTicket(i)->getHomeTeam().compare(homeTeam) == 0))
 					{
-						if ((ticketCollection->getTicket(i)->getHomeTeam().compare(homeTeam) == 0))
+						if (ticketCollection->getTicket(i)->getReservable() == true)
 						{
-							if (ticketCollection->getTicket(i)->getReservable() == true)
-							{
-								temp[tempCount++] = ticketCollection->getTicket(i);
-							}
+							temp[tempCount++] = ticketCollection->getTicket(i);
 						}
 					}
 				}
 			}
+		}
 
 			//날짜및 시간이 빠른순서대로 정렬
 			for (int i = 0; i < tempCount - 1; i++)
@@ -82,8 +70,6 @@ void SearchAuctionTicketControl::showBuyerWantAuctionTicket(string homeTeam, Tic
 					}
 				}
 			}
-
-		}
 	}
 }
 
