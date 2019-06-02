@@ -21,11 +21,11 @@ void SignUpUI::inputInfo(SignUpControl* signupControl, MemberCollection* memberC
 	if(signupControl->getCheckId()) // 중복이 없다면 즉, true라면
 	{
 		cout << "1.1 회원가입" << endl;
-		cout << "> " << id << " " << password << " " << name << " " << idNum << " " << memType << " " << endl;
+		cout << "> " << id << " " << password << " " << name << " " << idNum << " " << memType << " " << endl << endl;
 	}
 	else
 	{
-		cout << "> ID 중복입니다" << endl;
+		cout << "> ID 중복입니다" << endl << endl;
 	}
 	
 }

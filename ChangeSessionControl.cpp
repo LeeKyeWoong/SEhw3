@@ -37,5 +37,6 @@ void ChangeSessionControl::changeSession(string newID, MemberCollection *mc) {
 
 	cout << "6.1 Session º¯°æ" << endl;
 	cout << ">" << newID << endl;
+	cout << endl;
 
 }

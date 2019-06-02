@@ -134,7 +134,7 @@ int main()
 						break;
 					}
 					case 2: {	// 6.2. guest session으로 변경
-						//guestSession(&MemberCollection);
+						guestSession(&memberCollection);
 						break;
 					}
 				}
@@ -267,28 +267,25 @@ void changeSessionInterface(MemberCollection* mCollection) // 6.1 Session변경
 	userInterface.startInterface(&control, mCollection);
 }
 
-/*
-void guestSession(MemberCollection* p_MemberCollection)  // 6.2. guest session으로 변경
+
+void guestSession(MemberCollection* memcoll)  // 6.2. guest session으로 변경
 {
 	// Function :guestSession(MemberCollection* membercollection)
-	// Description: 프로그램의 memType을 guest로 수정
-	// Created: 2018/5/27
-	// Author: 김정걸
+	// Description: guest session으로 변경한다. 
+	//						누군가가 로그인 된 상태가 아니라면 아무 일도 수행하지 않고, 로그인된 상태이면 sessionOn = false로 바꾼다.
+	// Created: 2019/06/02
+	// Author: 김승연
 
-	// 해당 기능 수행
-
-	if (p_MemberCollection->currentSession() == NULL)
-	{
-		cout << "6.2 Guest Session으로 변경" << endl;
+	Member *tmp;
+	tmp = memcoll->currentSession();
+	if (tmp == NULL) {	}
+	else {
+		tmp->setSessionOn(false);
 	}
-	else
-	{
-		p_MemberCollection->currentSession()->setsessionOn(false);
-		cout << "6.2 Guest Session으로 변경" << endl;
-	}
-
+	cout << "6.2 Guest Session으로 변경" << endl;
+	cout << endl;
 }
-*/
+
 void exitProgram() {  // 7.1 종료 인터페이스
 
 	// Function :exitProgram()
