@@ -156,3 +156,8 @@ string Ticket::getGameDateNTime()
 	//Author: È«ÁöÀº
 	return this->gameDateNTime;
 }
+
+bool Ticket::getIsLimitedTimeAuction()
+{
+	return this->isLimitedTimeAuction;
+}

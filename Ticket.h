@@ -39,5 +39,6 @@ public:
 	string getTicketRegisterDate();  //티켓 등록날짜 가져오기
 	string getTicketSeatNum(); // 티켓좌석 가져오기 
 	string getGameDateNTime();
+	bool getIsLimitedTimeAuction(); //경매 여부 선택이 되어있는지 확인하기
 
 };

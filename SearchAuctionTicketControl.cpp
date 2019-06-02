@@ -23,7 +23,7 @@ SearchAuctionTicketControl::SearchAuctionTicketControl()
 		temp[i] = NULL;
 }
 
-void SearchAuctionTicketControl::showBuyerWantAuctionTicket(string homeTeam, TicketCollection* ticketCollection, MemberCollection* memberCollection)
+void SearchAuctionTicketControl::showBuyerWantAuctionTicket(string homeTeam, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t)
 {
 	//Function: showBuyerWantAuctionTicket(string homeTeam, SearchTicketControl* searchTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection)
 	//Description: 구매자가 원하는 경매 중인 티켓을 날짜 및 시간 순서가 빠른 순대로 보여준다.
@@ -36,14 +36,19 @@ void SearchAuctionTicketControl::showBuyerWantAuctionTicket(string homeTeam, Tic
 
 	else
 	{
-		if (memberCollection->currentSession()->getMemType().compare("buyer") == 0 && //티켓이 경매티켓인지 여부와 현재 시간과 경매시간 비교 24시간 전인것만 검색가능)
+		if (memberCollection->currentSession()->getMemType().compare("buyer") == 0 ) //티켓이 경매티켓인지 여부와 현재 시간과 경매시간 비교 24시간 전인것만 검색가능)
 		{
 			int ticketCount = ticketCollection->getTicketCount();
 			//구매자가 선택한 홈팀에 대한 예약가능한 티켓 목록 임시 저장
 			for (int i = 0; i < ticketCount; i++)
 			{
+				if (ticketCollection->getTicket(i)->getIsLimitedTimeAuction() == true) //경매 티켓이고
+				{
+					if(t->getCurrentTime() - )
+				}
 				if ((ticketCollection->getTicket(i)->getHomeTeam().compare(homeTeam) == 0))
 				{
+					if(ticketCollection->getTicket(i)->)
 					if (ticketCollection->getTicket(i)->getReservable() == true)
 					{
 						temp[tempCount++] = ticketCollection->getTicket(i);
