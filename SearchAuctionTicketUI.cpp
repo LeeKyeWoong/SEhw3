@@ -40,6 +40,6 @@ void SearchAuctionTicketUI::selectAuctionHomeTeam(SearchAuctionTicketControl* se
 			cout << t->returnRemainAuctionTime(searchAuctionTicket->getSortedList(i));
 			cout << endl;
 		}
-		cout << endl;
 	}
+	cout << endl;
 }
