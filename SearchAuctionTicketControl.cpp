@@ -42,6 +42,7 @@ void SearchAuctionTicketControl::showBuyerWantAuctionTicket(string homeTeam, Tic
 			//구매자가 선택한 홈팀에 대한 예약가능한 티켓 목록 임시 저장
 			for (int i = 0; i < ticketCount; i++)
 			{
+				t->checkTimeToConvertIntoAuction(ticketCollection->getTicket(i));
 				if (ticketCollection->getTicket(i)->getIsLimitedTimeAuction() == true) //경매 티켓이고
 				{
 					string currentTime, gameTime;

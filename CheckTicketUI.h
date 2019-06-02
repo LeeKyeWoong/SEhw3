@@ -20,3 +20,4 @@ private:
 
 public:
 	void startInterface(int ticketCount, Ticket *sellerTicket); // 받은 seller의 티켓들을 가지고 출력해주는 함수
+};

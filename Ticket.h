@@ -43,6 +43,7 @@ public:
 	string getGameDateNTime();
 	bool getIsLimitedTimeAuction(); //경매 여부 선택이 되어있는지 확인하기
 	bool getCanSell();
+	bool getIsSold();
 	void setCanSell(bool can);
 	string getTicketType();
 	void setTicketType(string type);
