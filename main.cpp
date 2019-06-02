@@ -14,8 +14,10 @@ int main()
 	// Revsions : 
 	// 1. When & Who : 2019/05/31 by 김승연
 	//    What : setCurrentTimeInterface() 함수, changeSessionInterface() 함수 구현
-	// 2. When & Who : 2019/6/2 by 홍지은
-	//    What : setCurrentTimeInterface() 함수, changeSessionInterface() 함수 구현
+	// 2. When & Who : 2019/05/31 by 홍지은
+	//    What : searchTicketInterface()함수
+	// 3. When & Who : 2019/6/2 by 홍지은
+	//    What : searchAutionTicketInterface() 함수, checkReservationInterface()함수, reserveGeneralTicketInterface()함수
 
 	Member member[MAX];             // 멤버 객체 생성 
 	Timer timer;					// 타이머 객체 생성 
