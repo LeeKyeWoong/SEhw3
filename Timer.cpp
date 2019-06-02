@@ -62,9 +62,9 @@ bool Timer::checkTimeToDeleteTicket(string registerTime) {
 void Timer::checkTimeToConvertIntoAuction(Ticket * tk) {
 	// Function: bool checkTimeToConvertIntoAuction(Ticket * tk)
 	// Description: 경기 시작 시간과 현재 시간을 비교해 경기 시작 24시간 전인 티켓 중 경매전환 옵션을 선택한 티켓은 ticketType을 A로 바꾼다.
-	//						그리고 경기 시작 6시간 전이 되면 경매 종료가 되므로 
+	//						그리고 경기 시작 6시간 전이 되면 경매 종료가 되므로 판매 불가하다는 의미의 canSell=false로 설정한다.
 	// Parameter: Ticket* tk - 시간을 비교할 티켓
-	// Created: 2019/05/30
+	// Created: 2019/06/02
 	// Author: 김승연
 
 	bool isLimited = tk->getIsLimitedTimeAuction();
@@ -98,6 +98,11 @@ void Timer::checkTimeToConvertIntoAuction(Ticket * tk) {
 }
 
 string Timer::returnRemainAuctionTime(Ticket* tk) {
+	// Function: string returnRemainAuctionTime(Ticket* tk)
+	// Description: 경매종료까지 얼마나 남았는지를 리턴하는 함수이다.
+	// Parameter: Ticket* tk - 시간을 비교할 티켓
+	// Created: 2019/06/02
+	// Author: 김승연
 
 	if (tk->getCanSell() && tk->getTicketType() == "A") {
 		string temp_crT, temp_gT;
