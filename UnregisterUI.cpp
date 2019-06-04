@@ -12,11 +12,11 @@ void UnregisterUI::callUnregister(UnregisterControl* unregisterControl, TicketCo
 	MemberCollection* memberCollection)
 {
 	// Function: callUnregister(UnregisterControl* unregisterControl, TicketCollection* ticketCollection, ReservationCollection* reservationCollection, MemberCollection* memberCollection)
-	// Description: callUnregisterë¼ëŠ” í•¨ìˆ˜ëŠ” Controlì—ì„œ requestUnregisterë¥¼ ë¶€ë¥´ê³  ì„±ê³µí•œë‹¤ë©´ íšŒì›íƒˆí‡´ ë¬¸êµ¬ë¥¼ ì¶œë ¥í•œë‹¤.
+	// Description: callUnregister¶ó´Â ÇÔ¼ö´Â Control¿¡¼­ requestUnregister¸¦ ºÎ¸£°í ¼º°øÇÑ´Ù¸é È¸¿øÅ»Åğ ¹®±¸¸¦ Ãâ·ÂÇÑ´Ù.
 	// Created: 2019/06/02
-	// Author: ì´ê³„ì›…
-	
-	cout << "1.2 íšŒì›íƒˆí‡´" << endl;
+	// Author: ÀÌ°è¿õ
+
+	cout << "1.2 È¸¿øÅ»Åğ" << endl;
 	unregisterControl->requestUnregister(ticketCollection, reservationCollection, memberCollection);
 
 	if (unregisterControl->getCanUnregister())
