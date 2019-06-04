@@ -16,16 +16,12 @@ void UnregisterUI::callUnregister(UnregisterControl* unregisterControl, TicketCo
 	// Created: 2019/06/02
 	// Author: 이계웅
 	
+	cout << "1.2 회원탈퇴" << endl;
 	unregisterControl->requestUnregister(ticketCollection, reservationCollection, memberCollection);
 
 	if (unregisterControl->getCanUnregister())
 	{
-		cout << "1.2. 회원탈퇴" << endl;
 		cout << "> " << unregisterControl->getUnregisterId() << endl;
 	}
-	else
-	{
-
-	}
-	
+	cout << endl;
 }

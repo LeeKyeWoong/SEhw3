@@ -18,10 +18,9 @@
 #include "LoginControl.h"
 #include "LogoutUI.h"         // 로그아웃 
 #include "LogoutControl.h"
-/*
+
 #include "UnregisterUI.h"     // 회원탈퇴 
 #include "UnregisterControl.h"
-*/
 
 //티켓 등록, 등록 티켓 조회 기능
 #include "Ticket.h"
@@ -53,7 +52,7 @@
 #include "ChangeSessionControl.h"
 
 void signupInterface(MemberCollection* memberCollection);//1.1 회원가입 인터페이스
-//void unregisterInterface(TicketCollection* TicketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection); //1.2 회원탈퇴 인터페이스
+void unregisterInterface(TicketCollection* ticketCollection, ReservationCollection* reservationCollection, MemberCollection* memberCollection); //1.2 회원탈퇴 인터페이스
 
 void loginInterface(MemberCollection* memberCollection); //2.1 로그인 인터페이스
 void logoutInterface(MemberCollection* memberCollection);//2.2 로그아웃 인터페이스

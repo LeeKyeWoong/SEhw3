@@ -125,3 +125,17 @@ string Reservation::getSeatNumber() {
 
 	return this->seatNumber;
 }
+
+void Reservation::deleteReservation() {
+	// Function: void deleteReservation()
+	// Description: 예약정보를 삭제하는 함수이다.
+	// Created: 2019/06/04
+	// Author: 김승연
+
+	sellerID = "";
+	buyerID = "";
+	reservePrice = 0;
+	reserveDate = "";
+	gameDate = "";
+	homeTeam = awayTeam = seatNumber = "";
+}

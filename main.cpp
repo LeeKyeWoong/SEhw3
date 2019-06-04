@@ -57,7 +57,7 @@ int main()
 						break;
 					}
 					case 2: {	// 1.2. 회원탈퇴 
-						//unregisterInterface(&TicketCollection, &reservationCollection, &MemberCollection);
+						unregisterInterface(&ticketCollection, &reservationCollection, &memberCollection);
 						break;
 					}
 				}
@@ -169,14 +169,18 @@ void signupInterface(MemberCollection* memberCollection) // 1.1 회원가입 인터페�
 	SignUpControl control;
 	userInterface.inputInfo(&control, memberCollection); // 포인터
 }
-/*
-void unregisterInterface(TicketCollection* ticketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection) // 1.2 회원탈퇴 인터페이스
+
+void unregisterInterface(TicketCollection* ticketCollection, ReservationCollection* reservationCollection, MemberCollection* memberCollection) // 1.2 회원탈퇴 인터페이스
 {
 	UnregisterUI userInterface;
 	UnregisterControl control;
-	userInterface.callUnregister(&control, ticketCollection, reservationCollection, MemberCollection);
+	userInterface.callUnregister(&control, ticketCollection, reservationCollection, memberCollection);
+	
+	if (control.getCanUnregister()) {
+		guestSession(memberCollection); // 회원탈퇴를 했으므로 guest session으로 변경해야 한다.
+	}
 }
-*/
+
 
 void loginInterface(MemberCollection* memberCollection) //2.1 로그인 인터페이스
 {

@@ -33,4 +33,5 @@ public:
 	string getHomeTeam();
 	string getAwayTeam();
 	string getSeatNumber();
+	void deleteReservation();
 };

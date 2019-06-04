@@ -23,6 +23,22 @@ void ReservationCollection::addReservation(string sID, string bID, int price, st
 	reservationCount++;
 }
 
+void ReservationCollection::deleteReservation(int deleteIndex) {
+	// Function: void deleteReservation(int deleteIndex)
+	// Description: reservation 객체를 삭제하는 함수이다. 구매자가 회원탈퇴 시 예약 정보를 파기해야 하므로 필요하다.
+	// Parameter: 삭제할 reservation 객체의 인덱스
+	// Created: 2019/06/04
+	// Author: 김승연
+
+	reservation[deleteIndex]->deleteReservation();
+	int num = this->reservationCount;
+	for (int i = deleteIndex; i < num - 1; i++) {
+		this->reservation[i] = this->reservation[i + 1];
+	}
+	
+	this->reservation[num] = NULL;
+}
+
 int ReservationCollection::getReservationCount() {
 	// Function: int getReservationCount()
 	// Description: reservation 객체의 개수를 리턴하는 함수이다.

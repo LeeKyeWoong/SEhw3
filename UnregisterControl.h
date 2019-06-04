@@ -23,7 +23,7 @@ private:
 
 public:
 	UnregisterControl();  // canUnregister의 값을 true로 설정하는 생성자
-	void requestUnregister(TicketCollection* TicketCollection, ReservationCollection* reservationCollection, MemberCollection* MemberCollection);  //해당 회원을 삭제하는 함수
+	void requestUnregister(TicketCollection* TicketCollection, ReservationCollection* reservationCollection, MemberCollection* memberCollection);  //해당 회원을 삭제하는 함수
 	bool getCanUnregister();  //탈퇴 가능 여부를 반환하는 함수
 	string getUnregisterId();  //탈퇴한 ID를 반환하는 함수
 };
