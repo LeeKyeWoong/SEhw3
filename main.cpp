@@ -14,13 +14,19 @@ int main()
 	// Revsions : 
 	// 1. When & Who : 2019/05/31 by 김승연
 	//    What : setCurrentTimeInterface() 함수, changeSessionInterface() 함수 구현
+	// 2. When & Who : 2019/05/31 by 홍지은
+	//    What : searchTicketInterface()함수
+	// 3. When & Who : 2019/6/2 by 홍지은
+	//    What : searchAutionTicketInterface() 함수, checkReservationInterface()함수, reserveGeneralTicketInterface()함수
+	// 4. When & Who: 2019/06/03 by 김승연
+	//    What : participateAuctionTicketInterface() 함수 구현, guest session 변경 기능 구현
 
 	Member member[MAX];             // 멤버 객체 생성 
 	Timer timer;					// 타이머 객체 생성 
-	//Reservation reservation[MAX];	// 예약 객체 생성
+	Reservation reservation[MAX];	// 예약 객체 생성
 	Ticket ticket[MAX];				// 티켓 객체 생성
 
-	//ReservationCollection reservationCollection(reservation);  // 예약 생성
+	ReservationCollection reservationCollection(reservation);  // 예약 생성
 	TicketCollection ticketCollection(ticket);                 // 티켓 생성
 	MemberCollection memberCollection(member);				   // 멤버 생성
 
@@ -96,7 +102,7 @@ int main()
 						break;
 					}
 					case 2: {   // 4.2. 티켓 예약
-						//reserveGeneralReservationInterface(&reservationCollection, &ticketCollection, &MemberCollection);
+						reserveGeneralTicketInterface(&reservationCollection, &ticketCollection, &memberCollection, &timer);
 						break;
 					}
 					case 3: {   // 4.3. 경매 중인 티켓 검색
@@ -104,11 +110,11 @@ int main()
 						break;
 					}
 					case 4: {   // 4.4. 경매 참여
-						//checkReservationInterface(&reservationCollection, &MemberCollection);
+						participateAuctionTicketInterface(&reservationCollection, &ticketCollection, &memberCollection, &timer);
 						break;
 					}
 					case 5: {   // 4.5. 예약 정보 조회
-						//checkReservationInterface(&reservationCollection, &MemberCollection);
+						checkReservationInterface(&reservationCollection, &memberCollection);
 						break;
 					}
 				}
@@ -134,7 +140,7 @@ int main()
 						break;
 					}
 					case 2: {	// 6.2. guest session으로 변경
-						//guestSession(&MemberCollection);
+						guestSession(&memberCollection);
 						break;
 					}
 				}
@@ -207,15 +213,14 @@ void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection*
 	userInterface.selectHomeTeam(&control, ticketCollection, memberCollection);
 }
 
-/*
-void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection) // 4.2. 티켓 예약 인터페이스
+
+void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer) // 4.2. 티켓 예약 인터페이스
 {
 	ReserveGeneralTicketUI userInterface;
 	ReserveGeneralTicketControl control;
-	userInterface.reserveGeneralTicket(&control, reservationCollection, ticketCollection, memberCollection);
+	userInterface.reserveGeneralTicket(&control, reservationCollection, ticketCollection, memberCollection, timer);
 }
 
-*/
 void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t) // 4.3. 경매 중인 티켓 검색 인터페이스 
 {
 	SearchAuctionTicketUI userInterface;
@@ -223,21 +228,26 @@ void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberColle
 	userInterface.selectAuctionHomeTeam(&control, ticketCollection, memberCollection, t);
 }
 
-/*
-void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection)  // 4.4. 예약 정보 조회
+
+void participateAuctionTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer *timer) // 4.4. 경매 참여 인터페이스
 {
-	CheckReservationInformationUI userInterface;
-	CheckReservationInformationControl control;
-	userInterface.showReservationInformation(&control, reservationCollection, memberCollection);
+	// Function: void participateAuctionTicketInterface()
+	// Description: 경매 참여를 위한 인터페이스를 호출
+	// Created: 2019/06/03
+	// Author: 김승연
+
+	ParticipateAuctionTicketUI userInterface;
+	ParticipateAuctionTicketControl control;
+	userInterface.participateAuctionInterface(&control, reservationCollection, memberCollection, ticketCollection, timer);
 }
 
-void participateAuctionTicketInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection) // 4.5. 경매 참여 인터페이스
+void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection)  // 4.5. 예약 정보 조회
 {
-	CheckReservationInformationUI userInterface;
-	CheckReservationInformationControl control;
-	userInterface.showReservationInformation(&control, reservationCollection, memberCollection);
+	CheckReservationInfoUI userInterface;
+	CheckReservationInfoControl control;
+	userInterface.showReservationInfo(&control, reservationCollection, memberCollection);
 }
-*/
+
 
 void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection) // 5.1 현재시간설정 인터페이스
 {
@@ -267,28 +277,25 @@ void changeSessionInterface(MemberCollection* mCollection) // 6.1 Session변경
 	userInterface.startInterface(&control, mCollection);
 }
 
-/*
-void guestSession(MemberCollection* p_MemberCollection)  // 6.2. guest session으로 변경
+
+void guestSession(MemberCollection* memcoll)  // 6.2. guest session으로 변경
 {
 	// Function :guestSession(MemberCollection* membercollection)
-	// Description: 프로그램의 memType을 guest로 수정
-	// Created: 2018/5/27
-	// Author: 김정걸
+	// Description: guest session으로 변경한다. 
+	//						누군가가 로그인 된 상태가 아니라면 아무 일도 수행하지 않고, 로그인된 상태이면 sessionOn = false로 바꾼다.
+	// Created: 2019/06/02
+	// Author: 김승연
 
-	// 해당 기능 수행
-
-	if (p_MemberCollection->currentSession() == NULL)
-	{
-		cout << "6.2 Guest Session으로 변경" << endl;
+	Member *tmp;
+	tmp = memcoll->currentSession();
+	if (tmp == NULL) {	}
+	else {
+		tmp->setSessionOn(false);
 	}
-	else
-	{
-		p_MemberCollection->currentSession()->setsessionOn(false);
-		cout << "6.2 Guest Session으로 변경" << endl;
-	}
-
+	cout << "6.2 Guest Session으로 변경" << endl;
+	cout << endl;
 }
-*/
+
 void exitProgram() {  // 7.1 종료 인터페이스
 
 	// Function :exitProgram()

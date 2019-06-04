@@ -56,20 +56,20 @@ void SearchAuctionTicketControl::showBuyerWantAuctionTicket(string homeTeam, Tic
 			}
 		}
 
-			//날짜및 시간이 빠른순서대로 정렬
-			for (int i = 0; i < tempCount - 1; i++)
-			{
-				for (int j = 0; j < tempCount - 1 - i; j++)
+		//날짜및 시간이 빠른순서대로 정렬
+		for (int i = 0; i < tempCount - 1; i++)
+		{
+			for (int j = 0; j < tempCount - 1 - i; j++)
 
+			{
+				if (strcmp(temp[j]->getGameDateNTime().c_str(), temp[j + 1]->getGameDateNTime().c_str()) > 0)
 				{
-					if (strcmp(temp[j]->getGameDateNTime().c_str(), temp[j + 1]->getGameDateNTime().c_str()) > 0)
-					{
-						Ticket* tempTicket = temp[j];
-						temp[j] = temp[j + 1];
-						temp[j + 1] = tempTicket;
-					}
+					Ticket* tempTicket = temp[j];
+					temp[j] = temp[j + 1];
+					temp[j + 1] = tempTicket;
 				}
 			}
+		}
 	}
 }
 
