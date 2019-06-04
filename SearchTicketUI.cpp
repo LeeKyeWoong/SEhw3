@@ -38,5 +38,6 @@ void SearchTicketUI::selectHomeTeam(SearchTicketControl* searchTicket, TicketCol
 			cout << searchTicket->getSortedList(i)->getTicketSeatNum() << " ";
 			cout << endl;
 		}
+		cout << endl;
 	}
 }
