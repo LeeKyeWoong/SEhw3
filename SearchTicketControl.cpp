@@ -41,13 +41,17 @@ void SearchTicketControl::showBuyerWantTicket(string homeTeam, TicketCollection*
 			//구매자가 선택한 홈팀에 대한 예약가능한 티켓 목록 임시 저장
 			for (int i = 0; i < ticketCount; i++)
 			{
-				if ((ticketCollection->getTicket(i)->getHomeTeam().compare(homeTeam) == 0))
+				if (ticketCollection->getTicket(i)->getTicketType() == "G" && ticketCollection->getTicket(i)->getCanSell() == false) //경매로 넘어간 티켓이 아니어야 하고
 				{
-					if (ticketCollection->getTicket(i)->getReservable() == true)
+					if ((ticketCollection->getTicket(i)->getHomeTeam().compare(homeTeam) == 0))
 					{
-						temp[tempCount++] = ticketCollection->getTicket(i);
+						if (ticketCollection->getTicket(i)->getReservable() == true)
+						{
+							temp[tempCount++] = ticketCollection->getTicket(i);
+						}
 					}
 				}
+				
 			}
 
 			//날짜및 시간이 빠른순서대로 정렬
