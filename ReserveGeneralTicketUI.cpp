@@ -22,6 +22,8 @@ void ReserveGeneralTicketUI::reserveGeneralTicket(ReserveGeneralTicketControl* r
 	string gameDateTime;
 	string awayTeam;
 	string seatNum;
+	cin >> gameDateTime >> awayTeam>> seatNum;
+
 	reserveGeneralTicket->makeGeneralReservation(gameDateTime, awayTeam, seatNum, reserveGeneralTicket, reservationCollection, ticketCollection, memberCollection, timer);
 
 	if (reserveGeneralTicket->getReservedTicket() == NULL)
@@ -37,3 +39,4 @@ void ReserveGeneralTicketUI::reserveGeneralTicket(ReserveGeneralTicketControl* r
 	}
 
 }
+
