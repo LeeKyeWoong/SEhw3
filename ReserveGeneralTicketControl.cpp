@@ -46,7 +46,7 @@ void ReserveGeneralTicketControl::makeGeneralReservation(string gameDateTime, st
 						(ticketCollection->getTicket(i)->getAwayTeam().compare(awayTeam) == 0) &&
 						(ticketCollection->getTicket(i)->getTicketSeatNum().compare(seatNum) == 0))
 					{
-						if (ticketCollection->getTicket(i)->getReservable() == false)
+						if (ticketCollection->getTicket(i)->getReservable() == true)
 						{
 							tempTicket = ticketCollection->getTicket(i);
 							existTicket = true; //위의 날짜및 시간, 어웨이팀, 좌석위치에 해당하는 티켓이 존재.
