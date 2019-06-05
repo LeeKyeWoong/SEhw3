@@ -13,11 +13,7 @@ using namespace std;
 class ParticipateAuctionTicketControl {
 	// Class: ParticipateAuctionTicketControl
 	// Description: 경매참여를 위한 control class
-<<<<<<< HEAD
-	// Created: 2019/06/30
-=======
 	// Created: 2019/06/03
->>>>>>> 63ab847e92eb84fa0ca4f1b169f7bb417bcd8ee6
 	// Author: 김승연
 
 public:

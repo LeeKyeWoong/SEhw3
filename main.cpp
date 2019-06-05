@@ -12,14 +12,6 @@ int main()
 	// Created: 2019/05/29
 	// Author: 이계웅
 	// Revsions : 
-<<<<<<< HEAD
-	// 1. When & Who : 2019/05/31 by 김승연
-	//    What : setCurrentTimeInterface() 함수, changeSessionInterface() 함수 구현
-	// 2. When & Who : 2019/05/31 by 홍지은
-	//    What : searchTicketInterface()함수
-	// 3. When & Who : 2019/6/2 by 홍지은
-	//    What : searchAutionTicketInterface() 함수, checkReservationInterface()함수, reserveGeneralTicketInterface()함수
-=======
 	// 1. When & Who : 2019/05/30 by 이계웅
 	//    What : signupInterface() 함수 구현
 	// 1. When & Who : 2019/05/31 by 김승연
@@ -32,7 +24,6 @@ int main()
 	//    What : searchAutionTicketInterface() 함수, checkReservationInterface()함수, reserveGeneralTicketInterface()함수 구현
 	// 1. When & Who : 2019/06/02 by 이계웅
 	//    What : unregisterInterface() 함수, checkTicketInterface() 함수 구현
->>>>>>> 63ab847e92eb84fa0ca4f1b169f7bb417bcd8ee6
 	// 4. When & Who: 2019/06/03 by 김승연
 	//    What : participateAuctionTicketInterface() 함수 구현, guest session 변경 기능 구현
 
@@ -182,11 +173,7 @@ void signupInterface(MemberCollection* memberCollection) // 1.1 회원가입 인터페�
 {
 	// Function : void signupInterface()
 	// Description: 회원가입을 하는 인터페이스
-<<<<<<< HEAD
-	// Created: 2019/5/30
-=======
 	// Created: 2019/05/30
->>>>>>> 63ab847e92eb84fa0ca4f1b169f7bb417bcd8ee6
 	// Author: 이계웅
 
 	SignUpUI userInterface;
@@ -263,11 +250,7 @@ void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection*
 {
 	// Function: void searchTicketInterface()
 	// Description: 일반티켓을 조회하기 위한 인터페이스
-<<<<<<< HEAD
-	// Created: 2019/6/1
-=======
 	// Created: 2019/06/01
->>>>>>> 63ab847e92eb84fa0ca4f1b169f7bb417bcd8ee6
 	// Author: 홍지은
 
 	SearchTicketUI userInterface;
@@ -280,11 +263,7 @@ void reserveGeneralTicketInterface(ReservationCollection* reservationCollection,
 {
 	// Function: void reserveGeneralTicketInterface()
 	// Description: 티켓을 예약하기 위한 인터페이스
-<<<<<<< HEAD
-	// Created: 2019/6/2
-=======
 	// Created: 2019/06/02
->>>>>>> 63ab847e92eb84fa0ca4f1b169f7bb417bcd8ee6
 	// Author: 홍지은
 
 	ReserveGeneralTicketUI userInterface;
@@ -296,11 +275,7 @@ void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberColle
 {
 	// Function: void searchAuctionTicketInterface()
 	// Description: 경매티켓을 조회하기 위한 인터페이스
-<<<<<<< HEAD
-	// Created: 2019/6/2
-=======
 	// Created: 2019/06/02
->>>>>>> 63ab847e92eb84fa0ca4f1b169f7bb417bcd8ee6
 	// Author: 홍지은
 
 	SearchAuctionTicketUI userInterface;
@@ -325,11 +300,7 @@ void checkReservationInterface(ReservationCollection* reservationCollection, Mem
 {
 	// Function: void checkReservationInterface()
 	// Description: 예약정보를 조회하기 위한 인터페이스
-<<<<<<< HEAD
-	// Created: 2019/5/31
-=======
 	// Created: 2019/06/02
->>>>>>> 63ab847e92eb84fa0ca4f1b169f7bb417bcd8ee6
 	// Author: 홍지은
 	CheckReservationInfoUI userInterface;
 	CheckReservationInfoControl control;
