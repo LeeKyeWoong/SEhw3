@@ -10,7 +10,7 @@ RegisterTicketControl::RegisterTicketControl()
 {
 	// Function : RegisterTicketControl()
 	// Description: 객체의 checkRegister값을 true로 초기화 하는 생성자 ( true 는 중복이 없다는 것을 의미한다.)
-	// Created: 2019/6/1
+	// Created: 2019/06/01
 	// Author: 이계웅
 	
 	this->checkRegister = true; // 등록할 수 있다.

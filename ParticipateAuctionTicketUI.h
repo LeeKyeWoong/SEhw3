@@ -13,10 +13,9 @@ class TicketCollection;
 
 class ParticipateAuctionTicketUI {
 	// Class: ParticipateAuctionTicketUI
-	// Description: °æ¸ÅÂü¿©¸¦ À§ÇÑ boundary class
-	// Created: 2019/06/30
-	// Author: ±è½Â¿¬
-
+	// Description: ê²½ë§¤ì°¸ì—¬ë¥¼ ìœ„í•œ boundary class
+	// Created: 2019/06/03
+	// Author: ê¹€ìŠ¹ì—°
 public:
 	void participateAuctionInterface(ParticipateAuctionTicketControl *ctl, 
 		ReservationCollection *resCollect, MemberCollection *memCollect, TicketCollection *tkCollect, Timer *timer);
