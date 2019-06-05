@@ -2,9 +2,9 @@
 
 void ChangeSessionUI::startInterface(ChangeSessionControl *ctl, MemberCollection *mcollection) {
 	// Function: void startInterface(ChangeSessionControl *ctl, MemberCollection *mcollection)
-	// Description: ¼¼¼Ç º¯°æ ÀÎÅÍÆäÀÌ½º
+	// Description: ì„¸ì…˜ ë³€ê²½ ì¸í„°íŽ˜ì´ìŠ¤
 	// Created: 2019/05/31
-	// Author: ±è½Â¿¬
+	// Author: ê¹€ìŠ¹ì—°
 
 	string ID;
 	cin >> ID;

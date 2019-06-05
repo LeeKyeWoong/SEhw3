@@ -13,12 +13,10 @@
 #include "MemberCollection.h"
 #include "SignUpUI.h"         // 회원가입
 #include "SignUpControl.h"
-
 #include "LoginUI.h"          // 로그인
 #include "LoginControl.h"
 #include "LogoutUI.h"         // 로그아웃 
 #include "LogoutControl.h"
-
 #include "UnregisterUI.h"     // 회원탈퇴 
 #include "UnregisterControl.h"
 
