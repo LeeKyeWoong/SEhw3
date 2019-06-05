@@ -12,9 +12,9 @@ using namespace std;
 
 class ParticipateAuctionTicketControl {
 	// Class: ParticipateAuctionTicketControl
-	// Description: ê²½ë§¤ì°¸ì—¬ë¥¼ ìœ„í•œ control class
-	// Created: 2019/06/03
-	// Author: ê¹€ìŠ¹ì—°
+	// Description: °æ¸ÅÂü¿©¸¦ À§ÇÑ control class
+	// Created: 2019/06/30
+	// Author: ±è½Â¿¬
 
 public:
 	void participateAuction(string date, string awayTeam, string seatNum, int bidPrice,

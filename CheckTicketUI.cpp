@@ -21,7 +21,7 @@ void CheckTicketUI::startInterface(int ticketCount, Ticket *sellerTicket[])
 	{
 		cout << "> 판매자는 티켓을 등록하지 않았습니다." << endl;
 	}
-	for (int i = 0; i < ticketCount;i++) // 출력한다.
+	for (int i = 0;i < ticketCount;i++) // 출력한다.
 	{
 		cout << "> " << sellerTicket[i]->getTicketPrice() << " " <<  sellerTicket[i]->getGameDateNTime() << " " << sellerTicket[i]->getHomeTeam() << " ";
 		cout << sellerTicket[i]->getAwayTeam() << " " <<  sellerTicket[i]->getTicketSeatNum() << " " << sellerTicket[i]->getIsLimitedTimeAuction() << " ";
