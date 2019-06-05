@@ -165,6 +165,11 @@ int main()
 
 void signupInterface(MemberCollection* memberCollection) // 1.1 회원가입 인터페이스 
 {
+	// Function : void signupInterface()
+	// Description: 회원가입을 하는 인터페이스
+	// Created: 2019/5/30
+	// Author: 이계웅
+
 	SignUpUI userInterface;
 	SignUpControl control;
 	userInterface.inputInfo(&control, memberCollection); // 포인터
@@ -172,10 +177,15 @@ void signupInterface(MemberCollection* memberCollection) // 1.1 회원가입 인터페�
 
 void unregisterInterface(TicketCollection* ticketCollection, ReservationCollection* reservationCollection, MemberCollection* memberCollection) // 1.2 회원탈퇴 인터페이스
 {
+	// Function: void unregisterInterface()
+	// Description: 회원탈퇴를 하는 인터페이스
+	// Created: 2019/06/02
+	// Author: 이계웅
+
 	UnregisterUI userInterface;
 	UnregisterControl control;
 	userInterface.callUnregister(&control, ticketCollection, reservationCollection, memberCollection);
-	
+
 	if (control.getCanUnregister()) {
 		guestSession(memberCollection); // 회원탈퇴를 했으므로 guest session으로 변경해야 한다.
 	}
@@ -184,6 +194,11 @@ void unregisterInterface(TicketCollection* ticketCollection, ReservationCollecti
 
 void loginInterface(MemberCollection* memberCollection) //2.1 로그인 인터페이스
 {
+	//Function: void loginInterface()
+	//Description: 로그인 하는 인터페이스
+	//Created: 2019/05/31
+	//Author: 이계웅
+
 	LoginUI userInterface;
 	LoginControl control;
 	userInterface.inputLogin(&control, memberCollection);
@@ -191,6 +206,11 @@ void loginInterface(MemberCollection* memberCollection) //2.1 로그인 인터페이스
 
 void logoutInterface(MemberCollection* memberCollection) //2.2 로그아웃 인터페이스
 {
+	//Function: void logoutInterface()
+	//Description: 로그아웃 하는 인터페이스
+	//Created: 2019/05/31
+	//Author: 이계웅
+
 	LogoutUI userInterface;
 	LogoutControl control;
 	userInterface.callLogout(&control, memberCollection);
@@ -198,6 +218,11 @@ void logoutInterface(MemberCollection* memberCollection) //2.2 로그아웃 인터페이
 
 void registerTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer *timer) // 3.1 판매티켓 등록 인터페이스
 {
+	// Function: void registerTicketInterface()
+	// Description: 새로운 티켓을 등록하는 인터페이스
+	// Created: 2019/05/31
+	// Author: 이계웅
+
 	RegisterTicketUI userInterface;
 	RegisterTicketControl control;
 	userInterface.inputRegisterNewTicket(&control, ticketCollection, memberCollection, timer);
@@ -205,6 +230,11 @@ void registerTicketInterface(TicketCollection* ticketCollection, MemberCollectio
 
 void checkTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection) // 3.2. 등록티켓 조회 인터페이스
 {
+	//Function: void checkTicketInterface()
+	//Description: 등록한 티켓 조회 인터페이스
+	//Created: 2019/06/02
+	//Author: 이계웅
+
 	CheckTicketUI userInterface;
 	CheckTicketControl control;
 	control.getSellerTicket(&userInterface, ticketCollection, memberCollection);
@@ -212,6 +242,11 @@ void checkTicketInterface(TicketCollection* ticketCollection, MemberCollection* 
 
 void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection)  // 4.1. 티켓 검색 인터페이스
 {
+	// Function: void searchTicketInterface()
+	// Description: 일반티켓을 조회하기 위한 인터페이스
+	// Created: 2019/6/1
+	// Author: 홍지은
+
 	SearchTicketUI userInterface;
 	SearchTicketControl control;
 	userInterface.selectHomeTeam(&control, ticketCollection, memberCollection);
@@ -220,6 +255,11 @@ void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection*
 
 void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer) // 4.2. 티켓 예약 인터페이스
 {
+	// Function: void reserveGeneralTicketInterface()
+	// Description: 티켓을 예약하기 위한 인터페이스
+	// Created: 2019/6/2
+	// Author: 홍지은
+
 	ReserveGeneralTicketUI userInterface;
 	ReserveGeneralTicketControl control;
 	userInterface.reserveGeneralTicket(&control, reservationCollection, ticketCollection, memberCollection, timer);
@@ -227,6 +267,11 @@ void reserveGeneralTicketInterface(ReservationCollection* reservationCollection,
 
 void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t) // 4.3. 경매 중인 티켓 검색 인터페이스 
 {
+	// Function: void searchAuctionTicketInterface()
+	// Description: 경매티켓을 조회하기 위한 인터페이스
+	// Created: 2019/6/2
+	// Author: 홍지은
+
 	SearchAuctionTicketUI userInterface;
 	SearchAuctionTicketControl control;
 	userInterface.selectAuctionHomeTeam(&control, ticketCollection, memberCollection, t);
@@ -247,6 +292,10 @@ void participateAuctionTicketInterface(ReservationCollection* reservationCollect
 
 void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection)  // 4.5. 예약 정보 조회
 {
+	// Function: void checkReservationInterface()
+	// Description: 예약정보를 조회하기 위한 인터페이스
+	// Created: 2019/5/31
+	// Author: 홍지은
 	CheckReservationInfoUI userInterface;
 	CheckReservationInfoControl control;
 	userInterface.showReservationInfo(&control, reservationCollection, memberCollection);
@@ -258,7 +307,7 @@ void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection) /
 	// Function: void setCurrentTimeInterface(Timer* timer, TicketCollection* TicketCollection, MemberCollection* memberCollection)
 	// Description: 현재시간설정 인터페이스를 호출하는 함수이다.
 	// Parameters: Timer* timer - 현재시간을 저장하기 위한 Timer 객체
-	//						TicketCollection* ticketCollection - 현재시간이 바뀌고 나서 일 년이 지난 티켓을 삭제하기 위해 필요한 TicketCollection 객체
+	//					TicketCollection* ticketCollection - 현재시간이 바뀌고 나서 일 년이 지난 티켓을 삭제하기 위해 필요한 TicketCollection 객체
 	// Created: 2019/05/31
 	// Author: 김승연
 
@@ -286,13 +335,13 @@ void guestSession(MemberCollection* memcoll)  // 6.2. guest session으로 변경
 {
 	// Function :guestSession(MemberCollection* membercollection)
 	// Description: guest session으로 변경한다. 
-	//						누군가가 로그인 된 상태가 아니라면 아무 일도 수행하지 않고, 로그인된 상태이면 sessionOn = false로 바꾼다.
+	//				누군가가 로그인 된 상태가 아니라면 아무 일도 수행하지 않고, 로그인된 상태이면 sessionOn = false로 바꾼다.
 	// Created: 2019/06/02
 	// Author: 김승연
 
 	Member *tmp;
 	tmp = memcoll->currentSession();
-	if (tmp == NULL) {	}
+	if (tmp == NULL) {}
 	else {
 		tmp->setSessionOn(false);
 	}

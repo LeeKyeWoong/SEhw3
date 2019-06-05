@@ -53,17 +53,17 @@ void Ticket::removeTicket()
 	//Created: 2019/6/1
 	//Author: 홍지은
 
-	this->price = 0;
-	this->homeTeam = "";
-	this->awayTeam = "";
-	this->gameDateNTime = "";
-	this->seatNum = "";
-	this->isLimitedTimeAuction = false;
-	this->isSold = false;
-	this->canSell = true;
-	this->sid = "";
-	this->registerTicketDate = "";
-	this->ticketType = "";
+	this->price = 0; //가격
+	this->homeTeam = ""; //홈팀
+	this->awayTeam = ""; //어웨이팀
+	this->gameDateNTime = ""; //게임시간
+	this->seatNum = ""; //좌석
+	this->isLimitedTimeAuction = false; //경매여부
+	this->isSold = false; //팔렸는지
+	this->canSell = true; //경매 판매 가능기간인지
+	this->sid = ""; //판매자 아이디
+	this->registerTicketDate = ""; //등록날짜
+	this->ticketType = ""; //티켓타입
 }
 
 bool Ticket::getReservable()

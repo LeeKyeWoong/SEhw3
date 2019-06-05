@@ -23,32 +23,32 @@
 #include "UnregisterControl.h"
 
 //티켓 등록, 등록 티켓 조회 기능
-#include "Ticket.h"
+#include "Ticket.h" //티켓
 #include "TicketCollection.h"
-#include "CheckTicketControl.h"
+#include "CheckTicketControl.h" //등록 티켓 조회
 #include "CheckTicketUI.h"
-#include "RegisterTicketControl.h"
+#include "RegisterTicketControl.h" //티켓 등록
 #include "RegisterTicketUI.h"
 
 //티켓 검색 및 예약 기능, 경매 참여 기능, 예약 정보 조회 기능
-#include "Reservation.h"
+#include "Reservation.h" //예약
 #include "ReservationCollection.h"
-#include "ReserveGeneralTicketUI.h"
+#include "ReserveGeneralTicketUI.h" //일반티켓 예약
 #include "ReserveGeneralTicketControl.h"
-#include "SearchTicketControl.h"
+#include "SearchTicketControl.h" //티켓 검색
 #include "SearchTicketUI.h"
-#include "SearchAuctionTicketControl.h"
+#include "SearchAuctionTicketControl.h" //경매티켓 검색
 #include "SearchAuctionTicketUI.h"
-#include "ParticipateAuctionTicketUI.h"
-#include "ParticipateAuctionTicketControl.h"
-#include "CheckReservationInfoUI.h"
+#include "ParticipateAuctionTicketUI.h" //입찰 참여
+#include "ParticipateAuctionTicketControl.h" 
+#include "CheckReservationInfoUI.h" //예약정보 조회
 #include "CheckReservationInfoControl.h"
 
 //현재시간 변경 기능, 세션 변경 기능
-#include "Timer.h"
-#include "SetCurrentTimeUI.h"
+#include "Timer.h" //타이머
+#include "SetCurrentTimeUI.h" //현재 시간 변경
 #include "SetCurrentTimeControl.h"
-#include "ChangeSessionUI.h"
+#include "ChangeSessionUI.h" //세션 변경
 #include "ChangeSessionControl.h"
 
 void signupInterface(MemberCollection* memberCollection);//1.1 회원가입 인터페이스

@@ -27,9 +27,9 @@ void CheckReservationInfoUI::showReservationInfo(CheckReservationInfoControl* ch
 		cout << "> " << endl;
 	}
 
-	else
+	else //예약한 티켓의 개수가 있다면
 	{
-		cout << "4.5.예약정보조회" << endl;
+		cout << "4.5.예약정보 조회" << endl;
 		for (int i = 0; i < reservationCount ; i++)
 		{
 			cout << "> " <<"{"<< checkReservationInfo->getReservationInfo(i)->getReservePrice() << " ";
