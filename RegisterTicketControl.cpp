@@ -16,7 +16,8 @@ RegisterTicketControl::RegisterTicketControl()
 	this->checkRegister = true; // 등록할 수 있다.
 }
 
-void RegisterTicketControl::registerNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, TicketCollection *ticketCollection, MemberCollection * memberCollection ,Timer * timer)
+void RegisterTicketControl::registerNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction,
+	TicketCollection *ticketCollection, MemberCollection * memberCollection ,Timer * timer)
 {
 	// Function: void registerNewTicket(int price, string gameDatenTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, TicketCollection *ticketCollection, MemberCollection * memberCollection ,Timer * timer)
 	// Description: 티켓정보들과 TicketCollection, MemberCollection, Timer을 인자로 받아 티켓을 추가하는함수

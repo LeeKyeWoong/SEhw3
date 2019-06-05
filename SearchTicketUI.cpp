@@ -20,7 +20,7 @@ void SearchTicketUI::selectHomeTeam(SearchTicketControl* searchTicket, TicketCol
 
 	int ticketCount = searchTicket->getTempCount(); //임시 티켓 저장한 개수 
 
-	if (ticketCount == 0)//가져올 숙소가 없다면
+	if (ticketCount == 0)//가져올 티켓이 없다면
 	{
 		cout << "4.1. 티켓 검색" << endl;
 		cout << "> " << endl;

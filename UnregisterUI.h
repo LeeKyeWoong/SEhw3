@@ -11,7 +11,7 @@ class MemberCollection;
 
 class UnregisterUI
 {
-	//Class: UnregisterControl
+	//Class: UnregisterUI
 	//Description: UnregisterÀÇ boudnary class
 	//Created: 2019/06/02
 	//Author: ÀÌ°è¿õ

@@ -11,7 +11,7 @@ class Timer;
 
 class SearchAuctionTicketUI
 {
-	//Class: SearchAuctionTicket
+	//Class: SearchAuctionTicketUI
 	//Description: SearchAuctionTicket 의 boundary class
 	//Created: 2019/6/2
 	//Author: 홍지은
@@ -19,6 +19,7 @@ class SearchAuctionTicketUI
 private:
 
 public:
-	void selectAuctionHomeTeam(SearchAuctionTicketControl* searchAuctionTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t);
+	void selectAuctionHomeTeam(SearchAuctionTicketControl* searchAuctionTicket, 
+		TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t);
 	//홈팀을 선택하여 예약가능한 티켓을 조회한다. (4.1.)
 };

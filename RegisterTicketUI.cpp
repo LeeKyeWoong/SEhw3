@@ -14,10 +14,7 @@ void RegisterTicketUI::inputRegisterNewTicket(RegisterTicketControl * registerTi
 	// Description: 새 Ticket 정보를 입력하는 함수
 	// Created: 2019/05/31
 	// Author: 이계웅
-	
-	//this->registerTicketControl = registerTicketControl;
-	//this->ticketCollection = ticketCollection;
-	//this->memberCollection = memberCollection;
+
 
 	string homeTeam; 			//홈팀
 	string awayTeam; 			//어웨이팀 

@@ -27,6 +27,6 @@ private:
 public:
 	CheckReservationInfoControl();
 	void getReservationInfo(CheckReservationInfoControl* checkReservationInfo, ReservationCollection* reservationCollection, MemberCollection* memberCollection);
-	Reservation* getReservationInfo(int n); //n번째 숙소를 가져오기
+	Reservation* getReservationInfo(int n); //n번째 티켓을 가져오기
 	int getTempCount(); //몇번째인지 출력
 };

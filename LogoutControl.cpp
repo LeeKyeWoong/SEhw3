@@ -13,7 +13,7 @@ void LogoutControl::requestLogout(MemberCollection* memberCollection)
 
 	if (memberCollection->currentSession() == NULL) // 만약 로그인 중인 아이디가 없다면
 	{
-		cout << "> 현재 로그인 중인 id가 없습니다."; // 문구를 출력한다.ㄴ
+		cout << "> 현재 로그인 중인 id가 없습니다."; // 문구를 출력한다.
 	}
 	else // 로그인 중인 id가 있다면 
 	{

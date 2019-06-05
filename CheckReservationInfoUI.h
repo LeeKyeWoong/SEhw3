@@ -19,5 +19,5 @@ private:
 public:
 	void showReservationInfo(CheckReservationInfoControl* checkReservationInfo,
 		ReservationCollection* reservationCollection,
-		MemberCollection* memberCollection); //숙소 예약정보를 보여주는 함수
+		MemberCollection* memberCollection); //티켓 예약정보를 보여주는 함수
 };

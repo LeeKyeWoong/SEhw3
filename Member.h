@@ -38,5 +38,4 @@ public:
 
 	void setMemType(string memType);    // 회원 타입을 Set하는 함수
 	void setSessionOn(bool sessionOn);  // 로그인 여부를 Set하는 함수
-
 };

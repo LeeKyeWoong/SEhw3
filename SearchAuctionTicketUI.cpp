@@ -7,7 +7,8 @@
 #include "MemberCollection.h"
 #include "Timer.h"
 
-void SearchAuctionTicketUI::selectAuctionHomeTeam(SearchAuctionTicketControl* searchAuctionTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t)
+void SearchAuctionTicketUI::selectAuctionHomeTeam(SearchAuctionTicketControl* searchAuctionTicket,
+	TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t)
 {
 	//Function: selectHomeTeam(SearchTicketControl* searchTicket, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t)
 	//Description: 구매자가 홈팀을 선택하는 UI를 제공하고 그 홈팀에 대한 경매 중인 티켓을 보여준다.
@@ -21,7 +22,7 @@ void SearchAuctionTicketUI::selectAuctionHomeTeam(SearchAuctionTicketControl* se
 
 	int ticketCount = searchAuctionTicket->getTempCount(); //임시 티켓 저장한 개수 
 
-	if (ticketCount == 0)//가져올 숙소가 없다면
+	if (ticketCount == 0)//가져올 티켓이 없다면
 	{
 		cout << "4.3. 경매 중인 티켓 검색" << endl;
 		cout << ">" << endl;

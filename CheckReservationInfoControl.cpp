@@ -10,7 +10,7 @@
 CheckReservationInfoControl::CheckReservationInfoControl()
 {
 	//Function: CheckReservationInfoControl()
-	//Description: output 에 출력할 임시 숙소를 초기화한다
+	//Description: output 에 출력할 임시 티켓을 초기화한다
 	//Created: 2019/05/31
 	//Author: 홍지은
 
@@ -18,7 +18,7 @@ CheckReservationInfoControl::CheckReservationInfoControl()
 	for (int i = 0; i < MAX; i++)
 	{
 		temp[i] = NULL;
-		//임시 숙소 초기화
+		//임시 티켓 초기화
 	}
 }
 
@@ -39,7 +39,7 @@ void CheckReservationInfoControl::getReservationInfo(CheckReservationInfoControl
 	{
 		if (memberCollection->currentSession()->getMemType().compare("buyer") == 0)
 		{
-			//해당 id의 숙소예약을 확인
+			//해당 id의 티켓예약을 확인
 			int reservationCount = reservationCollection->getReservationCount();
 
 			if(reservationCount ==0)
@@ -63,7 +63,7 @@ Reservation* CheckReservationInfoControl::getReservationInfo(int n)
 {
 
 	//Function: getReservationInfo(int n) 
-	//Description: n번째 숙소의 정보를 리턴한다.
+	//Description: n번째 티켓의 정보를 리턴한다.
 	//Created: 2019/05/31
 	//Author: 홍지은
 
@@ -75,7 +75,7 @@ int CheckReservationInfoControl::getTempCount()
 {
 
 	//Function: getTempCount()
-	//Description: 임시숙소의 개수를 리턴한다
+	//Description: 임시티켓의 개수를 리턴한다
 	//Created: 2019/05/31
 	//Author: 홍지은
 

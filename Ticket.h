@@ -10,7 +10,6 @@ class Ticket {
 	//Author : 홍지은
 	
 private:
-
 	int price; //티켓의 가격
 	string gameDateNTime; //게임 시작날짜와 시간
 	string homeTeam; //홈팀
@@ -27,8 +26,8 @@ private:
 
 public:
 	Ticket(); //생성자
-	void addNewTicket(int price, string gameDateNTime, string homeTeam, string awayTeam, string seatNum, bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType ); //티켓 생성
-	//날짜 시간 예시 : 2019:05:22:12:00
+	void addNewTicket(int price, string gameDateNTime, string homeTeam, string awayTeam, string seatNum,
+		bool isLimitedTimeAuction, bool isSold, string sid, string registerTicketDate, string ticketType ); //티켓 생성
 	void removeTicket();
 
 	bool getReservable(); //티켓이 예약되었는지의 여부 확인
@@ -37,7 +36,6 @@ public:
 	string getHomeTeam(); //홈팀 가져오기
 	string getAwayTeam();
 	int getTicketPrice();
-	//int getAuctionTicketPrice(); ->굳이 필요한가... 왜냐하면 경매티켓은 항상 반값부터 시작하기 때문이다.
 	string getTicketRegisterDate();  //티켓 등록날짜 가져오기
 	string getTicketSeatNum(); // 티켓좌석 가져오기 
 	string getGameDateNTime();

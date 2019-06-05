@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 class ReservationCollection;
@@ -19,11 +18,8 @@ class ReserveGeneralTicketUI
 	//Author: 홍지은
 
 
-private:
-
-
 public:
 	void reserveGeneralTicket(ReserveGeneralTicketControl* reserveGeneralTicket, ReservationCollection* reservationCollection,
-		TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer); //날짜시간, 어웨이팀, 좌석위치를 입력해서 티켓 예약
-
+		TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer);
+	//날짜시간, 어웨이팀, 좌석위치를 입력해서 티켓 예약
 };

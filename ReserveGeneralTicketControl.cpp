@@ -37,19 +37,19 @@ void ReserveGeneralTicketControl::makeGeneralReservation(string gameDateTime, st
 		{
 			int ticketCount = ticketCollection->getTicketCount(); //티켓 개수 확인
 
-			//bool existTicket = false; //티켓이 존재하는지 확인할 변수
+			bool existTicket = false; //티켓이 존재하는지 확인할 변수
 
 			for (int i = 0; i < ticketCount;  i++)
 			{
-				if (ticketCollection->getTicket(i)->getTicketType() == "G") { //일반티켓이고
-					if ((ticketCollection->getTicket(i)->getGameDateNTime() == gameDateTime) &&
-						(ticketCollection->getTicket(i)->getAwayTeam()== awayTeam) &&
-						(ticketCollection->getTicket(i)->getTicketSeatNum() == seatNum)) //입력한 정보들을 비교해 맞다면
+				if (ticketCollection->getTicket(i)->getTicketType() == "G") {
+					if ((ticketCollection->getTicket(i)->getGameDateNTime().compare(gameDateTime) == 0) &&
+						(ticketCollection->getTicket(i)->getAwayTeam().compare(awayTeam) == 0) &&
+						(ticketCollection->getTicket(i)->getTicketSeatNum().compare(seatNum) == 0))
 					{
-						if (ticketCollection->getTicket(i)->getReservable() == true) //예약이 가능한 티켓에 대해
+						if (ticketCollection->getTicket(i)->getReservable() == true)
 						{
 							tempTicket = ticketCollection->getTicket(i);
-							//existTicket = true; //위의 날짜및 시간, 어웨이팀, 좌석위치에 해당하는 티켓이 존재.
+							existTicket = true; //위의 날짜및 시간, 어웨이팀, 좌석위치에 해당하는 티켓이 존재.
 							break;
 						}
 					}
@@ -57,8 +57,8 @@ void ReserveGeneralTicketControl::makeGeneralReservation(string gameDateTime, st
 				
 			}
 
-			// 그런 티켓이 있으면 숙소를 예약
-			if (tempTicket != NULL)
+			// 그런 티켓이 있으면 티켓을 예약
+			if (existTicket)
 			{
 				tempTicket->setReservable(false);
 
@@ -76,7 +76,7 @@ void ReserveGeneralTicketControl::makeGeneralReservation(string gameDateTime, st
 Ticket* ReserveGeneralTicketControl::getReservedTicket()
 {
 	//Function: getReservedTicket()
-	//Description: 티켓 예약 후 , 예약결과를 반환하는 함수
+	//Description: 티켓 예약 후, 예약결과를 반환하는 함수
 	//Created: 2019/6/2
 	//Author: 홍지은
 

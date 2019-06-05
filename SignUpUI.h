@@ -17,6 +17,7 @@ class SignUpUI
 private:
 
 public:
-	void inputInfo(SignUpControl* signupControl, MemberCollection* memberCollection);  //Member를 생성 한다. 해당 객체를 MemberCollection에 저장하고, 메세지를 출력한다. 
+	void inputInfo(SignUpControl* signupControl, MemberCollection* memberCollection);  
+	//Member를 생성 한다. 해당 객체를 MemberCollection에 저장하고, 메세지를 출력한다. 
 };
 
