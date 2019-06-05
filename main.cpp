@@ -8,33 +8,27 @@ using namespace std;
 int main()
 {
 	// Function: Main()
-	// Description: í‹°ì¼“ ì˜ˆì•½ í”„ë¡œê·¸ëž¨ mainí•¨ìˆ˜
+	// Description: Æ¼ÄÏ ¿¹¾à ÇÁ·Î±×·¥ mainÇÔ¼ö
 	// Created: 2019/05/29
-	// Author: ì´ê³„ì›…
+	// Author: ÀÌ°è¿õ
 	// Revsions : 
-	// 1. When & Who : 2019/05/30 by ì´ê³„ì›…
-	//    What : signupInterface() í•¨ìˆ˜ êµ¬í˜„
-	// 1. When & Who : 2019/05/31 by ê¹€ìŠ¹ì—°
-	//    What : setCurrentTimeInterface() í•¨ìˆ˜, changeSessionInterface() í•¨ìˆ˜ êµ¬í˜„
-	// 1. When & Who : 2019/05/31 by ì´ê³„ì›…
-	//    What : loginInterface(), logoutInterface(), registerTicketInterface(), exitProgram() í•¨ìˆ˜ êµ¬í˜„
-	// 2. When & Who : 2019/06/01 by í™ì§€ì€
-	//    What : searchTicketInterface() í•¨ìˆ˜êµ¬í˜„
-	// 3. When & Who : 2019/06/02 by í™ì§€ì€
-	//    What : searchAutionTicketInterface() í•¨ìˆ˜, checkReservationInterface()í•¨ìˆ˜, reserveGeneralTicketInterface()í•¨ìˆ˜ êµ¬í˜„
-	// 1. When & Who : 2019/06/02 by ì´ê³„ì›…
-	//    What : unregisterInterface() í•¨ìˆ˜, checkTicketInterface() í•¨ìˆ˜ êµ¬í˜„
-	// 4. When & Who: 2019/06/03 by ê¹€ìŠ¹ì—°
-	//    What : participateAuctionTicketInterface() í•¨ìˆ˜ êµ¬í˜„, guest session ë³€ê²½ ê¸°ëŠ¥ êµ¬í˜„
+	// 1. When & Who : 2019/05/31 by ±è½Â¿¬
+	//    What : setCurrentTimeInterface() ÇÔ¼ö, changeSessionInterface() ÇÔ¼ö ±¸Çö
+	// 2. When & Who : 2019/05/31 by È«ÁöÀº
+	//    What : searchTicketInterface()ÇÔ¼ö
+	// 3. When & Who : 2019/6/2 by È«ÁöÀº
+	//    What : searchAutionTicketInterface() ÇÔ¼ö, checkReservationInterface()ÇÔ¼ö, reserveGeneralTicketInterface()ÇÔ¼ö
+	// 4. When & Who: 2019/06/03 by ±è½Â¿¬
+	//    What : participateAuctionTicketInterface() ÇÔ¼ö ±¸Çö, guest session º¯°æ ±â´É ±¸Çö
 
-	Member member[MAX];             // ë©¤ë²„ ê°ì²´ ìƒì„± 
-	Timer timer;					// íƒ€ì´ë¨¸ ê°ì²´ ìƒì„± 
-	Reservation reservation[MAX];	// ì˜ˆì•½ ê°ì²´ ìƒì„±
-	Ticket ticket[MAX];				// í‹°ì¼“ ê°ì²´ ìƒì„±
+	Member member[MAX];             // ¸â¹ö °´Ã¼ »ý¼º 
+	Timer timer;					// Å¸ÀÌ¸Ó °´Ã¼ »ý¼º 
+	Reservation reservation[MAX];	// ¿¹¾à °´Ã¼ »ý¼º
+	Ticket ticket[MAX];				// Æ¼ÄÏ °´Ã¼ »ý¼º
 
-	ReservationCollection reservationCollection(reservation);  // ì˜ˆì•½ ìƒì„±
-	TicketCollection ticketCollection(ticket);                 // í‹°ì¼“ ìƒì„±
-	MemberCollection memberCollection(member);				   // ë©¤ë²„ ìƒì„±
+	ReservationCollection reservationCollection(reservation);  // ¿¹¾à »ý¼º
+	TicketCollection ticketCollection(ticket);                 // Æ¼ÄÏ »ý¼º
+	MemberCollection memberCollection(member);				   // ¸â¹ö »ý¼º
 
 	FILE* in_fp;
 	FILE* out_fp;
@@ -44,25 +38,25 @@ int main()
 
 	while (1)
 	{
-		// ë‘ ê°œì˜ ë©”ë‰´ë¥¼ ìœ„í•œ ë³€ìˆ˜ 
+		// µÎ °³ÀÇ ¸Þ´º¸¦ À§ÇÑ º¯¼ö 
 		int menu_1 = 0;
 		int menu_2 = 0;
 
-		// ìž…ë ¥íŒŒì¼ì—ì„œ ë©”ë‰´ ìˆ«ìž 2ê°œë¥¼ ì½ê¸°
+		// ÀÔ·ÂÆÄÀÏ¿¡¼­ ¸Þ´º ¼ýÀÚ 2°³¸¦ ÀÐ±â
  		cin >> menu_1 >> menu_2;
 
-		// ë©”ë‰´ êµ¬ë¶„ ë° í•´ë‹¹ ì—°ì‚° ìˆ˜í–‰
+		// ¸Þ´º ±¸ºÐ ¹× ÇØ´ç ¿¬»ê ¼öÇà
 		switch(menu_1)
 		{
 			case 1: 
 			{
 				switch(menu_2)
 				{
-					case 1: {	// 1.1. íšŒì›ê°€ìž…
+					case 1: {	// 1.1. È¸¿ø°¡ÀÔ
 						signupInterface(&memberCollection);
 						break;
 					}
-					case 2: {	// 1.2. íšŒì›íƒˆí‡´ 
+					case 2: {	// 1.2. È¸¿øÅ»Åð 
 						unregisterInterface(&ticketCollection, &reservationCollection, &memberCollection);
 						break;
 					}
@@ -73,11 +67,11 @@ int main()
 			{
 				switch(menu_2)
 				{
-					case 1: {	// 2.1. ë¡œê·¸ì¸
+					case 1: {	// 2.1. ·Î±×ÀÎ
 						loginInterface(&memberCollection);
 						break;
 					}
-					case 2: {	// 2.2. ë¡œê·¸ì•„ì›ƒ
+					case 2: {	// 2.2. ·Î±×¾Æ¿ô
 						logoutInterface(&memberCollection);
 						break;
 					}
@@ -88,11 +82,11 @@ int main()
 			{
 				switch(menu_2) 
 				{
-					case 1: {   // 3.1. íŒë§¤í‹°ì¼“ ë“±ë¡
+					case 1: {   // 3.1. ÆÇ¸ÅÆ¼ÄÏ µî·Ï
 						registerTicketInterface(&ticketCollection, &memberCollection, &timer);
 						break;
 					}
-					case 2: {   // 3.2. ë“±ë¡í‹°ì¼“ ì¡°íšŒ
+					case 2: {   // 3.2. µî·ÏÆ¼ÄÏ Á¶È¸
 						checkTicketInterface(&ticketCollection, &memberCollection);
 						break;
 					}
@@ -103,23 +97,23 @@ int main()
 			{
 				switch(menu_2) 
 				{
-					case 1: {   // 4.1. í‹°ì¼“ ê²€ìƒ‰
+					case 1: {   // 4.1. Æ¼ÄÏ °Ë»ö
 						searchTicketInterface(&ticketCollection, &memberCollection);
 						break;
 					}
-					case 2: {   // 4.2. í‹°ì¼“ ì˜ˆì•½
+					case 2: {   // 4.2. Æ¼ÄÏ ¿¹¾à
 						reserveGeneralTicketInterface(&reservationCollection, &ticketCollection, &memberCollection, &timer);
 						break;
 					}
-					case 3: {   // 4.3. ê²½ë§¤ ì¤‘ì¸ í‹°ì¼“ ê²€ìƒ‰
+					case 3: {   // 4.3. °æ¸Å ÁßÀÎ Æ¼ÄÏ °Ë»ö
 						searchAutionTicketInterface(&ticketCollection, &memberCollection, &timer);
 						break;
 					}
-					case 4: {   // 4.4. ê²½ë§¤ ì°¸ì—¬
+					case 4: {   // 4.4. °æ¸Å Âü¿©
 						participateAuctionTicketInterface(&reservationCollection, &ticketCollection, &memberCollection, &timer);
 						break;
 					}
-					case 5: {   // 4.5. ì˜ˆì•½ ì •ë³´ ì¡°íšŒ
+					case 5: {   // 4.5. ¿¹¾à Á¤º¸ Á¶È¸
 						checkReservationInterface(&reservationCollection, &memberCollection);
 						break;
 					}
@@ -130,7 +124,7 @@ int main()
 			{
 				switch(menu_2) 
 				{
-					case 1: {	 // 5.1. í˜„ìž¬ì‹œê°„ ì„¤ì •
+					case 1: {	 // 5.1. ÇöÀç½Ã°£ ¼³Á¤
 						setCurrentTimeInterface(&timer, &ticketCollection);
 						break;
 					}
@@ -141,11 +135,11 @@ int main()
 			{
 				switch(menu_2) 
 				{
-					case 1: {	 // 6.1. session ë³€ê²½
+					case 1: {	 // 6.1. session º¯°æ
 						changeSessionInterface(&memberCollection);
 						break;
 					}
-					case 2: {	// 6.2. guest sessionìœ¼ë¡œ ë³€ê²½
+					case 2: {	// 6.2. guest sessionÀ¸·Î º¯°æ
 						guestSession(&memberCollection);
 						break;
 					}
@@ -156,8 +150,8 @@ int main()
 			{
 				switch(menu_2) 
 				{
-					case 1: {   // 7.1. ì¢…ë£Œ
-						exitProgram();	//exitProgram() í•¨ìˆ˜ì—ì„œ í•´ë‹¹ ê¸°ëŠ¥ ìˆ˜í–‰
+					case 1: {   // 7.1. Á¾·á
+						exitProgram();	//exitProgram() ÇÔ¼ö¿¡¼­ ÇØ´ç ±â´É ¼öÇà
 						break;
 					}
 				}
@@ -169,89 +163,89 @@ int main()
 	return 0;
 }
 
-void signupInterface(MemberCollection* memberCollection) // 1.1 íšŒì›ê°€ìž… ì¸í„°íŽ˜ì´ìŠ¤ 
+void signupInterface(MemberCollection* memberCollection) // 1.1 È¸¿ø°¡ÀÔ ÀÎÅÍÆäÀÌ½º 
 {
 	// Function : void signupInterface()
-	// Description: íšŒì›ê°€ìž…ì„ í•˜ëŠ” ì¸í„°íŽ˜ì´ìŠ¤
-	// Created: 2019/05/30
-	// Author: ì´ê³„ì›…
+	// Description: È¸¿ø°¡ÀÔÀ» ÇÏ´Â ÀÎÅÍÆäÀÌ½º
+	// Created: 2019/5/30
+	// Author: ÀÌ°è¿õ
 
 	SignUpUI userInterface;
 	SignUpControl control;
-	userInterface.inputInfo(&control, memberCollection); // í¬ì¸í„°
+	userInterface.inputInfo(&control, memberCollection); // Æ÷ÀÎÅÍ
 }
 
-void unregisterInterface(TicketCollection* ticketCollection, ReservationCollection* reservationCollection, MemberCollection* memberCollection) // 1.2 íšŒì›íƒˆí‡´ ì¸í„°íŽ˜ì´ìŠ¤
+void unregisterInterface(TicketCollection* ticketCollection, ReservationCollection* reservationCollection, MemberCollection* memberCollection) // 1.2 È¸¿øÅ»Åð ÀÎÅÍÆäÀÌ½º
 {
 	// Function: void unregisterInterface()
-	// Description: íšŒì›íƒˆí‡´ë¥¼ í•˜ëŠ” ì¸í„°íŽ˜ì´ìŠ¤
+	// Description: È¸¿øÅ»Åð¸¦ ÇÏ´Â ÀÎÅÍÆäÀÌ½º
 	// Created: 2019/06/02
-	// Author: ì´ê³„ì›…
+	// Author: ÀÌ°è¿õ
 
 	UnregisterUI userInterface;
 	UnregisterControl control;
 	userInterface.callUnregister(&control, ticketCollection, reservationCollection, memberCollection);
 
 	if (control.getCanUnregister()) {
-		guestSession(memberCollection); // íšŒì›íƒˆí‡´ë¥¼ í–ˆìœ¼ë¯€ë¡œ guest sessionìœ¼ë¡œ ë³€ê²½í•´ì•¼ í•œë‹¤.
+		guestSession(memberCollection); // È¸¿øÅ»Åð¸¦ ÇßÀ¸¹Ç·Î guest sessionÀ¸·Î º¯°æÇØ¾ß ÇÑ´Ù.
 	}
 }
 
 
-void loginInterface(MemberCollection* memberCollection) //2.1 ë¡œê·¸ì¸ ì¸í„°íŽ˜ì´ìŠ¤
+void loginInterface(MemberCollection* memberCollection) //2.1 ·Î±×ÀÎ ÀÎÅÍÆäÀÌ½º
 {
 	//Function: void loginInterface()
-	//Description: ë¡œê·¸ì¸ í•˜ëŠ” ì¸í„°íŽ˜ì´ìŠ¤
+	//Description: ·Î±×ÀÎ ÇÏ´Â ÀÎÅÍÆäÀÌ½º
 	//Created: 2019/05/31
-	//Author: ì´ê³„ì›…
+	//Author: ÀÌ°è¿õ
 
 	LoginUI userInterface;
 	LoginControl control;
 	userInterface.inputLogin(&control, memberCollection);
 }
 
-void logoutInterface(MemberCollection* memberCollection) //2.2 ë¡œê·¸ì•„ì›ƒ ì¸í„°íŽ˜ì´ìŠ¤
+void logoutInterface(MemberCollection* memberCollection) //2.2 ·Î±×¾Æ¿ô ÀÎÅÍÆäÀÌ½º
 {
 	//Function: void logoutInterface()
-	//Description: ë¡œê·¸ì•„ì›ƒ í•˜ëŠ” ì¸í„°íŽ˜ì´ìŠ¤
+	//Description: ·Î±×¾Æ¿ô ÇÏ´Â ÀÎÅÍÆäÀÌ½º
 	//Created: 2019/05/31
-	//Author: ì´ê³„ì›…
+	//Author: ÀÌ°è¿õ
 
 	LogoutUI userInterface;
 	LogoutControl control;
 	userInterface.callLogout(&control, memberCollection);
 }
 
-void registerTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer *timer) // 3.1 íŒë§¤í‹°ì¼“ ë“±ë¡ ì¸í„°íŽ˜ì´ìŠ¤
+void registerTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer *timer) // 3.1 ÆÇ¸ÅÆ¼ÄÏ µî·Ï ÀÎÅÍÆäÀÌ½º
 {
 	// Function: void registerTicketInterface()
-	// Description: ìƒˆë¡œìš´ í‹°ì¼“ì„ ë“±ë¡í•˜ëŠ” ì¸í„°íŽ˜ì´ìŠ¤
+	// Description: »õ·Î¿î Æ¼ÄÏÀ» µî·ÏÇÏ´Â ÀÎÅÍÆäÀÌ½º
 	// Created: 2019/05/31
-	// Author: ì´ê³„ì›…
+	// Author: ÀÌ°è¿õ
 
 	RegisterTicketUI userInterface;
 	RegisterTicketControl control;
 	userInterface.inputRegisterNewTicket(&control, ticketCollection, memberCollection, timer);
 }
 
-void checkTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection) // 3.2. ë“±ë¡í‹°ì¼“ ì¡°íšŒ ì¸í„°íŽ˜ì´ìŠ¤
+void checkTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection) // 3.2. µî·ÏÆ¼ÄÏ Á¶È¸ ÀÎÅÍÆäÀÌ½º
 {
 	//Function: void checkTicketInterface()
-	//Description: ë“±ë¡í•œ í‹°ì¼“ ì¡°íšŒ ì¸í„°íŽ˜ì´ìŠ¤
+	//Description: µî·ÏÇÑ Æ¼ÄÏ Á¶È¸ ÀÎÅÍÆäÀÌ½º
 	//Created: 2019/06/02
-	//Author: ì´ê³„ì›…
+	//Author: ÀÌ°è¿õ
 
 	CheckTicketUI userInterface;
 	CheckTicketControl control;
 	control.getSellerTicket(&userInterface, ticketCollection, memberCollection);
 }
 
-void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection)  // 4.1. í‹°ì¼“ ê²€ìƒ‰ ì¸í„°íŽ˜ì´ìŠ¤
+void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection)  // 4.1. Æ¼ÄÏ °Ë»ö ÀÎÅÍÆäÀÌ½º
 {
 	// Function: void searchTicketInterface()
-	// Description: ì¼ë°˜í‹°ì¼“ì„ ì¡°íšŒí•˜ê¸° ìœ„í•œ ì¸í„°íŽ˜ì´ìŠ¤
-	// Created: 2019/06/01
-	// Author: í™ì§€ì€
+	// Description: ÀÏ¹ÝÆ¼ÄÏÀ» Á¶È¸ÇÏ±â À§ÇÑ ÀÎÅÍÆäÀÌ½º
+	// Created: 2019/6/1
+	// Author: È«ÁöÀº
 
 	SearchTicketUI userInterface;
 	SearchTicketControl control;
@@ -259,24 +253,24 @@ void searchTicketInterface(TicketCollection* ticketCollection, MemberCollection*
 }
 
 
-void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer) // 4.2. í‹°ì¼“ ì˜ˆì•½ ì¸í„°íŽ˜ì´ìŠ¤
+void reserveGeneralTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* timer) // 4.2. Æ¼ÄÏ ¿¹¾à ÀÎÅÍÆäÀÌ½º
 {
 	// Function: void reserveGeneralTicketInterface()
-	// Description: í‹°ì¼“ì„ ì˜ˆì•½í•˜ê¸° ìœ„í•œ ì¸í„°íŽ˜ì´ìŠ¤
-	// Created: 2019/06/02
-	// Author: í™ì§€ì€
+	// Description: Æ¼ÄÏÀ» ¿¹¾àÇÏ±â À§ÇÑ ÀÎÅÍÆäÀÌ½º
+	// Created: 2019/6/2
+	// Author: È«ÁöÀº
 
 	ReserveGeneralTicketUI userInterface;
 	ReserveGeneralTicketControl control;
 	userInterface.reserveGeneralTicket(&control, reservationCollection, ticketCollection, memberCollection, timer);
 }
 
-void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t) // 4.3. ê²½ë§¤ ì¤‘ì¸ í‹°ì¼“ ê²€ìƒ‰ ì¸í„°íŽ˜ì´ìŠ¤ 
+void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer* t) // 4.3. °æ¸Å ÁßÀÎ Æ¼ÄÏ °Ë»ö ÀÎÅÍÆäÀÌ½º 
 {
 	// Function: void searchAuctionTicketInterface()
-	// Description: ê²½ë§¤í‹°ì¼“ì„ ì¡°íšŒí•˜ê¸° ìœ„í•œ ì¸í„°íŽ˜ì´ìŠ¤
-	// Created: 2019/06/02
-	// Author: í™ì§€ì€
+	// Description: °æ¸ÅÆ¼ÄÏÀ» Á¶È¸ÇÏ±â À§ÇÑ ÀÎÅÍÆäÀÌ½º
+	// Created: 2019/6/2
+	// Author: È«ÁöÀº
 
 	SearchAuctionTicketUI userInterface;
 	SearchAuctionTicketControl control;
@@ -284,38 +278,38 @@ void searchAutionTicketInterface(TicketCollection* ticketCollection, MemberColle
 }
 
 
-void participateAuctionTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer *timer) // 4.4. ê²½ë§¤ ì°¸ì—¬ ì¸í„°íŽ˜ì´ìŠ¤
+void participateAuctionTicketInterface(ReservationCollection* reservationCollection, TicketCollection* ticketCollection, MemberCollection* memberCollection, Timer *timer) // 4.4. °æ¸Å Âü¿© ÀÎÅÍÆäÀÌ½º
 {
 	// Function: void participateAuctionTicketInterface()
-	// Description: ê²½ë§¤ ì°¸ì—¬ë¥¼ ìœ„í•œ ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ í˜¸ì¶œ
+	// Description: °æ¸Å Âü¿©¸¦ À§ÇÑ ÀÎÅÍÆäÀÌ½º¸¦ È£Ãâ
 	// Created: 2019/06/03
-	// Author: ê¹€ìŠ¹ì—°
+	// Author: ±è½Â¿¬
 
 	ParticipateAuctionTicketUI userInterface;
 	ParticipateAuctionTicketControl control;
 	userInterface.participateAuctionInterface(&control, reservationCollection, memberCollection, ticketCollection, timer);
 }
 
-void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection)  // 4.5. ì˜ˆì•½ ì •ë³´ ì¡°íšŒ
+void checkReservationInterface(ReservationCollection* reservationCollection, MemberCollection* memberCollection)  // 4.5. ¿¹¾à Á¤º¸ Á¶È¸
 {
 	// Function: void checkReservationInterface()
-	// Description: ì˜ˆì•½ì •ë³´ë¥¼ ì¡°íšŒí•˜ê¸° ìœ„í•œ ì¸í„°íŽ˜ì´ìŠ¤
-	// Created: 2019/06/02
-	// Author: í™ì§€ì€
+	// Description: ¿¹¾àÁ¤º¸¸¦ Á¶È¸ÇÏ±â À§ÇÑ ÀÎÅÍÆäÀÌ½º
+	// Created: 2019/5/31
+	// Author: È«ÁöÀº
 	CheckReservationInfoUI userInterface;
 	CheckReservationInfoControl control;
 	userInterface.showReservationInfo(&control, reservationCollection, memberCollection);
 }
 
 
-void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection) // 5.1 í˜„ìž¬ì‹œê°„ì„¤ì • ì¸í„°íŽ˜ì´ìŠ¤
+void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection) // 5.1 ÇöÀç½Ã°£¼³Á¤ ÀÎÅÍÆäÀÌ½º
 {
 	// Function: void setCurrentTimeInterface(Timer* timer, TicketCollection* TicketCollection, MemberCollection* memberCollection)
-	// Description: í˜„ìž¬ì‹œê°„ì„¤ì • ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ì´ë‹¤.
-	// Parameters: Timer* timer - í˜„ìž¬ì‹œê°„ì„ ì €ìž¥í•˜ê¸° ìœ„í•œ Timer ê°ì²´
-	//					TicketCollection* ticketCollection - í˜„ìž¬ì‹œê°„ì´ ë°”ë€Œê³  ë‚˜ì„œ ì¼ ë…„ì´ ì§€ë‚œ í‹°ì¼“ì„ ì‚­ì œí•˜ê¸° ìœ„í•´ í•„ìš”í•œ TicketCollection ê°ì²´
+	// Description: ÇöÀç½Ã°£¼³Á¤ ÀÎÅÍÆäÀÌ½º¸¦ È£ÃâÇÏ´Â ÇÔ¼öÀÌ´Ù.
+	// Parameters: Timer* timer - ÇöÀç½Ã°£À» ÀúÀåÇÏ±â À§ÇÑ Timer °´Ã¼
+	//					TicketCollection* ticketCollection - ÇöÀç½Ã°£ÀÌ ¹Ù²î°í ³ª¼­ ÀÏ ³âÀÌ Áö³­ Æ¼ÄÏÀ» »èÁ¦ÇÏ±â À§ÇØ ÇÊ¿äÇÑ TicketCollection °´Ã¼
 	// Created: 2019/05/31
-	// Author: ê¹€ìŠ¹ì—°
+	// Author: ±è½Â¿¬
 
 	SetCurrentTimeUI userInterface;
 	SetCurrentTimeControl control;
@@ -323,13 +317,13 @@ void setCurrentTimeInterface(Timer* timer, TicketCollection* ticketCollection) /
 }
 
 
-void changeSessionInterface(MemberCollection* mCollection) // 6.1 Sessionë³€ê²½
+void changeSessionInterface(MemberCollection* mCollection) // 6.1 Sessionº¯°æ
 {
 	// Function: void changeSession(MemberCollection* mCollection)
-	// Description: Sessionì„ ë³€ê²½í•˜ê¸° ìœ„í•´ ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜
-	// Parameter: MemberCollection* mCollection - ì„¸ì…˜ ë³€ê²½ì„ í•  ë•Œ ë©¤ë²„ ê°ì²´ë“¤ì— ì ‘ê·¼í•˜ê¸° ìœ„í•´ í•„ìš”
+	// Description: SessionÀ» º¯°æÇÏ±â À§ÇØ ÀÎÅÍÆäÀÌ½º¸¦ È£ÃâÇÏ´Â ÇÔ¼ö
+	// Parameter: MemberCollection* mCollection - ¼¼¼Ç º¯°æÀ» ÇÒ ¶§ ¸â¹ö °´Ã¼µé¿¡ Á¢±ÙÇÏ±â À§ÇØ ÇÊ¿ä
 	// Created: 2019/05/31
-	// Author: ê¹€ìŠ¹ì—°
+	// Author: ±è½Â¿¬
 
 	ChangeSessionUI userInterface;
 	ChangeSessionControl control;
@@ -337,13 +331,13 @@ void changeSessionInterface(MemberCollection* mCollection) // 6.1 Sessionë³€ê²½
 }
 
 
-void guestSession(MemberCollection* memcoll)  // 6.2. guest sessionìœ¼ë¡œ ë³€ê²½
+void guestSession(MemberCollection* memcoll)  // 6.2. guest sessionÀ¸·Î º¯°æ
 {
 	// Function :guestSession(MemberCollection* membercollection)
-	// Description: guest sessionìœ¼ë¡œ ë³€ê²½í•œë‹¤. 
-	//				ëˆ„êµ°ê°€ê°€ ë¡œê·¸ì¸ ëœ ìƒíƒœê°€ ì•„ë‹ˆë¼ë©´ ì•„ë¬´ ì¼ë„ ìˆ˜í–‰í•˜ì§€ ì•Šê³ , ë¡œê·¸ì¸ëœ ìƒíƒœì´ë©´ sessionOn = falseë¡œ ë°”ê¾¼ë‹¤.
+	// Description: guest sessionÀ¸·Î º¯°æÇÑ´Ù. 
+	//				´©±º°¡°¡ ·Î±×ÀÎ µÈ »óÅÂ°¡ ¾Æ´Ï¶ó¸é ¾Æ¹« ÀÏµµ ¼öÇàÇÏÁö ¾Ê°í, ·Î±×ÀÎµÈ »óÅÂÀÌ¸é sessionOn = false·Î ¹Ù²Û´Ù.
 	// Created: 2019/06/02
-	// Author: ê¹€ìŠ¹ì—°
+	// Author: ±è½Â¿¬
 
 	Member *tmp;
 	tmp = memcoll->currentSession();
@@ -351,17 +345,17 @@ void guestSession(MemberCollection* memcoll)  // 6.2. guest sessionìœ¼ë¡œ ë³€ê²½
 	else {
 		tmp->setSessionOn(false);
 	}
-	cout << "6.2 Guest Sessionìœ¼ë¡œ ë³€ê²½" << endl;
+	cout << "6.2 Guest SessionÀ¸·Î º¯°æ" << endl;
 	cout << endl;
 }
 
-void exitProgram() {  // 7.1 ì¢…ë£Œ ì¸í„°íŽ˜ì´ìŠ¤
+void exitProgram() {  // 7.1 Á¾·á ÀÎÅÍÆäÀÌ½º
 
 	// Function :exitProgram()
-	// Description: í”„ë¡œê·¸ëž¨ ì¢…ë£Œ
+	// Description: ÇÁ·Î±×·¥ Á¾·á
 	// Created: 2019/05/31
-	// Author: ì´ê³„ì›…
+	// Author: ÀÌ°è¿õ
 
-	cout << "7.1 ì¢…ë£Œ";
+	cout << "7.1 Á¾·á";
 	exit(0);
 }
